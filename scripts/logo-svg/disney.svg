@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" role="img" aria-label="Disney">
+  <rect width="480" height="140" fill="#fff"/>
+  <text x="240" y="95" text-anchor="middle" font-family="Brush Script MT, Segoe Script, cursive" font-size="88" fill="#113CCF">Disney</text>
+  <path d="M200 38c0-8 6-14 14-14s14 6 14 14-6 14-14 14-14-6-14-14z" fill="none" stroke="#113CCF" stroke-width="3"/>
+  <circle cx="214" cy="38" r="3" fill="#113CCF"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Loblaws">
+  <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <svg x="8" y="8" width="104" height="104" viewBox="0 0 400 120" preserveAspectRatio="xMidYMid meet">
+    
+  <rect width="400" height="120" fill="#fff"/>
+  <text x="200" y="82" text-anchor="middle" font-family="Brush Script MT, Segoe Script, cursive" font-size="72" fill="#E31837">Loblaws</text>
+
+  </svg>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Samsung">
+  <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <svg x="8" y="8" width="104" height="104" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+    
+  <ellipse cx="50" cy="50" rx="42" ry="26" fill="none" stroke="#1428A0" stroke-width="7"/>
+  <ellipse cx="50" cy="50" rx="28" ry="16" fill="none" stroke="#1428A0" stroke-width="4"/>
+
+  </svg>
+</svg>

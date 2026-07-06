@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Disney">
+  <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <svg x="8" y="8" width="104" height="104" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+    
+  <circle cx="50" cy="52" r="34" fill="#113CCF"/>
+  <circle cx="36" cy="38" r="14" fill="#113CCF"/>
+  <circle cx="64" cy="38" r="14" fill="#113CCF"/>
+
+  </svg>
+</svg>

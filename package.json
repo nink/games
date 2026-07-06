@@ -1,0 +1,23 @@
+{
+  "name": "take5",
+  "version": "0.1.0",
+  "description": "Take 5 — corporate Sequence board game prototype (TV + mobile)",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node scripts/validate-board.js",
+    "generate-logos": "node scripts/generate-logos.js",
+    "generate-cards": "node scripts/generate-cards.js",
+    "postinstall": "node scripts/generate-logos.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "simple-icons": "^16.25.0"
+  }
+}

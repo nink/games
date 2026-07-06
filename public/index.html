@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Take 5</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            board: '#0f172a',
+            cell: '#1e293b',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen antialiased">
+  <div id="app" class="min-h-screen"></div>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

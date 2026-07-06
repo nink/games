@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Dunkin">
+  <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <svg x="8" y="8" width="104" height="104" viewBox="0 0 480 120" preserveAspectRatio="xMidYMid meet">
+    
+  <rect width="480" height="120" fill="#fff"/>
+  <text x="240" y="82" text-anchor="middle" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#FF671F" font-style="italic">DUNKIN'</text>
+  <ellipse cx="120" cy="58" rx="28" ry="18" fill="#FF671F" opacity="0.25"/>
+  <ellipse cx="360" cy="58" rx="28" ry="18" fill="#E11383" opacity="0.2"/>
+
+  </svg>
+</svg>

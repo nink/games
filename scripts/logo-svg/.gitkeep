@@ -1,0 +1,4 @@
+/**
+ * Vendored / fetched brand SVG sources (raw). generate-logos.js normalizes these.
+ * Add files here to avoid network fetches during builds.
+ */

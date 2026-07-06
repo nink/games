@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Nike · Green">
+  <title>Nike · Green</title>
+  <rect width="200" height="200" rx="12" fill="#22c55e" stroke="rgba(15, 23, 42, 0.15)" stroke-width="1"/>
+  <rect x="10" y="10" width="180" height="180" rx="8" fill="#ffffff" filter="url(#shadow)"/>
+  <svg x="16" y="16" width="168" height="168" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
+    <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <g transform="translate(20 20) scale(3.333333)">
+    <path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z" fill="#111111"/>
+  </g>
+  </svg>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+</svg>

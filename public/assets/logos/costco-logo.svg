@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Costco">
+  <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <svg x="8" y="8" width="104" height="104" viewBox="0 0 512 120" preserveAspectRatio="xMidYMid meet">
+    
+  <rect width="512" height="120" fill="#fff"/>
+  <text x="256" y="78" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="72" font-weight="900" fill="#005DAA" letter-spacing="4">COSTCO</text>
+  <rect x="80" y="92" width="352" height="8" fill="#E31837"/>
+
+  </svg>
+</svg>

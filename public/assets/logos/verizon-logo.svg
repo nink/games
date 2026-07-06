@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Verizon">
+  <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <g transform="translate(20 20) scale(3.333333)">
+    <path d="M18.302 0H22v.003L10.674 24H7.662L2 12h3.727l3.449 7.337z" fill="#CD040B"/>
+  </g>
+</svg>

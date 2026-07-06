@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Pizza Hut">
+  <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <svg x="8" y="8" width="104" height="104" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+    
+  <path d="M50 18 L82 78 L18 78 Z" fill="#EE3A23"/>
+  <rect x="38" y="48" width="24" height="10" rx="2" fill="#fff"/>
+  <circle cx="50" cy="62" r="4" fill="#fff"/>
+
+  </svg>
+</svg>
