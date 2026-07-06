@@ -1,11 +1,51 @@
 import { CARD_CATALOG } from '/shared/cards.js';
 import { createCardFace, createWildFace } from './suit-ui.js';
+import { applyLogoBorderIfNeeded, TEAM_COLORS } from './logo-contrast.js';
 
 const TEAM_RING = {
   red: 'team-ring-red',
   blue: 'team-ring-blue',
   green: 'team-ring-green',
 };
+
+function isWildCorner(cardId) {
+  return cardId === 'FREE';
+}
+
+function brandIdForCell(cardId, card) {
+  if (cardId === 'FREE') return 'ibm';
+  return card?.brandId ?? 'apple';
+}
+
+/**
+ * @param {HTMLElement} face
+ * @param {string} cardId
+ * @param {import('/shared/cards.js').CardDef | null} card
+ * @param {string | null} chipTeam
+ */
+function stylePlacedChip(face, cardId, card, chipTeam) {
+  if (!chipTeam) return;
+
+  const logoWrap = face.querySelector('.card-face-logo');
+  if (!logoWrap) return;
+
+  logoWrap.classList.add(`chip-team-${chipTeam}`);
+  logoWrap.style.backgroundColor = TEAM_COLORS[chipTeam] ?? '#ffffff';
+
+  applyLogoBorderIfNeeded(logoWrap, brandIdForCell(cardId, card), chipTeam);
+}
+
+/**
+ * @param {HTMLElement} face
+ * @param {string} cardId
+ * @param {import('/shared/cards.js').CardDef | null} card
+ */
+function styleFlashTarget(face, cardId, card) {
+  const logoWrap = face.querySelector('.card-face-logo');
+  if (logoWrap) {
+    applyLogoBorderIfNeeded(logoWrap, brandIdForCell(cardId, card), 'black');
+  }
+}
 
 /**
  * @param {HTMLElement} container
@@ -41,29 +81,33 @@ export function renderBoard(container, { chips, highlights = [], onCellClick, in
       const cell = chips[r][c];
       const cardId = cell.cardId;
       const card = cardId === 'FREE' ? null : CARD_CATALOG[cardId];
-      const isHighlight = highlightPlace.has(`${r},${c}`);
+      const wildCorner = isWildCorner(cardId);
+      const isHighlight = highlightPlace.has(`${r},${c}`) && !wildCorner;
       const isRemoveHighlight = highlightRemove.has(`${r},${c}`);
 
       const el = document.createElement('button');
       el.type = 'button';
       el.style.aspectRatio = '1';
       el.style.minHeight = '0';
-      el.style.backgroundColor = cardId === 'FREE' ? 'rgba(120, 53, 15, 0.4)' : '#1e293b';
+      el.style.backgroundColor = wildCorner ? 'rgba(120, 53, 15, 0.4)' : '#1e293b';
       el.className = [
         'board-cell relative rounded-md bg-cell overflow-hidden aspect-square',
         'flex items-center justify-center',
         cell.team ? TEAM_RING[cell.team] ?? '' : '',
-        isHighlight ? 'cell-highlight' : '',
-        isRemoveHighlight ? 'cell-highlight-remove' : '',
+        isHighlight ? 'cell-highlight-flash' : '',
+        isRemoveHighlight ? 'cell-highlight-remove-flash' : '',
         interactive ? 'cursor-pointer hover:brightness-110' : 'cursor-default',
-        cardId === 'FREE' ? 'bg-amber-900/40' : '',
+        wildCorner ? 'board-cell-wild' : '',
       ].join(' ');
       el.dataset.row = String(r);
       el.dataset.col = String(c);
       el.disabled = !interactive;
 
-      const face = cardId === 'FREE' ? createWildFace() : createCardFace(card, { variant: 'board' });
+      const face = wildCorner ? createWildFace() : createCardFace(card, { variant: 'board' });
       face.classList.add('pointer-events-none', 'w-full', 'h-full');
+      if (cell.team) stylePlacedChip(face, cardId, card, cell.team);
+      if (isHighlight) styleFlashTarget(face, cardId, card);
+      if (isRemoveHighlight) styleFlashTarget(face, cardId, card);
       el.appendChild(face);
       if (cell.locked) {
         const seq = document.createElement('span');
