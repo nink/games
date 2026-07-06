@@ -23,6 +23,7 @@ const SIMPLE_ICON_SLUG = {
   coke: 'cocacola',
   apple: 'apple',
   google: 'google',
+  microsoft: 'microsoft',
   ikea: 'ikea',
   samsung: 'samsung',
   meta: 'meta',

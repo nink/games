@@ -8,8 +8,7 @@
     "build": "node scripts/build-public.js && node scripts/generate-cards.js",
     "test": "node scripts/validate-board.js",
     "generate-logos": "node scripts/generate-logos.js",
-    "generate-cards": "node scripts/generate-cards.js",
-    "postinstall": "node scripts/generate-logos.js"
+    "generate-cards": "node scripts/generate-cards.js"
   },
   "engines": {
     "node": ">=18"
