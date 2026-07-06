@@ -8,6 +8,7 @@ import {
 } from './ws-client.js';
 import { emptyBoardChips } from '/shared/cards.js';
 import { renderBoard } from './board-render.js';
+import { renderPlayQr } from './play-qr.js';
 
 /**
  * @param {HTMLElement} root
@@ -27,6 +28,7 @@ export function renderTvView(root) {
           <p class="text-xs uppercase tracking-widest text-slate-500">Room code</p>
           <p id="tv-code" class="room-code text-4xl font-black text-amber-400 mt-1">----</p>
         </div>
+        <div id="tv-qr" class="flex justify-center py-1"></div>
         <div>
           <p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Turn</p>
           <p id="tv-turn" class="text-lg font-semibold">Waiting…</p>
@@ -58,6 +60,13 @@ export function renderTvView(root) {
   const startBtn = root.querySelector('#tv-start');
   const createBtn = root.querySelector('#tv-create');
   const offlineEl = root.querySelector('#tv-offline');
+  const qrEl = root.querySelector('#tv-qr');
+
+  function updateQr(code) {
+    renderPlayQr(qrEl, code || roomCode).catch(() => {});
+  }
+
+  updateQr(roomCode);
 
   function paintBoard(chips, highlights = []) {
     renderBoard(boardEl, {
@@ -81,6 +90,7 @@ export function renderTvView(root) {
     codeEl.textContent = state.code || '----';
     roomCode = state.code;
     sessionStorage.setItem('take5_room_code', roomCode);
+    updateQr(roomCode);
 
     const highlights = state.pendingSelection?.targets ?? [];
     if (state.chips) {
@@ -139,6 +149,7 @@ export function renderTvView(root) {
   onMessage((msg) => {
     if (msg.type === 'room_created' || msg.type === 'subscribed') {
       roomCode = msg.payload.code;
+      updateQr(roomCode);
     }
     if (msg.type === 'state') {
       state = msg.payload;

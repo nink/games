@@ -22,6 +22,7 @@ export function renderPlayView(root) {
 
   const savedName = localStorage.getItem('take5_name') || '';
   const savedTeam = localStorage.getItem('take5_team') || 'red';
+  const urlCode = new URLSearchParams(location.search).get('code')?.toUpperCase().slice(0, 4) || '';
 
   root.innerHTML = `
     <div id="play-join" class="min-h-screen flex flex-col items-center justify-center p-6 gap-6">
@@ -47,7 +48,7 @@ export function renderPlayView(root) {
           <span class="text-xs uppercase text-slate-500">Room code</span>
           <input name="code" required maxlength="4" pattern="[A-Za-z0-9]{4}"
             class="mt-1 w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 uppercase room-code text-center text-2xl font-bold tracking-widest"
-            placeholder="ABCD" />
+            placeholder="ABCD" value="${urlCode}" />
         </label>
         <button type="submit" class="w-full rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3">
           Join room
