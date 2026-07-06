@@ -52,16 +52,15 @@ export function generateRoomCode() {
   for (let i = 0; i < ROOM_CODE_LENGTH; i++) {
     code += CODE_CHARS[Math.floor(Math.random() * CODE_CHARS.length)];
   }
-  if (rooms.has(code)) return generateRoomCode();
   return code;
 }
 
 /**
+ * @param {string} code
  * @returns {GameRoom}
  */
-export function createRoom() {
-  const code = generateRoomCode();
-  const room = {
+export function createRoomObject(code) {
+  return {
     code,
     phase: GAME_PHASE.LOBBY,
     players: [],
@@ -73,6 +72,15 @@ export function createRoom() {
     pendingSelection: null,
     activeTeams: new Set(),
   };
+}
+
+/**
+ * @returns {GameRoom}
+ */
+export function createRoom() {
+  let code = generateRoomCode();
+  while (rooms.has(code)) code = generateRoomCode();
+  const room = createRoomObject(code);
   rooms.set(code, room);
   return room;
 }

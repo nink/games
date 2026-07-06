@@ -1,7 +1,6 @@
 import {
   connect,
   createRoom,
-  isStaticDeploy,
   onConnectionStatus,
   onMessage,
   startGame,
@@ -38,7 +37,7 @@ export function renderTvView(root) {
         </div>
         <div id="tv-sequences" class="text-sm text-slate-400"></div>
         <div id="tv-offline" class="hidden rounded-xl border border-amber-500/40 bg-amber-500/10 text-amber-200 text-sm p-3 leading-snug">
-          Board preview only on this host. For live multiplayer, run <code class="text-amber-100">npm start</code> locally (same Wi‑Fi). Supabase sync coming next.
+          Connecting to game server…
         </div>
         <button id="tv-start" class="mt-auto hidden rounded-xl bg-emerald-600 hover:bg-emerald-500 font-bold py-3 px-4">
           Start game
@@ -129,11 +128,11 @@ export function renderTvView(root) {
 
   connect();
   onConnectionStatus((status) => {
-    const offline = status === 'offline' || isStaticDeploy();
+    const offline = status === 'offline';
     offlineEl.classList.toggle('hidden', !offline);
     if (offline && !state) {
-      turnEl.textContent = 'Board preview';
-      statusEl.textContent = 'Create room when running the local game server.';
+      turnEl.textContent = 'Offline';
+      statusEl.textContent = 'Could not reach game server.';
     }
   });
 
@@ -147,18 +146,12 @@ export function renderTvView(root) {
     }
   });
 
-  createBtn.addEventListener('click', () => {
-    if (isStaticDeploy() || !createRoom()) {
-      statusEl.textContent = 'Start local server: cd take5 && npm start — then open http://localhost:3456/tv';
-    }
-  });
+  createBtn.addEventListener('click', () => createRoom());
   startBtn.addEventListener('click', () => startGame());
 
-  if (!isStaticDeploy()) {
-    if (roomCode) {
-      subscribeTv(roomCode);
-    } else {
-      createRoom();
-    }
+  if (roomCode) {
+    subscribeTv(roomCode);
+  } else {
+    createRoom();
   }
 }

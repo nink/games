@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
 import { WebSocketServer } from 'ws';
+import { configApiHandler, gameApiHandler } from './api-handlers.js';
 import {
   clearSelection,
   createRoom,
@@ -16,11 +17,13 @@ import {
   selectCard,
   startGame,
 } from './state-machine.js';
+import './load-env.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT) || 3456;
 
 const app = express();
+app.use(express.json({ limit: '64kb' }));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/shared', express.static(path.join(__dirname, '../shared')));
 
@@ -28,9 +31,16 @@ app.get('/api/health', (_req, res) => {
   res.json({ ok: true, game: 'take5' });
 });
 
-app.post('/api/room', (_req, res) => {
-  const room = createRoom();
-  res.json({ code: room.code });
+app.get('/api/config', (req, res) => configApiHandler(req, res));
+app.get('/api/game', (req, res) => gameApiHandler(req, res));
+app.post('/api/game', (req, res) => gameApiHandler(req, res));
+
+app.post('/api/room', async (_req, res) => {
+  const { handleGameAction } = await import('./game-handler.js');
+  const result = await handleGameAction({ action: 'create_room' });
+  if (!result.ok) return res.status(400).json(result);
+  const created = result.messages?.find((m) => m.type === 'room_created');
+  res.json({ code: created?.payload?.code });
 });
 
 // SPA fallback — client router handles /tv and /play

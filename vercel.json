@@ -2,7 +2,7 @@
   "buildCommand": "node scripts/build-public.js",
   "outputDirectory": "public",
   "rewrites": [
-    { "source": "/((?!js/|css/|assets/|shared/).*)", "destination": "/index.html" }
+    { "source": "/((?!js/|css/|assets/|shared/|api/).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
