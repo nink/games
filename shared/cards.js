@@ -161,6 +161,21 @@ export const BOARD = [
 ];
 
 /**
+ * Empty chip matrix for board preview (matches server serializeChips shape).
+ */
+export function emptyBoardChips() {
+  return BOARD.map((row, r) =>
+    row.map((cardId, c) => ({
+      row: r,
+      col: c,
+      team: null,
+      locked: false,
+      cardId,
+    }))
+  );
+}
+
+/**
  * @param {number} row
  * @param {number} col
  * @returns {{ row: number, col: number, cardId: string, isCorner: boolean }}
