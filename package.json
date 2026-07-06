@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node server/index.js",
+    "build": "node scripts/build-public.js && node scripts/generate-cards.js",
     "test": "node scripts/validate-board.js",
     "generate-logos": "node scripts/generate-logos.js",
     "generate-cards": "node scripts/generate-cards.js",
