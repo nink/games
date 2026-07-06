@@ -4,6 +4,7 @@
   "description": "Take 5 — corporate Sequence board game prototype (TV + mobile)",
   "type": "module",
   "scripts": {
+    "prestart": "node scripts/build-public.js",
     "start": "node server/index.js",
     "build": "node scripts/build-public.js && node scripts/generate-cards.js",
     "test": "node scripts/validate-board.js",
