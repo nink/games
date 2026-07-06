@@ -1,6 +1,4 @@
--- Take 5 multiplayer rooms (run once in Supabase SQL editor)
--- https://supabase.com/dashboard/project/qbmtvyxlagztkxdaazfi/sql
-
+-- Idempotent migration for game_rooms (also in schema/game-rooms.sql)
 create table if not exists public.game_rooms (
   code text primary key check (char_length(code) = 4),
   state jsonb not null,
@@ -15,8 +13,6 @@ drop policy if exists "game_rooms_select" on public.game_rooms;
 create policy "game_rooms_select"
   on public.game_rooms for select
   using (true);
-
--- Writes go through API (service role) only — no anon insert/update policy.
 
 do $$
 begin
