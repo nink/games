@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "node scripts/build-public.js",
   "outputDirectory": "public",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!js/|css/|assets/|shared/).*)", "destination": "/index.html" }
   ],
   "headers": [
     {

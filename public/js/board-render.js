@@ -23,7 +23,16 @@ export function renderBoard(container, { chips, highlights = [], onCellClick, in
     highlights.filter((h) => h.kind === 'remove').map((h) => `${h.row},${h.col}`)
   );
   const grid = document.createElement('div');
-  grid.className = 'grid grid-cols-10 gap-1 w-full max-w-[min(90vh,90vw)] aspect-square';
+  grid.className = 'take5-board-grid grid grid-cols-10 gap-1 w-full max-w-[min(90vh,90vw)] aspect-square';
+  // Inline layout so the board renders on Vercel (Tailwind CDN does not scan JS modules).
+  Object.assign(grid.style, {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(10, minmax(0, 1fr))',
+    gap: '4px',
+    width: 'min(90vh, 90vw)',
+    maxWidth: '100%',
+    aspectRatio: '1',
+  });
   grid.setAttribute('role', 'grid');
   grid.setAttribute('aria-label', 'Take 5 game board');
 
@@ -37,6 +46,9 @@ export function renderBoard(container, { chips, highlights = [], onCellClick, in
 
       const el = document.createElement('button');
       el.type = 'button';
+      el.style.aspectRatio = '1';
+      el.style.minHeight = '0';
+      el.style.backgroundColor = cardId === 'FREE' ? 'rgba(120, 53, 15, 0.4)' : '#1e293b';
       el.className = [
         'board-cell relative rounded-md bg-cell overflow-hidden aspect-square',
         'flex items-center justify-center',

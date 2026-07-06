@@ -69,7 +69,12 @@ export function renderTvView(root) {
   }
 
   // Always show the board (Vercel has no WebSocket server until Supabase is wired).
-  paintBoard(emptyBoardChips());
+  try {
+    paintBoard(emptyBoardChips());
+  } catch (err) {
+    console.error('Board render failed:', err);
+    boardEl.innerHTML = `<p class="text-red-400 text-sm p-4">Board failed to load. Try a hard refresh (Ctrl+Shift+R).</p>`;
+  }
 
   function paint() {
     if (!state) return;
