@@ -1,12 +1,6 @@
 import { CARD_CATALOG } from '/shared/cards.js';
 import { createCardFace, createWildFace } from './suit-ui.js';
-import { applyLogoBorderIfNeeded, TEAM_COLORS } from './logo-contrast.js';
-
-const TEAM_RING = {
-  red: 'team-ring-red',
-  blue: 'team-ring-blue',
-  green: 'team-ring-green',
-};
+import { applyLogoBorderIfNeeded } from './logo-contrast.js';
 
 function isWildCorner(cardId) {
   return cardId === 'FREE';
@@ -25,14 +19,11 @@ function brandIdForCell(cardId, card) {
  */
 function stylePlacedChip(face, cardId, card, chipTeam) {
   if (!chipTeam) return;
-
+  face.classList.add('card-face-chipped', `card-face-chipped-${chipTeam}`);
   const logoWrap = face.querySelector('.card-face-logo');
-  if (!logoWrap) return;
-
-  logoWrap.classList.add(`chip-team-${chipTeam}`);
-  logoWrap.style.backgroundColor = TEAM_COLORS[chipTeam] ?? '#ffffff';
-
-  applyLogoBorderIfNeeded(logoWrap, brandIdForCell(cardId, card), chipTeam);
+  if (logoWrap) {
+    applyLogoBorderIfNeeded(logoWrap, brandIdForCell(cardId, card), chipTeam);
+  }
 }
 
 /**
@@ -54,8 +45,9 @@ function styleFlashTarget(face, cardId, card) {
  * @param {{ row: number, col: number, kind?: string }[]} [opts.highlights]
  * @param {(row: number, col: number) => void} [opts.onCellClick]
  * @param {boolean} [opts.interactive]
+ * @param {'red' | 'blue' | 'green'} [opts.playerTeam]
  */
-export function renderBoard(container, { chips, highlights = [], onCellClick, interactive = false }) {
+export function renderBoard(container, { chips, highlights = [], onCellClick, interactive = false, playerTeam }) {
   const highlightPlace = new Set(
     highlights.filter((h) => h.kind !== 'remove').map((h) => `${h.row},${h.col}`)
   );
@@ -93,8 +85,9 @@ export function renderBoard(container, { chips, highlights = [], onCellClick, in
       el.className = [
         'board-cell relative rounded-md bg-cell overflow-hidden aspect-square',
         'flex items-center justify-center',
-        cell.team ? TEAM_RING[cell.team] ?? '' : '',
+        cell.team ? `board-cell-chip board-cell-chip-${cell.team}` : '',
         isHighlight ? 'cell-highlight-flash' : '',
+        isHighlight && playerTeam ? `cell-highlight-team cell-highlight-team-${playerTeam}` : '',
         isRemoveHighlight ? 'cell-highlight-remove-flash' : '',
         interactive ? 'cursor-pointer hover:brightness-110' : 'cursor-default',
         wildCorner ? 'board-cell-wild' : '',

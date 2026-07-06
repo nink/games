@@ -124,6 +124,7 @@ export function renderPlayView(root) {
         highlights: targets,
         interactive: Boolean(selectedCardId && state.you.isYourTurn),
         onCellClick: (row, col) => handleBoardTap(row, col),
+        playerTeam: state.you.team,
       });
     }
 

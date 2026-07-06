@@ -56,7 +56,7 @@ export const BRANDS = {
 /**
  * One brand per rank — same logo on all four suit colours.
  * Each card id appears twice on the board → 4 suits × 2 = 8 cells per logo
- * (2 red, 2 green, 2 yellow, 2 blue).
+ * (2 purple, 2 orange, 2 yellow, 2 teal).
  */
 const RANK_BRAND = {
   2: 'apple',
@@ -73,12 +73,12 @@ const RANK_BRAND = {
   A: 'mcdonalds',
 };
 
-/** Suit → background colour (4 variants per logo; 2 copies each on the board = 8 cells/logo). */
+/** Suit → card/board background (distinct from team chip colours: red, blue, green). */
 export const SUIT_META = {
-  hearts: { name: 'Hearts', colorName: 'Red', bg: '#ef4444', css: 'hearts' },
-  diamonds: { name: 'Diamonds', colorName: 'Green', bg: '#22c55e', css: 'diamonds' },
-  clubs: { name: 'Clubs', colorName: 'Yellow', bg: '#facc15', css: 'clubs' },
-  spades: { name: 'Spades', colorName: 'Blue', bg: '#3b82f6', css: 'spades' },
+  hearts: { name: 'Hearts', colorName: 'Purple', bg: '#9333ea', css: 'hearts' },
+  diamonds: { name: 'Diamonds', colorName: 'Orange', bg: '#f97316', css: 'diamonds' },
+  clubs: { name: 'Clubs', colorName: 'Yellow', bg: '#eab308', css: 'clubs' },
+  spades: { name: 'Spades', colorName: 'Teal', bg: '#0d9488', css: 'spades' },
 };
 
 /**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Walmart · Green">
-  <title>Walmart · Green</title>
-  <rect width="200" height="200" rx="12" fill="#22c55e" stroke="rgba(15, 23, 42, 0.15)" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Walmart · Orange">
+  <title>Walmart · Orange</title>
+  <rect width="200" height="200" rx="12" fill="#f97316" stroke="rgba(15, 23, 42, 0.15)" stroke-width="1"/>
   <rect x="10" y="10" width="180" height="180" rx="8" fill="#ffffff" filter="url(#shadow)"/>
   <svg x="16" y="16" width="168" height="168" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
     <rect width="120" height="120" rx="14" fill="#ffffff"/>

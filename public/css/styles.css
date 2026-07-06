@@ -1,6 +1,33 @@
-.team-ring-red { box-shadow: inset 0 0 0 4px #ef4444, 0 0 12px rgba(239, 68, 68, 0.5); }
-.team-ring-blue { box-shadow: inset 0 0 0 4px #3b82f6, 0 0 12px rgba(59, 130, 246, 0.5); }
-.team-ring-green { box-shadow: inset 0 0 0 4px #22c55e, 0 0 12px rgba(34, 197, 94, 0.5); }
+/* Placed chip — single team-colour border on the cell, interior filled */
+.board-cell-chip-red { box-shadow: inset 0 0 0 4px #ef4444; }
+.board-cell-chip-blue { box-shadow: inset 0 0 0 4px #3b82f6; }
+.board-cell-chip-green { box-shadow: inset 0 0 0 4px #22c55e; }
+
+.card-face-chipped-red { background-color: #ef4444 !important; }
+.card-face-chipped-blue { background-color: #3b82f6 !important; }
+.card-face-chipped-green { background-color: #22c55e !important; }
+
+.card-face-chipped .card-face-logo {
+  inset: 4px;
+  background: transparent !important;
+  box-shadow: none;
+  border-radius: 2px;
+  padding: 2px;
+}
+
+.card-face-chipped.card-face-wild .card-face-logo {
+  inset: 4px 4px 14px;
+}
+
+/* Valid targets — team border outside + black flash inside */
+.cell-highlight-team-red { box-shadow: inset 0 0 0 4px #ef4444; }
+.cell-highlight-team-blue { box-shadow: inset 0 0 0 4px #3b82f6; }
+.cell-highlight-team-green { box-shadow: inset 0 0 0 4px #22c55e; }
+
+.cell-highlight-team {
+  z-index: 10;
+  position: relative;
+}
 
 /* Valid play targets — flash card face black (not wild corners) */
 .cell-highlight-flash .card-face {
@@ -45,10 +72,10 @@
   to { background-color: #991b1b; }
 }
 
-.card-face.suit-hearts { --card-suit-bg: #ef4444; background-color: #ef4444; }
-.card-face.suit-diamonds { --card-suit-bg: #22c55e; background-color: #22c55e; }
-.card-face.suit-clubs { --card-suit-bg: #facc15; background-color: #facc15; }
-.card-face.suit-spades { --card-suit-bg: #3b82f6; background-color: #3b82f6; }
+.card-face.suit-hearts { --card-suit-bg: #9333ea; background-color: #9333ea; }
+.card-face.suit-diamonds { --card-suit-bg: #f97316; background-color: #f97316; }
+.card-face.suit-clubs { --card-suit-bg: #eab308; background-color: #eab308; }
+.card-face.suit-spades { --card-suit-bg: #0d9488; background-color: #0d9488; }
 
 .card-face-logo-bordered {
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.85), 0 0 0 1px rgba(15, 23, 42, 0.45);
@@ -56,27 +83,6 @@
 
 .logo-img-bordered {
   filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.9));
-}
-
-.chip-team-red.card-face-logo,
-.chip-team-red .card-face-logo {
-  background-color: #ef4444 !important;
-}
-
-.chip-team-blue.card-face-logo,
-.chip-team-blue .card-face-logo {
-  background-color: #3b82f6 !important;
-}
-
-.chip-team-green.card-face-logo,
-.chip-team-green .card-face-logo {
-  background-color: #22c55e !important;
-}
-
-.chip-team-red.card-face-logo,
-.chip-team-blue.card-face-logo,
-.chip-team-green.card-face-logo {
-  animation: none !important;
 }
 
 .card-tap:active { transform: scale(0.96); }

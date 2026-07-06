@@ -68,11 +68,18 @@ export function renderTvView(root) {
 
   updateQr(roomCode);
 
-  function paintBoard(chips, highlights = []) {
+  function paintBoard(chips, highlights = [], playerTeam) {
+    const team =
+      playerTeam ||
+      (state?.pendingSelection
+        ? state.players?.find((p) => p.id === state.pendingSelection.playerId)?.team
+        : null) ||
+      state?.currentTeam;
     renderBoard(boardEl, {
       chips,
       highlights,
       interactive: false,
+      playerTeam: team,
     });
   }
 

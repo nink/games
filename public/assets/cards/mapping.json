@@ -6,10 +6,10 @@
       "suit": "hearts",
       "rankLabel": "Ace",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "mcdonalds",
       "brandName": "McDonald's",
-      "label": "McDonald's · Red",
+      "label": "McDonald's · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -28,10 +28,10 @@
       "suit": "spades",
       "rankLabel": "Ace",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "mcdonalds",
       "brandName": "McDonald's",
-      "label": "McDonald's · Blue",
+      "label": "McDonald's · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -50,10 +50,10 @@
       "suit": "diamonds",
       "rankLabel": "Ace",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "mcdonalds",
       "brandName": "McDonald's",
-      "label": "McDonald's · Green",
+      "label": "McDonald's · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -94,10 +94,10 @@
       "suit": "hearts",
       "rankLabel": "2",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "apple",
       "brandName": "Apple",
-      "label": "Apple · Red",
+      "label": "Apple · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -116,10 +116,10 @@
       "suit": "spades",
       "rankLabel": "2",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "apple",
       "brandName": "Apple",
-      "label": "Apple · Blue",
+      "label": "Apple · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -138,10 +138,10 @@
       "suit": "diamonds",
       "rankLabel": "2",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "apple",
       "brandName": "Apple",
-      "label": "Apple · Green",
+      "label": "Apple · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -182,10 +182,10 @@
       "suit": "hearts",
       "rankLabel": "3",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "google",
       "brandName": "Google",
-      "label": "Google · Red",
+      "label": "Google · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -204,10 +204,10 @@
       "suit": "spades",
       "rankLabel": "3",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "google",
       "brandName": "Google",
-      "label": "Google · Blue",
+      "label": "Google · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -226,10 +226,10 @@
       "suit": "diamonds",
       "rankLabel": "3",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "google",
       "brandName": "Google",
-      "label": "Google · Green",
+      "label": "Google · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -270,10 +270,10 @@
       "suit": "hearts",
       "rankLabel": "4",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "amazon",
       "brandName": "Amazon",
-      "label": "Amazon · Red",
+      "label": "Amazon · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -292,10 +292,10 @@
       "suit": "spades",
       "rankLabel": "4",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "amazon",
       "brandName": "Amazon",
-      "label": "Amazon · Blue",
+      "label": "Amazon · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -314,10 +314,10 @@
       "suit": "diamonds",
       "rankLabel": "4",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "amazon",
       "brandName": "Amazon",
-      "label": "Amazon · Green",
+      "label": "Amazon · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -358,10 +358,10 @@
       "suit": "hearts",
       "rankLabel": "5",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "netflix",
       "brandName": "Netflix",
-      "label": "Netflix · Red",
+      "label": "Netflix · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -380,10 +380,10 @@
       "suit": "spades",
       "rankLabel": "5",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "netflix",
       "brandName": "Netflix",
-      "label": "Netflix · Blue",
+      "label": "Netflix · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -402,10 +402,10 @@
       "suit": "diamonds",
       "rankLabel": "5",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "netflix",
       "brandName": "Netflix",
-      "label": "Netflix · Green",
+      "label": "Netflix · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -446,10 +446,10 @@
       "suit": "hearts",
       "rankLabel": "6",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "walmart",
       "brandName": "Walmart",
-      "label": "Walmart · Red",
+      "label": "Walmart · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -468,10 +468,10 @@
       "suit": "spades",
       "rankLabel": "6",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "walmart",
       "brandName": "Walmart",
-      "label": "Walmart · Blue",
+      "label": "Walmart · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -490,10 +490,10 @@
       "suit": "diamonds",
       "rankLabel": "6",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "walmart",
       "brandName": "Walmart",
-      "label": "Walmart · Green",
+      "label": "Walmart · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -534,10 +534,10 @@
       "suit": "hearts",
       "rankLabel": "7",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "starbucks",
       "brandName": "Starbucks",
-      "label": "Starbucks · Red",
+      "label": "Starbucks · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -556,10 +556,10 @@
       "suit": "spades",
       "rankLabel": "7",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "starbucks",
       "brandName": "Starbucks",
-      "label": "Starbucks · Blue",
+      "label": "Starbucks · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -578,10 +578,10 @@
       "suit": "diamonds",
       "rankLabel": "7",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "starbucks",
       "brandName": "Starbucks",
-      "label": "Starbucks · Green",
+      "label": "Starbucks · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -622,10 +622,10 @@
       "suit": "hearts",
       "rankLabel": "8",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "bmw",
       "brandName": "BMW",
-      "label": "BMW · Red",
+      "label": "BMW · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -644,10 +644,10 @@
       "suit": "spades",
       "rankLabel": "8",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "bmw",
       "brandName": "BMW",
-      "label": "BMW · Blue",
+      "label": "BMW · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -666,10 +666,10 @@
       "suit": "diamonds",
       "rankLabel": "8",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "bmw",
       "brandName": "BMW",
-      "label": "BMW · Green",
+      "label": "BMW · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -710,10 +710,10 @@
       "suit": "hearts",
       "rankLabel": "9",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "nike",
       "brandName": "Nike",
-      "label": "Nike · Red",
+      "label": "Nike · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -732,10 +732,10 @@
       "suit": "spades",
       "rankLabel": "9",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "nike",
       "brandName": "Nike",
-      "label": "Nike · Blue",
+      "label": "Nike · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -754,10 +754,10 @@
       "suit": "diamonds",
       "rankLabel": "9",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "nike",
       "brandName": "Nike",
-      "label": "Nike · Green",
+      "label": "Nike · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -798,10 +798,10 @@
       "suit": "hearts",
       "rankLabel": "10",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "burgerking",
       "brandName": "Burger King",
-      "label": "Burger King · Red",
+      "label": "Burger King · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -820,10 +820,10 @@
       "suit": "spades",
       "rankLabel": "10",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "burgerking",
       "brandName": "Burger King",
-      "label": "Burger King · Blue",
+      "label": "Burger King · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -842,10 +842,10 @@
       "suit": "diamonds",
       "rankLabel": "10",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "burgerking",
       "brandName": "Burger King",
-      "label": "Burger King · Green",
+      "label": "Burger King · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -886,10 +886,10 @@
       "suit": "hearts",
       "rankLabel": "Jack",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "pepsi",
       "brandName": "Pepsi",
-      "label": "Pepsi (Remove) · Red",
+      "label": "Pepsi (Remove) · Purple",
       "onBoard": false,
       "boardCells": []
     },
@@ -899,10 +899,10 @@
       "suit": "spades",
       "rankLabel": "Jack",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "pepsi",
       "brandName": "Pepsi",
-      "label": "Pepsi (Remove) · Blue",
+      "label": "Pepsi (Remove) · Teal",
       "onBoard": false,
       "boardCells": []
     },
@@ -912,10 +912,10 @@
       "suit": "diamonds",
       "rankLabel": "Jack",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "coke",
       "brandName": "Coke",
-      "label": "Coke (Wild) · Green",
+      "label": "Coke (Wild) · Orange",
       "onBoard": false,
       "boardCells": []
     },
@@ -938,10 +938,10 @@
       "suit": "hearts",
       "rankLabel": "Queen",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "subway",
       "brandName": "Subway",
-      "label": "Subway · Red",
+      "label": "Subway · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -960,10 +960,10 @@
       "suit": "spades",
       "rankLabel": "Queen",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "subway",
       "brandName": "Subway",
-      "label": "Subway · Blue",
+      "label": "Subway · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -982,10 +982,10 @@
       "suit": "diamonds",
       "rankLabel": "Queen",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "subway",
       "brandName": "Subway",
-      "label": "Subway · Green",
+      "label": "Subway · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -1026,10 +1026,10 @@
       "suit": "hearts",
       "rankLabel": "King",
       "suitLabel": "Hearts",
-      "colorName": "Red",
+      "colorName": "Purple",
       "brandId": "kfc",
       "brandName": "KFC",
-      "label": "KFC · Red",
+      "label": "KFC · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -1048,10 +1048,10 @@
       "suit": "spades",
       "rankLabel": "King",
       "suitLabel": "Spades",
-      "colorName": "Blue",
+      "colorName": "Teal",
       "brandId": "kfc",
       "brandName": "KFC",
-      "label": "KFC · Blue",
+      "label": "KFC · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -1070,10 +1070,10 @@
       "suit": "diamonds",
       "rankLabel": "King",
       "suitLabel": "Diamonds",
-      "colorName": "Green",
+      "colorName": "Orange",
       "brandId": "kfc",
       "brandName": "KFC",
-      "label": "KFC · Green",
+      "label": "KFC · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -1120,10 +1120,10 @@
           "suit": "hearts",
           "rankLabel": "Ace",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "mcdonalds",
           "brandName": "McDonald's",
-          "label": "McDonald's · Red",
+          "label": "McDonald's · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1142,10 +1142,10 @@
           "suit": "spades",
           "rankLabel": "Ace",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "mcdonalds",
           "brandName": "McDonald's",
-          "label": "McDonald's · Blue",
+          "label": "McDonald's · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1164,10 +1164,10 @@
           "suit": "diamonds",
           "rankLabel": "Ace",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "mcdonalds",
           "brandName": "McDonald's",
-          "label": "McDonald's · Green",
+          "label": "McDonald's · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1215,10 +1215,10 @@
           "suit": "hearts",
           "rankLabel": "2",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "apple",
           "brandName": "Apple",
-          "label": "Apple · Red",
+          "label": "Apple · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1237,10 +1237,10 @@
           "suit": "spades",
           "rankLabel": "2",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "apple",
           "brandName": "Apple",
-          "label": "Apple · Blue",
+          "label": "Apple · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1259,10 +1259,10 @@
           "suit": "diamonds",
           "rankLabel": "2",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "apple",
           "brandName": "Apple",
-          "label": "Apple · Green",
+          "label": "Apple · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1310,10 +1310,10 @@
           "suit": "hearts",
           "rankLabel": "3",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "google",
           "brandName": "Google",
-          "label": "Google · Red",
+          "label": "Google · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1332,10 +1332,10 @@
           "suit": "spades",
           "rankLabel": "3",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "google",
           "brandName": "Google",
-          "label": "Google · Blue",
+          "label": "Google · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1354,10 +1354,10 @@
           "suit": "diamonds",
           "rankLabel": "3",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "google",
           "brandName": "Google",
-          "label": "Google · Green",
+          "label": "Google · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1405,10 +1405,10 @@
           "suit": "hearts",
           "rankLabel": "4",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "amazon",
           "brandName": "Amazon",
-          "label": "Amazon · Red",
+          "label": "Amazon · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1427,10 +1427,10 @@
           "suit": "spades",
           "rankLabel": "4",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "amazon",
           "brandName": "Amazon",
-          "label": "Amazon · Blue",
+          "label": "Amazon · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1449,10 +1449,10 @@
           "suit": "diamonds",
           "rankLabel": "4",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "amazon",
           "brandName": "Amazon",
-          "label": "Amazon · Green",
+          "label": "Amazon · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1500,10 +1500,10 @@
           "suit": "hearts",
           "rankLabel": "5",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "netflix",
           "brandName": "Netflix",
-          "label": "Netflix · Red",
+          "label": "Netflix · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1522,10 +1522,10 @@
           "suit": "spades",
           "rankLabel": "5",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "netflix",
           "brandName": "Netflix",
-          "label": "Netflix · Blue",
+          "label": "Netflix · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1544,10 +1544,10 @@
           "suit": "diamonds",
           "rankLabel": "5",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "netflix",
           "brandName": "Netflix",
-          "label": "Netflix · Green",
+          "label": "Netflix · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1595,10 +1595,10 @@
           "suit": "hearts",
           "rankLabel": "6",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "walmart",
           "brandName": "Walmart",
-          "label": "Walmart · Red",
+          "label": "Walmart · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1617,10 +1617,10 @@
           "suit": "spades",
           "rankLabel": "6",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "walmart",
           "brandName": "Walmart",
-          "label": "Walmart · Blue",
+          "label": "Walmart · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1639,10 +1639,10 @@
           "suit": "diamonds",
           "rankLabel": "6",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "walmart",
           "brandName": "Walmart",
-          "label": "Walmart · Green",
+          "label": "Walmart · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1690,10 +1690,10 @@
           "suit": "hearts",
           "rankLabel": "7",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "starbucks",
           "brandName": "Starbucks",
-          "label": "Starbucks · Red",
+          "label": "Starbucks · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1712,10 +1712,10 @@
           "suit": "spades",
           "rankLabel": "7",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "starbucks",
           "brandName": "Starbucks",
-          "label": "Starbucks · Blue",
+          "label": "Starbucks · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1734,10 +1734,10 @@
           "suit": "diamonds",
           "rankLabel": "7",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "starbucks",
           "brandName": "Starbucks",
-          "label": "Starbucks · Green",
+          "label": "Starbucks · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1785,10 +1785,10 @@
           "suit": "hearts",
           "rankLabel": "8",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "bmw",
           "brandName": "BMW",
-          "label": "BMW · Red",
+          "label": "BMW · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1807,10 +1807,10 @@
           "suit": "spades",
           "rankLabel": "8",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "bmw",
           "brandName": "BMW",
-          "label": "BMW · Blue",
+          "label": "BMW · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1829,10 +1829,10 @@
           "suit": "diamonds",
           "rankLabel": "8",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "bmw",
           "brandName": "BMW",
-          "label": "BMW · Green",
+          "label": "BMW · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1880,10 +1880,10 @@
           "suit": "hearts",
           "rankLabel": "9",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "nike",
           "brandName": "Nike",
-          "label": "Nike · Red",
+          "label": "Nike · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1902,10 +1902,10 @@
           "suit": "spades",
           "rankLabel": "9",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "nike",
           "brandName": "Nike",
-          "label": "Nike · Blue",
+          "label": "Nike · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1924,10 +1924,10 @@
           "suit": "diamonds",
           "rankLabel": "9",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "nike",
           "brandName": "Nike",
-          "label": "Nike · Green",
+          "label": "Nike · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1975,10 +1975,10 @@
           "suit": "hearts",
           "rankLabel": "10",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "burgerking",
           "brandName": "Burger King",
-          "label": "Burger King · Red",
+          "label": "Burger King · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1997,10 +1997,10 @@
           "suit": "spades",
           "rankLabel": "10",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "burgerking",
           "brandName": "Burger King",
-          "label": "Burger King · Blue",
+          "label": "Burger King · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -2019,10 +2019,10 @@
           "suit": "diamonds",
           "rankLabel": "10",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "burgerking",
           "brandName": "Burger King",
-          "label": "Burger King · Green",
+          "label": "Burger King · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -2070,10 +2070,10 @@
           "suit": "hearts",
           "rankLabel": "Queen",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "subway",
           "brandName": "Subway",
-          "label": "Subway · Red",
+          "label": "Subway · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -2092,10 +2092,10 @@
           "suit": "spades",
           "rankLabel": "Queen",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "subway",
           "brandName": "Subway",
-          "label": "Subway · Blue",
+          "label": "Subway · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -2114,10 +2114,10 @@
           "suit": "diamonds",
           "rankLabel": "Queen",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "subway",
           "brandName": "Subway",
-          "label": "Subway · Green",
+          "label": "Subway · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -2165,10 +2165,10 @@
           "suit": "hearts",
           "rankLabel": "King",
           "suitLabel": "Hearts",
-          "colorName": "Red",
+          "colorName": "Purple",
           "brandId": "kfc",
           "brandName": "KFC",
-          "label": "KFC · Red",
+          "label": "KFC · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -2187,10 +2187,10 @@
           "suit": "spades",
           "rankLabel": "King",
           "suitLabel": "Spades",
-          "colorName": "Blue",
+          "colorName": "Teal",
           "brandId": "kfc",
           "brandName": "KFC",
-          "label": "KFC · Blue",
+          "label": "KFC · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -2209,10 +2209,10 @@
           "suit": "diamonds",
           "rankLabel": "King",
           "suitLabel": "Diamonds",
-          "colorName": "Green",
+          "colorName": "Orange",
           "brandId": "kfc",
           "brandName": "KFC",
-          "label": "KFC · Green",
+          "label": "KFC · Orange",
           "onBoard": true,
           "boardCells": [
             {
