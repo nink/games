@@ -146,8 +146,8 @@ function mappingMarkdown() {
 
   const byLogo = buildLogoMapping();
   const logoOrder = [
-    'mcdonalds', 'apple', 'google', 'amazon', 'netflix', 'walmart', 'starbucks', 'bmw', 'nike',
-    'burgerking', 'coke', 'pepsi', 'subway', 'kfc', 'ibm',
+    'mcdonalds', 'apple', 'google', 'facebook', 'netflix', 'x', 'starbucks', 'bmw', 'nike',
+    'burgerking', 'coke', 'pepsi', 'linkedin', 'kfc', 'ibm',
   ];
   const seen = new Set();
   for (const id of logoOrder) {

@@ -9,14 +9,14 @@
 | A | McDonald's | A_clubs, A_diamonds, A_hearts, A_spades | 8 |
 | 2 | Apple | 2_clubs, 2_diamonds, 2_hearts, 2_spades | 8 |
 | 3 | Google | 3_clubs, 3_diamonds, 3_hearts, 3_spades | 8 |
-| 4 | Amazon | 4_clubs, 4_diamonds, 4_hearts, 4_spades | 8 |
+| 4 | Facebook | 4_clubs, 4_diamonds, 4_hearts, 4_spades | 8 |
 | 5 | Netflix | 5_clubs, 5_diamonds, 5_hearts, 5_spades | 8 |
-| 6 | Walmart | 6_clubs, 6_diamonds, 6_hearts, 6_spades | 8 |
+| 6 | X | 6_clubs, 6_diamonds, 6_hearts, 6_spades | 8 |
 | 7 | Starbucks | 7_clubs, 7_diamonds, 7_hearts, 7_spades | 8 |
 | 8 | BMW | 8_clubs, 8_diamonds, 8_hearts, 8_spades | 8 |
 | 9 | Nike | 9_clubs, 9_diamonds, 9_hearts, 9_spades | 8 |
 | 10 | Burger King | 10_clubs, 10_diamonds, 10_hearts, 10_spades | 8 |
-| Q | Subway | Q_clubs, Q_diamonds, Q_hearts, Q_spades | 8 |
+| Q | LinkedIn | Q_clubs, Q_diamonds, Q_hearts, Q_spades | 8 |
 | K | KFC | K_clubs, K_diamonds, K_hearts, K_spades | 8 |
 
 Corners: **IBM** + Wild (not in deck). Jacks: **Coke** / **Pepsi** (deck only).
@@ -65,16 +65,16 @@ Board cells: **8** (deck: 4 suit variants; jacks deck-only)
 | 3 Diamonds | Orange | Google · Orange | (2,3), (6,9) |
 | 3 Clubs | Yellow | Google · Yellow | (1,3), (3,5) |
 
-### Amazon (`amazon`)
+### Facebook (`facebook`)
 
 Board cells: **8** (deck: 4 suit variants; jacks deck-only)
 
 | Card | Colour | Label | Board positions |
 |------|--------|-------|-----------------|
-| 4 Hearts | Purple | Amazon · Purple | (4,5), (7,8) |
-| 4 Spades | Teal | Amazon · Teal | (0,3), (8,4) |
-| 4 Diamonds | Orange | Amazon · Orange | (2,4), (7,9) |
-| 4 Clubs | Yellow | Amazon · Yellow | (1,2), (3,4) |
+| 4 Hearts | Purple | Facebook · Purple | (4,5), (7,8) |
+| 4 Spades | Teal | Facebook · Teal | (0,3), (8,4) |
+| 4 Diamonds | Orange | Facebook · Orange | (2,4), (7,9) |
+| 4 Clubs | Yellow | Facebook · Yellow | (1,2), (3,4) |
 
 ### Netflix (`netflix`)
 
@@ -87,16 +87,16 @@ Board cells: **8** (deck: 4 suit variants; jacks deck-only)
 | 5 Diamonds | Orange | Netflix · Orange | (2,5), (8,9) |
 | 5 Clubs | Yellow | Netflix · Yellow | (1,1), (3,3) |
 
-### Walmart (`walmart`)
+### X (`x`)
 
 Board cells: **8** (deck: 4 suit variants; jacks deck-only)
 
 | Card | Colour | Label | Board positions |
 |------|--------|-------|-----------------|
-| 6 Hearts | Purple | Walmart · Purple | (4,3), (5,8) |
-| 6 Spades | Teal | Walmart · Teal | (0,5), (8,2) |
-| 6 Diamonds | Orange | Walmart · Orange | (2,6), (9,8) |
-| 6 Clubs | Yellow | Walmart · Yellow | (1,0), (3,2) |
+| 6 Hearts | Purple | X · Purple | (4,3), (5,8) |
+| 6 Spades | Teal | X · Teal | (0,5), (8,2) |
+| 6 Diamonds | Orange | X · Orange | (2,6), (9,8) |
+| 6 Clubs | Yellow | X · Yellow | (1,0), (3,2) |
 
 ### Starbucks (`starbucks`)
 
@@ -142,16 +142,16 @@ Board cells: **8** (deck: 4 suit variants; jacks deck-only)
 | 10 Diamonds | Orange | Burger King · Orange | (5,7), (9,4) |
 | 10 Clubs | Yellow | Burger King · Yellow | (5,0), (7,2) |
 
-### Subway (`subway`)
+### LinkedIn (`linkedin`)
 
 Board cells: **8** (deck: 4 suit variants; jacks deck-only)
 
 | Card | Colour | Label | Board positions |
 |------|--------|-------|-----------------|
-| Queen Hearts | Purple | Subway · Purple | (1,7), (6,6) |
-| Queen Spades | Teal | Subway · Teal | (2,9), (4,1) |
-| Queen Diamonds | Orange | Subway · Orange | (6,7), (9,3) |
-| Queen Clubs | Yellow | Subway · Yellow | (6,0), (7,3) |
+| Queen Hearts | Purple | LinkedIn · Purple | (1,7), (6,6) |
+| Queen Spades | Teal | LinkedIn · Teal | (2,9), (4,1) |
+| Queen Diamonds | Orange | LinkedIn · Orange | (6,7), (9,3) |
+| Queen Clubs | Yellow | LinkedIn · Yellow | (6,0), (7,3) |
 
 ### KFC (`kfc`)
 
@@ -181,18 +181,18 @@ Board cells: **8** (deck: 4 suit variants; jacks deck-only)
 | 3 Spades | Google | Teal | Google · Teal | yes | (0,2), (8,5) |
 | 3 Diamonds | Google | Orange | Google · Orange | yes | (2,3), (6,9) |
 | 3 Clubs | Google | Yellow | Google · Yellow | yes | (1,3), (3,5) |
-| 4 Hearts | Amazon | Purple | Amazon · Purple | yes | (4,5), (7,8) |
-| 4 Spades | Amazon | Teal | Amazon · Teal | yes | (0,3), (8,4) |
-| 4 Diamonds | Amazon | Orange | Amazon · Orange | yes | (2,4), (7,9) |
-| 4 Clubs | Amazon | Yellow | Amazon · Yellow | yes | (1,2), (3,4) |
+| 4 Hearts | Facebook | Purple | Facebook · Purple | yes | (4,5), (7,8) |
+| 4 Spades | Facebook | Teal | Facebook · Teal | yes | (0,3), (8,4) |
+| 4 Diamonds | Facebook | Orange | Facebook · Orange | yes | (2,4), (7,9) |
+| 4 Clubs | Facebook | Yellow | Facebook · Yellow | yes | (1,2), (3,4) |
 | 5 Hearts | Netflix | Purple | Netflix · Purple | yes | (4,4), (6,8) |
 | 5 Spades | Netflix | Teal | Netflix · Teal | yes | (0,4), (8,3) |
 | 5 Diamonds | Netflix | Orange | Netflix · Orange | yes | (2,5), (8,9) |
 | 5 Clubs | Netflix | Yellow | Netflix · Yellow | yes | (1,1), (3,3) |
-| 6 Hearts | Walmart | Purple | Walmart · Purple | yes | (4,3), (5,8) |
-| 6 Spades | Walmart | Teal | Walmart · Teal | yes | (0,5), (8,2) |
-| 6 Diamonds | Walmart | Orange | Walmart · Orange | yes | (2,6), (9,8) |
-| 6 Clubs | Walmart | Yellow | Walmart · Yellow | yes | (1,0), (3,2) |
+| 6 Hearts | X | Purple | X · Purple | yes | (4,3), (5,8) |
+| 6 Spades | X | Teal | X · Teal | yes | (0,5), (8,2) |
+| 6 Diamonds | X | Orange | X · Orange | yes | (2,6), (9,8) |
+| 6 Clubs | X | Yellow | X · Yellow | yes | (1,0), (3,2) |
 | 7 Hearts | Starbucks | Purple | Starbucks · Purple | yes | (4,8), (5,3) |
 | 7 Spades | Starbucks | Teal | Starbucks · Teal | yes | (0,6), (8,1) |
 | 7 Diamonds | Starbucks | Orange | Starbucks · Orange | yes | (2,7), (9,7) |
@@ -213,10 +213,10 @@ Board cells: **8** (deck: 4 suit variants; jacks deck-only)
 | Jack Spades | Pepsi | Teal | Pepsi (Remove) · Teal | deck only | — (jack / deck only) |
 | Jack Diamonds | Coke | Orange | Coke (Wild) · Orange | deck only | — (jack / deck only) |
 | Jack Clubs | Coke | Yellow | Coke (Wild) · Yellow | deck only | — (jack / deck only) |
-| Queen Hearts | Subway | Purple | Subway · Purple | yes | (1,7), (6,6) |
-| Queen Spades | Subway | Teal | Subway · Teal | yes | (2,9), (4,1) |
-| Queen Diamonds | Subway | Orange | Subway · Orange | yes | (6,7), (9,3) |
-| Queen Clubs | Subway | Yellow | Subway · Yellow | yes | (6,0), (7,3) |
+| Queen Hearts | LinkedIn | Purple | LinkedIn · Purple | yes | (1,7), (6,6) |
+| Queen Spades | LinkedIn | Teal | LinkedIn · Teal | yes | (2,9), (4,1) |
+| Queen Diamonds | LinkedIn | Orange | LinkedIn · Orange | yes | (6,7), (9,3) |
+| Queen Clubs | LinkedIn | Yellow | LinkedIn · Yellow | yes | (6,0), (7,3) |
 | King Hearts | KFC | Purple | KFC · Purple | yes | (1,6), (5,6) |
 | King Spades | KFC | Teal | KFC · Teal | yes | (3,1), (3,9) |
 | King Diamonds | KFC | Orange | KFC · Orange | yes | (7,7), (9,2) |

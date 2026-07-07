@@ -271,9 +271,9 @@
       "rankLabel": "4",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "amazon",
-      "brandName": "Amazon",
-      "label": "Amazon · Purple",
+      "brandId": "facebook",
+      "brandName": "Facebook",
+      "label": "Facebook · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -293,9 +293,9 @@
       "rankLabel": "4",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "amazon",
-      "brandName": "Amazon",
-      "label": "Amazon · Teal",
+      "brandId": "facebook",
+      "brandName": "Facebook",
+      "label": "Facebook · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -315,9 +315,9 @@
       "rankLabel": "4",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "amazon",
-      "brandName": "Amazon",
-      "label": "Amazon · Orange",
+      "brandId": "facebook",
+      "brandName": "Facebook",
+      "label": "Facebook · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -337,9 +337,9 @@
       "rankLabel": "4",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "amazon",
-      "brandName": "Amazon",
-      "label": "Amazon · Yellow",
+      "brandId": "facebook",
+      "brandName": "Facebook",
+      "label": "Facebook · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -447,9 +447,9 @@
       "rankLabel": "6",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "walmart",
-      "brandName": "Walmart",
-      "label": "Walmart · Purple",
+      "brandId": "x",
+      "brandName": "X",
+      "label": "X · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -469,9 +469,9 @@
       "rankLabel": "6",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "walmart",
-      "brandName": "Walmart",
-      "label": "Walmart · Teal",
+      "brandId": "x",
+      "brandName": "X",
+      "label": "X · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -491,9 +491,9 @@
       "rankLabel": "6",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "walmart",
-      "brandName": "Walmart",
-      "label": "Walmart · Orange",
+      "brandId": "x",
+      "brandName": "X",
+      "label": "X · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -513,9 +513,9 @@
       "rankLabel": "6",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "walmart",
-      "brandName": "Walmart",
-      "label": "Walmart · Yellow",
+      "brandId": "x",
+      "brandName": "X",
+      "label": "X · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -939,9 +939,9 @@
       "rankLabel": "Queen",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "subway",
-      "brandName": "Subway",
-      "label": "Subway · Purple",
+      "brandId": "linkedin",
+      "brandName": "LinkedIn",
+      "label": "LinkedIn · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -961,9 +961,9 @@
       "rankLabel": "Queen",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "subway",
-      "brandName": "Subway",
-      "label": "Subway · Teal",
+      "brandId": "linkedin",
+      "brandName": "LinkedIn",
+      "label": "LinkedIn · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -983,9 +983,9 @@
       "rankLabel": "Queen",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "subway",
-      "brandName": "Subway",
-      "label": "Subway · Orange",
+      "brandId": "linkedin",
+      "brandName": "LinkedIn",
+      "label": "LinkedIn · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -1005,9 +1005,9 @@
       "rankLabel": "Queen",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "subway",
-      "brandName": "Subway",
-      "label": "Subway · Yellow",
+      "brandId": "linkedin",
+      "brandName": "LinkedIn",
+      "label": "LinkedIn · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -1395,9 +1395,9 @@
       ],
       "boardCellCount": 8
     },
-    "amazon": {
-      "brandId": "amazon",
-      "brandName": "Amazon",
+    "facebook": {
+      "brandId": "facebook",
+      "brandName": "Facebook",
       "cards": [
         {
           "cardId": "4_hearts",
@@ -1406,9 +1406,9 @@
           "rankLabel": "4",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "amazon",
-          "brandName": "Amazon",
-          "label": "Amazon · Purple",
+          "brandId": "facebook",
+          "brandName": "Facebook",
+          "label": "Facebook · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1428,9 +1428,9 @@
           "rankLabel": "4",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "amazon",
-          "brandName": "Amazon",
-          "label": "Amazon · Teal",
+          "brandId": "facebook",
+          "brandName": "Facebook",
+          "label": "Facebook · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1450,9 +1450,9 @@
           "rankLabel": "4",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "amazon",
-          "brandName": "Amazon",
-          "label": "Amazon · Orange",
+          "brandId": "facebook",
+          "brandName": "Facebook",
+          "label": "Facebook · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1472,9 +1472,9 @@
           "rankLabel": "4",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "amazon",
-          "brandName": "Amazon",
-          "label": "Amazon · Yellow",
+          "brandId": "facebook",
+          "brandName": "Facebook",
+          "label": "Facebook · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -1585,9 +1585,9 @@
       ],
       "boardCellCount": 8
     },
-    "walmart": {
-      "brandId": "walmart",
-      "brandName": "Walmart",
+    "x": {
+      "brandId": "x",
+      "brandName": "X",
       "cards": [
         {
           "cardId": "6_hearts",
@@ -1596,9 +1596,9 @@
           "rankLabel": "6",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "walmart",
-          "brandName": "Walmart",
-          "label": "Walmart · Purple",
+          "brandId": "x",
+          "brandName": "X",
+          "label": "X · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1618,9 +1618,9 @@
           "rankLabel": "6",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "walmart",
-          "brandName": "Walmart",
-          "label": "Walmart · Teal",
+          "brandId": "x",
+          "brandName": "X",
+          "label": "X · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1640,9 +1640,9 @@
           "rankLabel": "6",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "walmart",
-          "brandName": "Walmart",
-          "label": "Walmart · Orange",
+          "brandId": "x",
+          "brandName": "X",
+          "label": "X · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1662,9 +1662,9 @@
           "rankLabel": "6",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "walmart",
-          "brandName": "Walmart",
-          "label": "Walmart · Yellow",
+          "brandId": "x",
+          "brandName": "X",
+          "label": "X · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -2060,9 +2060,9 @@
       ],
       "boardCellCount": 8
     },
-    "subway": {
-      "brandId": "subway",
-      "brandName": "Subway",
+    "linkedin": {
+      "brandId": "linkedin",
+      "brandName": "LinkedIn",
       "cards": [
         {
           "cardId": "Q_hearts",
@@ -2071,9 +2071,9 @@
           "rankLabel": "Queen",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "subway",
-          "brandName": "Subway",
-          "label": "Subway · Purple",
+          "brandId": "linkedin",
+          "brandName": "LinkedIn",
+          "label": "LinkedIn · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -2093,9 +2093,9 @@
           "rankLabel": "Queen",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "subway",
-          "brandName": "Subway",
-          "label": "Subway · Teal",
+          "brandId": "linkedin",
+          "brandName": "LinkedIn",
+          "label": "LinkedIn · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -2115,9 +2115,9 @@
           "rankLabel": "Queen",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "subway",
-          "brandName": "Subway",
-          "label": "Subway · Orange",
+          "brandId": "linkedin",
+          "brandName": "LinkedIn",
+          "label": "LinkedIn · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -2137,9 +2137,9 @@
           "rankLabel": "Queen",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "subway",
-          "brandName": "Subway",
-          "label": "Subway · Yellow",
+          "brandId": "linkedin",
+          "brandName": "LinkedIn",
+          "label": "LinkedIn · Yellow",
           "onBoard": true,
           "boardCells": [
             {

@@ -38,6 +38,8 @@ const SIMPLE_ICON_SLUG = {
   visa: 'visa',
   mastercard: 'mastercard',
   facebook: 'facebook',
+  x: 'x',
+  linkedin: 'linkedin',
   starbucks: 'starbucks',
   tacobell: 'tacobell',
   tesla: 'tesla',
@@ -68,6 +70,12 @@ const CUSTOM_SVG = {
   <rect width="120" height="120" rx="16" fill="#1e293b"/>
   <text x="60" y="72" text-anchor="middle" font-size="52" fill="url(#wild)">★</text>
   <text x="60" y="98" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#fde68a">WILD</text>
+</svg>`,
+  linkedin: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="LinkedIn">
+  <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <g transform="translate(20 20) scale(3.333333)">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2"/>
+  </g>
 </svg>`,
 };
 
@@ -194,7 +202,7 @@ function readLocal(brandId) {
 }
 
 async function resolveLogo(brandId, brand) {
-  if (brandId === 'free') return CUSTOM_SVG.free;
+  if (CUSTOM_SVG[brandId]) return CUSTOM_SVG[brandId];
 
   // IBM 8-bar wordmark is wide — do not squash into a square tile.
   if (brandId === 'ibm') {
@@ -229,6 +237,9 @@ async function resolveLogo(brandId, brand) {
     const raw = await fetchText(commonsUrl(file));
     return normalizeFetchedSvg(raw, brand.name);
   }
+
+  const existing = path.join(outDir, brand.logo);
+  if (fs.existsSync(existing)) return fs.readFileSync(existing, 'utf8').trim();
 
   throw new Error(`No logo source for ${brandId}`);
 }
