@@ -70,13 +70,15 @@ export function renderPlayView(root) {
       </header>
       <div class="play-main flex flex-col">
         <div class="play-stack">
-          <div id="play-mini-board" class="play-board-pane flex justify-center items-center"></div>
-          <button id="play-start" class="hidden play-start-btn rounded-xl bg-emerald-600 font-bold py-3 shrink-0 w-full">Start game (host)</button>
-          <p id="play-hint" class="text-center text-xs text-amber-300/80 shrink-0 px-1"></p>
-          <section class="play-hand-pane shrink-0">
-            <h2 class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5 px-0">Your hand</h2>
-            <div id="play-hand"></div>
-          </section>
+          <div class="play-board-column">
+            <div id="play-mini-board" class="play-board-pane flex justify-center items-center"></div>
+            <button id="play-start" class="hidden play-start-btn rounded-xl bg-emerald-600 font-bold py-3 shrink-0 w-full">Start game (host)</button>
+            <p id="play-hint" class="text-center text-xs text-amber-300/80 shrink-0 px-1"></p>
+            <section class="play-hand-pane shrink-0">
+              <h2 class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5 px-0">Your hand</h2>
+              <div id="play-hand"></div>
+            </section>
+          </div>
         </div>
       </div>
       <p id="play-error" class="text-red-400 text-sm text-center hidden shrink-0"></p>
@@ -89,12 +91,36 @@ export function renderPlayView(root) {
   const joinError = root.querySelector('#join-error');
   const handEl = root.querySelector('#play-hand');
   const miniBoardEl = root.querySelector('#play-mini-board');
+  const boardColumnEl = root.querySelector('.play-board-column');
   const hintEl = root.querySelector('#play-hint');
   const turnEl = root.querySelector('#play-turn');
   const codeEl = root.querySelector('#play-code');
   const teamBadge = root.querySelector('#play-team-badge');
   const startBtn = root.querySelector('#play-start');
   const playError = root.querySelector('#play-error');
+
+  const mobileMq = window.matchMedia('(max-width: 767px)');
+  function updateViewportMode() {
+    const mobile = mobileMq.matches;
+    gameEl.classList.toggle('play-view-mobile', mobile);
+    gameEl.classList.toggle('play-view-desktop', !mobile);
+  }
+  mobileMq.addEventListener('change', () => {
+    updateViewportMode();
+    syncPlayWidths();
+  });
+  updateViewportMode();
+  window.addEventListener('resize', syncPlayWidths);
+
+  /** Keep hand / hint / start aligned to rendered board width */
+  function syncPlayWidths() {
+    requestAnimationFrame(() => {
+      const grid = miniBoardEl.querySelector('.take5-board-grid');
+      if (!grid || !boardColumnEl) return;
+      const w = Math.round(grid.getBoundingClientRect().width);
+      if (w > 0) boardColumnEl.style.setProperty('--board-side', `${w}px`);
+    });
+  }
 
   function showError(el, text) {
     if (!text) {
@@ -166,6 +192,7 @@ export function renderPlayView(root) {
 
     startBtn.classList.toggle('hidden', state.phase !== 'lobby');
     gameEl.classList.toggle('play-game-lobby', state.phase === 'lobby');
+    gameEl.classList.toggle('play-game-playing', state.phase !== 'lobby');
   }
 
   function syncSelectionFromState() {
@@ -254,6 +281,7 @@ export function renderPlayView(root) {
     paintHeader();
     paintBoard();
     paintHand(fullHandRebuild);
+    syncPlayWidths();
   }
 
   function onHandCardTap(cardId) {
