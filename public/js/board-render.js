@@ -86,16 +86,21 @@ export function renderBoard(container, {
   ].filter(Boolean).join(' ');
 
   const boardWidth = isMobile ? '100%' : 'min(90vh, 90vw)';
-  Object.assign(grid.style, {
+  const gridStyle = {
     display: 'grid',
     gridTemplateColumns: 'repeat(10, minmax(0, 1fr))',
-    gap: isMobile ? '4px' : '7px',
-    width: boardWidth,
+    gridTemplateRows: 'repeat(10, minmax(0, 1fr))',
+    gap: isMobile ? '2px' : '7px',
     maxWidth: '100%',
     maxHeight: '100%',
-    aspectRatio: '1',
     touchAction: interactive ? 'manipulation' : 'auto',
-  });
+  };
+  if (isMobile) {
+    Object.assign(gridStyle, { width: undefined, height: undefined });
+  } else {
+    Object.assign(gridStyle, { width: boardWidth, aspectRatio: '1' });
+  }
+  Object.assign(grid.style, gridStyle);
   grid.setAttribute('role', 'grid');
   grid.setAttribute('aria-label', 'Take 5 game board');
 
@@ -109,11 +114,10 @@ export function renderBoard(container, {
       const isRemoveHighlight = highlightRemove.has(`${r},${c}`);
 
       const el = document.createElement('div');
-      el.style.aspectRatio = '1';
       el.style.minHeight = '0';
       el.style.backgroundColor = wildCorner ? 'rgba(120, 53, 15, 0.4)' : '#1e293b';
       el.className = [
-        'board-cell relative rounded-md bg-cell overflow-hidden aspect-square',
+        'board-cell relative rounded-md bg-cell overflow-hidden min-h-0 min-w-0 w-full h-full',
         'flex items-center justify-center',
         cell.team ? `board-cell-chip board-cell-chip-${cell.team}` : '',
         !useToken && isHighlight ? 'cell-highlight-flash' : '',
