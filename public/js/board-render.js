@@ -44,6 +44,7 @@ function addTokenPreview(cellEl, team, kind) {
  * @param {object} opts
  * @param {unknown[][]} opts.chips
  * @param {{ row: number, col: number, kind?: string }[]} [opts.highlights]
+ * @param {{ row: number, col: number, kind?: string }[]} [opts.tokenHighlights]
  * @param {(row: number, col: number) => void} [opts.onCellClick]
  * @param {boolean} [opts.interactive]
  * @param {'red' | 'blue' | 'green'} [opts.playerTeam]
@@ -54,6 +55,7 @@ function addTokenPreview(cellEl, team, kind) {
 export function renderBoard(container, {
   chips,
   highlights = [],
+  tokenHighlights,
   onCellClick,
   interactive = false,
   playerTeam,
@@ -61,11 +63,18 @@ export function renderBoard(container, {
   boardSize = 'default',
   snapToTarget = false,
 }) {
+  const tokens = tokenHighlights ?? highlights;
   const highlightPlace = new Set(
     highlights.filter((h) => h.kind !== 'remove').map((h) => `${h.row},${h.col}`)
   );
   const highlightRemove = new Set(
     highlights.filter((h) => h.kind === 'remove').map((h) => `${h.row},${h.col}`)
+  );
+  const tokenPlace = new Set(
+    tokens.filter((h) => h.kind !== 'remove').map((h) => `${h.row},${h.col}`)
+  );
+  const tokenRemove = new Set(
+    tokens.filter((h) => h.kind === 'remove').map((h) => `${h.row},${h.col}`)
   );
   const useToken = highlightMode === 'token';
   const isMobile = boardSize === 'mobile';
@@ -118,8 +127,8 @@ export function renderBoard(container, {
       face.classList.add('pointer-events-none', 'w-full', 'h-full');
       if (cell.team) stylePlacedChip(face, cardId, card, cell.team);
 
-      if (useToken && playerTeam && (isHighlight || isRemoveHighlight)) {
-        addTokenPreview(el, playerTeam, isRemoveHighlight ? 'remove' : 'place');
+      if (useToken && playerTeam && (tokenPlace.has(`${r},${c}`) || tokenRemove.has(`${r},${c}`))) {
+        addTokenPreview(el, playerTeam, tokenRemove.has(`${r},${c}`) ? 'remove' : 'place');
       }
 
       el.appendChild(face);

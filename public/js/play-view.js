@@ -18,6 +18,8 @@ import {
 export function renderPlayView(root) {
   let state = null;
   let selectedCardId = null;
+  /** @type {{ row: number, col: number, kind?: string } | null} */
+  let pinnedTarget = null;
   let joined = false;
   let lastBoardSig = '';
 
@@ -115,6 +117,7 @@ export function renderPlayView(root) {
     return JSON.stringify({
       chips: state?.chips,
       targets,
+      pinned: pinnedTarget,
       team: state?.you?.team,
       sel: selectedCardId,
       turn: state?.you?.isYourTurn,
@@ -142,11 +145,11 @@ export function renderPlayView(root) {
     } else if (!selectedCardId) {
       hintEl.textContent = 'Tap a card in your hand';
     } else if (card?.jackType === 'one_eyed') {
-      hintEl.textContent = 'Pepsi — tap near an opponent chip to remove';
+      hintEl.textContent = pinnedTarget ? 'Tap the token again to remove' : 'Tap an opponent chip to remove';
     } else if (card?.jackType === 'two_eyed') {
-      hintEl.textContent = 'Coke — tap any open space';
+      hintEl.textContent = pinnedTarget ? 'Tap the token again to play' : 'Tap an open space on the board';
     } else {
-      hintEl.textContent = 'Tap near a matching space on the board';
+      hintEl.textContent = pinnedTarget ? 'Tap the token again to play' : 'Tap a matching space on the board';
     }
 
     startBtn.classList.toggle('hidden', state.phase !== 'lobby');
@@ -160,10 +163,12 @@ export function renderPlayView(root) {
 
     const targets = getTargets();
     const canPlay = Boolean(selectedCardId && state.you?.isYourTurn);
+    const tokenHighlights = pinnedTarget ? [pinnedTarget] : [];
 
     renderBoard(miniBoardEl, {
       chips: state.chips,
       highlights: targets,
+      tokenHighlights,
       interactive: canPlay,
       onCellClick: (row, col) => handleBoardTap(row, col),
       playerTeam: state.you.team,
@@ -194,6 +199,7 @@ export function renderPlayView(root) {
     if (!state?.you?.isYourTurn) return;
     showError(playError, '');
     selectedCardId = cardId;
+    pinnedTarget = null;
     selectCard(cardId);
     paintHeader();
     paintBoard();
@@ -204,20 +210,26 @@ export function renderPlayView(root) {
     if (!selectedCardId || !state?.you?.isYourTurn) return;
 
     const targets = getTargets();
-    const valid = targets.some((t) => t.row === row && t.col === col);
-    if (!valid) return;
-
-    const card = CARD_CATALOG[selectedCardId];
     const target = targets.find((t) => t.row === row && t.col === col);
+    if (!target) return;
 
-    if (target?.kind === 'remove' || card?.jackType === 'one_eyed') {
-      playRemove(selectedCardId, row, col);
-    } else {
-      playPlace(selectedCardId, row, col);
+    if (pinnedTarget?.row === row && pinnedTarget?.col === col) {
+      const card = CARD_CATALOG[selectedCardId];
+      if (target.kind === 'remove' || card?.jackType === 'one_eyed') {
+        playRemove(selectedCardId, row, col);
+      } else {
+        playPlace(selectedCardId, row, col);
+      }
+      selectedCardId = null;
+      pinnedTarget = null;
+      clearSelection();
+      showError(playError, '');
+      return;
     }
-    selectedCardId = null;
-    clearSelection();
-    showError(playError, '');
+
+    pinnedTarget = { row, col, kind: target.kind };
+    paintHeader();
+    paintBoard();
   }
 
   connect();
@@ -236,7 +248,10 @@ export function renderPlayView(root) {
     if (msg.type === 'state') {
       const wasMyTurn = state?.you?.isYourTurn;
       state = msg.payload;
-      if (!state.pendingSelection) selectedCardId = null;
+      if (!state.pendingSelection) {
+        selectedCardId = null;
+        pinnedTarget = null;
+      }
       if (!state.you?.isYourTurn || !wasMyTurn) showError(playError, '');
       lastBoardSig = '';
       const curHand = JSON.stringify(state.you?.hand ?? []);
