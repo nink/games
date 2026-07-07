@@ -44,13 +44,13 @@ function addTokenPreview(cellEl, team, kind) {
  * @param {object} opts
  * @param {unknown[][]} opts.chips
  * @param {{ row: number, col: number, kind?: string }[]} [opts.highlights]
+ * @param {{ row: number, col: number, kind?: string }[]} [opts.validTargets]
  * @param {{ row: number, col: number, kind?: string }[]} [opts.tokenHighlights]
  * @param {(row: number, col: number) => void} [opts.onCellClick]
  * @param {boolean} [opts.interactive]
  * @param {'red' | 'blue' | 'green'} [opts.playerTeam]
  * @param {'token' | 'flash'} [opts.highlightMode]
  * @param {'mobile' | 'default'} [opts.boardSize]
- * @param {boolean} [opts.snapToTarget]
  * @param {boolean} [opts.showTargetPreviews]
  * @param {{ row: number, col: number }[]} [opts.sequenceEligible]
  * @param {{ row: number, col: number }[]} [opts.sequencePicked]
@@ -59,24 +59,25 @@ function addTokenPreview(cellEl, team, kind) {
 export function renderBoard(container, {
   chips,
   highlights = [],
+  validTargets,
   tokenHighlights,
   onCellClick,
   interactive = false,
   playerTeam,
   highlightMode = 'token',
   boardSize = 'default',
-  snapToTarget = false,
   showTargetPreviews = true,
   sequenceEligible = [],
   sequencePicked = [],
   sequenceTeam,
 }) {
+  const clickTargets = validTargets ?? highlights;
   const tokens = tokenHighlights ?? highlights;
   const highlightPlace = new Set(
-    highlights.filter((h) => h.kind !== 'remove').map((h) => `${h.row},${h.col}`)
+    clickTargets.filter((h) => h.kind !== 'remove').map((h) => `${h.row},${h.col}`)
   );
   const highlightRemove = new Set(
-    highlights.filter((h) => h.kind === 'remove').map((h) => `${h.row},${h.col}`)
+    clickTargets.filter((h) => h.kind === 'remove').map((h) => `${h.row},${h.col}`)
   );
   const tokenPlace = new Set(
     tokens.filter((h) => h.kind !== 'remove').map((h) => `${h.row},${h.col}`)

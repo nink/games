@@ -68,19 +68,24 @@ export function renderTvView(root) {
 
   updateQr(roomCode);
 
-  function paintBoard(chips, highlights = [], playerTeam) {
+  function paintBoard(chips) {
+    const claim = state?.pendingSequenceClaim;
     const team =
-      playerTeam ||
+      claim?.team ||
       (state?.pendingSelection
         ? state.players?.find((p) => p.id === state.pendingSelection.playerId)?.team
         : null) ||
       state?.currentTeam;
     renderBoard(boardEl, {
       chips,
-      highlights,
+      highlights: [],
+      showTargetPreviews: false,
       interactive: false,
       playerTeam: team,
       highlightMode: 'token',
+      sequenceEligible: claim?.eligibleCells ?? [],
+      sequencePicked: claim?.pickedCells ?? [],
+      sequenceTeam: claim?.team,
     });
   }
 
@@ -100,9 +105,8 @@ export function renderTvView(root) {
     sessionStorage.setItem('take5_room_code', roomCode);
     updateQr(roomCode);
 
-    const highlights = state.pendingSelection?.targets ?? [];
     if (state.chips) {
-      paintBoard(state.chips, highlights);
+      paintBoard(state.chips);
     }
 
     if (state.phase === 'game_over' && state.winnerTeam) {

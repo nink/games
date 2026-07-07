@@ -159,7 +159,7 @@ export function renderPlayView(root) {
     } else if (card?.jackType === 'one_eyed') {
       hintEl.textContent = 'Pepsi — tap an opponent chip to remove it';
     } else if (card?.jackType === 'two_eyed') {
-      hintEl.textContent = 'Coke — tap any open space';
+      hintEl.textContent = 'Coke — tap one empty square';
     } else {
       hintEl.textContent = 'Tap a matching space on the board';
     }
@@ -196,13 +196,13 @@ export function renderPlayView(root) {
 
     renderBoard(miniBoardEl, {
       chips: state.chips,
-      highlights: myClaim ? [] : targets,
+      validTargets: myClaim ? [] : targets,
+      highlights: [],
       interactive: myClaim || Boolean(selectedCardId && state.you?.isYourTurn),
       onCellClick: myClaim ? handleSequencePick : (row, col) => handleBoardTap(row, col),
       playerTeam: state.you.team,
       highlightMode: 'token',
       boardSize: 'mobile',
-      snapToTarget: false,
       showTargetPreviews: false,
       sequenceEligible: myClaim ? (claim.eligibleCells ?? []) : [],
       sequencePicked: myClaim ? (claim.pickedCells ?? []) : [],
@@ -261,13 +261,12 @@ export function renderPlayView(root) {
   async function handleBoardTap(row, col) {
     if (!selectedCardId || !state?.you?.isYourTurn) return;
 
-    const targets = getTargets();
-    const target = targets.find((t) => t.row === row && t.col === col);
-    if (!target) return;
-
     const cardId = selectedCardId;
     const card = CARD_CATALOG[cardId];
     const team = state.you.team;
+    const targets = legalTargetsClient(state.chips, cardId, team);
+    const target = targets.find((t) => t.row === row && t.col === col);
+    if (!target) return;
     const isRemove = target.kind === 'remove' || card?.jackType === 'one_eyed';
 
     if (isRemove) {
