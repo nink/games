@@ -8,7 +8,7 @@ function isWildCorner(cardId) {
 }
 
 function brandIdForCell(cardId, card) {
-  if (cardId === 'FREE') return 'amazon';
+  if (cardId === 'FREE') return 'spotify';
   return card?.brandId ?? 'apple';
 }
 

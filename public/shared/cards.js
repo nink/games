@@ -21,7 +21,6 @@ export const BRANDS = {
   facebook: { id: 'facebook', name: 'Facebook', logo: 'facebook-logo.svg', accent: '#0866FF' },
   x: { id: 'x', name: 'X', logo: 'x-logo.svg', accent: '#000000' },
   linkedin: { id: 'linkedin', name: 'LinkedIn', logo: 'linkedin-logo.svg', accent: '#0A66C2' },
-  amazon: { id: 'amazon', name: 'Amazon', logo: 'amazon-logo.svg', accent: '#FF9900' },
   microsoft: { id: 'microsoft', name: 'Microsoft', logo: 'microsoft-logo.svg', accent: '#00A4EF' },
   ikea: { id: 'ikea', name: 'IKEA', logo: 'ikea-logo.svg', accent: '#0058A3' },
   samsung: { id: 'samsung', name: 'Samsung', logo: 'samsung-logo.svg', accent: '#1428A0' },
@@ -256,7 +255,7 @@ export function jackTypeOf(cardId) {
  * @param {string} cellCardId
  */
 export function brandForCell(cellCardId) {
-  if (cellCardId === 'FREE') return BRANDS.amazon;
+  if (cellCardId === 'FREE') return BRANDS.spotify;
   const card = getCard(cellCardId);
   if (!card) return BRANDS.apple;
   return BRANDS[card.brandId] ?? BRANDS.apple;
