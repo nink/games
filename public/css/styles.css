@@ -93,14 +93,14 @@
   padding: 2px;
 }
 
-/* Board (TV + play) — logos sized to leave visible suit-colour border */
+/* Board (TV + play) — balance: visible suit border + larger logos (clipped in white box) */
 .take5-board-grid .board-cell img {
   padding: 0 !important;
 }
 
 .take5-board-grid .card-face-logo {
-  inset: 5px !important;
-  padding: 3px !important;
+  inset: 4px !important;
+  padding: 1px !important;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -111,21 +111,23 @@
   padding: 0 !important;
   object-fit: contain !important;
   object-position: center;
-  transform: none;
+  /* Mild zoom inside white box only — overflow:hidden keeps suit border clear */
+  transform: scale(1.32);
+  transform-origin: center;
 }
 
 .take5-board-grid .card-face-chipped .card-face-logo {
   inset: 4px !important;
-  padding: 2px !important;
+  padding: 1px !important;
 }
 
 .take5-board-grid .card-face-wild .card-face-logo {
-  inset: 4px 4px 16px !important;
-  padding: 2px 4px !important;
+  inset: 4px 4px 14px !important;
+  padding: 1px 2px !important;
 }
 
 .take5-board-grid .card-face-wild .card-face-logo img {
-  transform: none;
+  transform: scale(1.28);
 }
 
 /* Card face — suit = full background colour */
