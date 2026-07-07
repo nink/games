@@ -166,7 +166,7 @@ async function apiPost(action, payload = {}) {
   return true;
 }
 
-async function refreshState() {
+export async function refreshState() {
   if (!roomCode) return false;
   const params = new URLSearchParams({
     code: roomCode,

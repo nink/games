@@ -7,6 +7,7 @@ import {
   onMessage,
   playPlace,
   playRemove,
+  refreshState,
   selectCard,
   startGame,
 } from './ws-client.js';
@@ -217,21 +218,39 @@ export function renderPlayView(root) {
     updateHandSelection(handEl, selectedCardId);
   }
 
-  function handleBoardTap(row, col) {
+  async function handleBoardTap(row, col) {
     if (!selectedCardId || !state?.you?.isYourTurn) return;
 
     const targets = getTargets();
     const target = targets.find((t) => t.row === row && t.col === col);
     if (!target) return;
 
-    const card = CARD_CATALOG[selectedCardId];
-    if (target.kind === 'remove' || card?.jackType === 'one_eyed') {
-      playRemove(selectedCardId, row, col);
+    const cardId = selectedCardId;
+    const card = CARD_CATALOG[cardId];
+    const team = state.you.team;
+    const isRemove = target.kind === 'remove' || card?.jackType === 'one_eyed';
+
+    if (isRemove) {
+      state.chips[row][col].team = null;
+      state.chips[row][col].locked = false;
     } else {
-      playPlace(selectedCardId, row, col);
+      state.chips[row][col].team = team;
     }
+
+    const handIdx = state.you.hand.indexOf(cardId);
+    if (handIdx >= 0) state.you.hand.splice(handIdx, 1);
+
     selectedCardId = null;
+    lastBoardSig = '';
     showError(playError, '');
+    paintHeader();
+    paintBoard();
+    paintHand(true);
+
+    const ok = isRemove
+      ? await playRemove(cardId, row, col)
+      : await playPlace(cardId, row, col);
+    if (!ok) await refreshState();
   }
 
   function onViewportChange() {
@@ -248,7 +267,10 @@ export function renderPlayView(root) {
   onMessage((msg) => {
     if (msg.type === 'error') {
       if (!joined) showError(joinError, msg.payload.reason);
-      else showError(playError, msg.payload.reason);
+      else {
+        showError(playError, msg.payload.reason);
+        refreshState();
+      }
       return;
     }
     if (msg.type === 'joined') {

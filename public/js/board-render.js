@@ -1,30 +1,20 @@
 import { CARD_CATALOG } from '/shared/cards.js';
 import { createCardFace, createWildFace } from './suit-ui.js';
-import { applyLogoBorderIfNeeded } from './logo-contrast.js';
 import { snapTargetFromPointer } from './play-targets.js';
 
 function isWildCorner(cardId) {
   return cardId === 'FREE';
 }
 
-function brandIdForCell(cardId, card) {
-  if (cardId === 'FREE') return 'spotify';
-  return card?.brandId ?? 'apple';
-}
-
 /**
- * @param {HTMLElement} face
- * @param {string} cardId
- * @param {import('/shared/cards.js').CardDef | null} card
- * @param {string | null} chipTeam
+ * @param {HTMLElement} cellEl
+ * @param {'red' | 'blue' | 'green'} team
  */
-function stylePlacedChip(face, cardId, card, chipTeam) {
-  if (!chipTeam) return;
-  face.classList.add('card-face-chipped', `card-face-chipped-${chipTeam}`);
-  const logoWrap = face.querySelector('.card-face-logo');
-  if (logoWrap) {
-    applyLogoBorderIfNeeded(logoWrap, brandIdForCell(cardId, card), chipTeam);
-  }
+function addPlacedToken(cellEl, team) {
+  const token = document.createElement('span');
+  token.className = `chip-token-placed chip-token-placed-${team}`;
+  token.setAttribute('aria-hidden', 'true');
+  cellEl.appendChild(token);
 }
 
 /**
@@ -34,7 +24,7 @@ function stylePlacedChip(face, cardId, card, chipTeam) {
  */
 function addTokenPreview(cellEl, team, kind) {
   const token = document.createElement('span');
-  token.className = `chip-token-preview chip-token-preview-${team}${kind === 'remove' ? ' chip-token-preview-remove' : ''}`;
+  token.className = `chip-token-preview chip-token-preview-${team} chip-token-preview-blink${kind === 'remove' ? ' chip-token-preview-remove' : ''}`;
   token.setAttribute('aria-hidden', 'true');
   cellEl.appendChild(token);
 }
@@ -119,7 +109,7 @@ export function renderBoard(container, {
       el.className = [
         'board-cell relative rounded-md bg-cell overflow-hidden min-h-0 min-w-0 w-full h-full',
         'flex items-center justify-center',
-        cell.team ? `board-cell-chip board-cell-chip-${cell.team}` : '',
+        cell.team ? 'board-cell-has-token' : '',
         !useToken && isHighlight ? 'cell-highlight-flash' : '',
         !useToken && isHighlight && playerTeam ? `cell-highlight-team cell-highlight-team-${playerTeam}` : '',
         !useToken && isRemoveHighlight ? 'cell-highlight-remove-flash' : '',
@@ -130,16 +120,19 @@ export function renderBoard(container, {
 
       const face = wildCorner ? createWildFace() : createCardFace(card, { variant: 'board' });
       face.classList.add('pointer-events-none', 'w-full', 'h-full');
-      if (cell.team) stylePlacedChip(face, cardId, card, cell.team);
 
       el.appendChild(face);
 
-      if (
-        useToken
+      if (cell.team && !wildCorner) {
+        addPlacedToken(el, cell.team);
+      }
+
+      const showPreview = useToken
         && playerTeam
         && !wildCorner
-        && (tokenPlace.has(`${r},${c}`) || tokenRemove.has(`${r},${c}`))
-      ) {
+        && (tokenPlace.has(`${r},${c}`) || tokenRemove.has(`${r},${c}`));
+      if (showPreview) {
+        el.classList.add('board-cell-has-preview');
         addTokenPreview(el, playerTeam, tokenRemove.has(`${r},${c}`) ? 'remove' : 'place');
       }
       if (cell.locked) {
