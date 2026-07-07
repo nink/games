@@ -2,7 +2,6 @@ import { CARD_CATALOG } from '/shared/cards.js';
 import { renderBoard, renderHand, updateHandSelection } from './board-render.js';
 import { legalTargetsClient } from './play-targets.js';
 import {
-  clearSelection,
   connect,
   joinRoom,
   onMessage,
@@ -58,7 +57,7 @@ export function renderPlayView(root) {
       <p id="join-error" class="text-red-400 text-sm hidden"></p>
     </div>
 
-    <div id="play-game" class="hidden play-game min-h-screen flex flex-col p-2 sm:p-4 gap-2 max-w-6xl mx-auto">
+    <div id="play-game" class="hidden play-game min-h-screen flex flex-col p-2 gap-1 max-w-6xl mx-auto">
       <header class="play-header flex items-center justify-between shrink-0 px-1">
         <div>
           <p class="text-xs text-slate-500">Room <span id="play-code" class="text-amber-400 font-bold"></span></p>
@@ -67,7 +66,6 @@ export function renderPlayView(root) {
         <span id="play-team-badge" class="rounded-full px-3 py-1 text-xs font-bold uppercase"></span>
       </header>
       <div class="play-main flex-1 min-h-0 flex flex-col">
-        <div class="play-spacer" aria-hidden="true"></div>
         <div class="play-stack">
           <div id="play-mini-board" class="play-board-pane flex justify-center items-center"></div>
           <p id="play-hint" class="text-center text-xs text-amber-300/80 shrink-0 px-1"></p>
@@ -155,6 +153,23 @@ export function renderPlayView(root) {
     startBtn.classList.toggle('hidden', state.phase !== 'lobby');
   }
 
+  function syncSelectionFromState() {
+    if (!state?.you) {
+      selectedCardId = null;
+      return;
+    }
+    const pending = state.pendingSelection;
+    if (pending?.playerId === state.you.id) {
+      selectedCardId = pending.cardId;
+      return;
+    }
+    if (pending) {
+      selectedCardId = null;
+      return;
+    }
+    if (!state.you.isYourTurn) selectedCardId = null;
+  }
+
   function paintBoard() {
     if (!state?.chips) return;
     const sig = boardSignature();
@@ -216,7 +231,6 @@ export function renderPlayView(root) {
       playPlace(selectedCardId, row, col);
     }
     selectedCardId = null;
-    clearSelection();
     showError(playError, '');
   }
 
@@ -245,7 +259,7 @@ export function renderPlayView(root) {
     if (msg.type === 'state') {
       const wasMyTurn = state?.you?.isYourTurn;
       state = msg.payload;
-      if (!state.pendingSelection) selectedCardId = null;
+      syncSelectionFromState();
       if (!state.you?.isYourTurn || !wasMyTurn) showError(playError, '');
       lastBoardSig = '';
       const curHand = JSON.stringify(state.you?.hand ?? []);

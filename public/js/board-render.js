@@ -132,11 +132,16 @@ export function renderBoard(container, {
       face.classList.add('pointer-events-none', 'w-full', 'h-full');
       if (cell.team) stylePlacedChip(face, cardId, card, cell.team);
 
-      if (useToken && playerTeam && (tokenPlace.has(`${r},${c}`) || tokenRemove.has(`${r},${c}`))) {
+      el.appendChild(face);
+
+      if (
+        useToken
+        && playerTeam
+        && !wildCorner
+        && (tokenPlace.has(`${r},${c}`) || tokenRemove.has(`${r},${c}`))
+      ) {
         addTokenPreview(el, playerTeam, tokenRemove.has(`${r},${c}`) ? 'remove' : 'place');
       }
-
-      el.appendChild(face);
       if (cell.locked) {
         const seq = document.createElement('span');
         seq.className = 'absolute top-0.5 right-0.5 text-[8px] bg-black/60 px-1 rounded z-10';

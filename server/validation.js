@@ -56,7 +56,7 @@ export function validatePlaceMove({ chips, cardId, row, col, playerTeam }) {
 
   const boardCardId = BOARD[row][col];
   if (boardCardId === 'FREE' || isCorner(row, col)) {
-    return { ok: true, action: 'place_corner' };
+    return { ok: false, reason: 'Cannot place on wild corner' };
   }
 
   if (boardCardId !== cardId) {
@@ -96,7 +96,9 @@ export function legalTargetsForCard(chips, cardId, playerTeam) {
   if (jack === JACK_TYPE.TWO_EYED) {
     for (let r = 0; r < 10; r++) {
       for (let c = 0; c < 10; c++) {
-        if (!isOccupied(chips, r, c)) targets.push({ row: r, col: c, kind: 'place' });
+        if (!isOccupied(chips, r, c) && BOARD[r][c] !== 'FREE' && !isCorner(r, c)) {
+          targets.push({ row: r, col: c, kind: 'place' });
+        }
       }
     }
     return targets;
@@ -116,19 +118,8 @@ export function legalTargetsForCard(chips, cardId, playerTeam) {
 
   const matches = boardCellsForCard(cardId);
   for (const { row, col } of matches) {
-    if (!isOccupied(chips, row, col)) {
+    if (!isOccupied(chips, row, col) && BOARD[row][col] !== 'FREE' && !isCorner(row, col)) {
       targets.push({ row, col, kind: 'place' });
-    }
-  }
-
-  // Corner free spaces accept any team's normal card in Sequence — include unoccupied corners
-  for (let r = 0; r < 10; r++) {
-    for (let c = 0; c < 10; c++) {
-      if (isCorner(r, c) && !isOccupied(chips, r, c)) {
-        if (!targets.some((t) => t.row === r && t.col === c)) {
-          targets.push({ row: r, col: c, kind: 'place' });
-        }
-      }
     }
   }
 

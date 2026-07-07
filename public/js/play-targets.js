@@ -1,5 +1,9 @@
 import { CARD_CATALOG, boardCellsForCard } from '/shared/cards.js';
 
+function isWildCornerCell(chips, row, col) {
+  return chips[row]?.[col]?.cardId === 'FREE';
+}
+
 /**
  * Client-side legal targets (mirrors server) for instant highlight before WS round-trip.
  * @param {unknown[][]} chips
@@ -14,7 +18,9 @@ export function legalTargetsClient(chips, cardId, playerTeam) {
     const targets = [];
     for (let r = 0; r < 10; r++) {
       for (let c = 0; c < 10; c++) {
-        if (!chips[r][c].team) targets.push({ row: r, col: c, kind: 'place' });
+        if (!chips[r][c].team && !isWildCornerCell(chips, r, c)) {
+          targets.push({ row: r, col: c, kind: 'place' });
+        }
       }
     }
     return targets;
@@ -36,15 +42,8 @@ export function legalTargetsClient(chips, cardId, playerTeam) {
   const matches = boardCellsForCard(cardId);
   const targets = [];
   for (const { row, col } of matches) {
-    if (!chips[row][col].team) targets.push({ row, col, kind: 'place' });
-  }
-  for (let r = 0; r < 10; r++) {
-    for (let c = 0; c < 10; c++) {
-      const isCorner =
-        (r === 0 && c === 0) || (r === 0 && c === 9) || (r === 9 && c === 0) || (r === 9 && c === 9);
-      if (isCorner && !chips[r][c].team && !targets.some((t) => t.row === r && t.col === c)) {
-        targets.push({ row: r, col: c, kind: 'place' });
-      }
+    if (!chips[row][col].team && !isWildCornerCell(chips, row, col)) {
+      targets.push({ row, col, kind: 'place' });
     }
   }
   return targets;
