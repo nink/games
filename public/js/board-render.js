@@ -85,13 +85,14 @@ export function renderBoard(container, {
     isMobile ? 'take5-board-mobile' : '',
   ].filter(Boolean).join(' ');
 
-  const boardWidth = isMobile ? 'min(96vw, 72vh)' : 'min(90vh, 90vw)';
+  const boardWidth = isMobile ? '100%' : 'min(90vh, 90vw)';
   Object.assign(grid.style, {
     display: 'grid',
     gridTemplateColumns: 'repeat(10, minmax(0, 1fr))',
     gap: isMobile ? '3px' : '6px',
     width: boardWidth,
     maxWidth: '100%',
+    maxHeight: '100%',
     aspectRatio: '1',
     touchAction: interactive ? 'manipulation' : 'auto',
   });
