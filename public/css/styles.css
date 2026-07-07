@@ -99,9 +99,9 @@
 }
 
 .take5-board-grid .card-face-logo {
-  inset: 0 !important;
+  inset: 2px !important;
   padding: 0 !important;
-  border-radius: 5px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
@@ -111,10 +111,10 @@
   width: 100% !important;
   height: 100% !important;
   padding: 0 !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: center;
-  /* SVG logos ship with ~33% built-in margin — zoom to fill the cell */
-  transform: scale(2.25);
+  /* Compensate for built-in SVG margin without overflowing the cell */
+  transform: scale(1.55);
   transform-origin: center;
 }
 
@@ -129,8 +129,8 @@
 }
 
 .take5-board-grid .card-face-wild .card-face-logo img {
-  object-fit: cover !important;
-  transform: scale(2.25);
+  object-fit: contain !important;
+  transform: scale(1.55);
 }
 
 /* Card face — suit = full background colour */
