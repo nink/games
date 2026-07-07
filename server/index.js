@@ -10,6 +10,7 @@ import {
   getRoom,
   joinRoom,
   markDisconnected,
+  pickSequenceCell,
   playPlace,
   playRemove,
   playerState,
@@ -151,6 +152,17 @@ wss.on('connection', (ws) => {
         const room = meta && getRoom(meta.roomCode);
         if (!room) return;
         clearSelection(room, meta.playerId);
+        broadcastState(room);
+        break;
+      }
+
+      case 'pick_sequence_cell': {
+        const meta = sockets.get(ws);
+        const room = meta && getRoom(meta.roomCode);
+        if (!room) return;
+        const { row, col } = payload;
+        const result = pickSequenceCell(room, meta.playerId, Number(row), Number(col));
+        if (!result.ok) return send(ws, 'error', { reason: result.reason });
         broadcastState(room);
         break;
       }

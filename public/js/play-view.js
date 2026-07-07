@@ -5,12 +5,14 @@ import {
   connect,
   joinRoom,
   onMessage,
+  pickSequenceCell,
   playPlace,
   playRemove,
   refreshState,
   selectCard,
   startGame,
 } from './ws-client.js';
+import { detectSequenceClaimRequired } from '/shared/sequence-claim.js';
 
 /**
  * @param {HTMLElement} root
@@ -114,13 +116,20 @@ export function renderPlayView(root) {
 
   function boardSignature() {
     const targets = getTargets();
+    const claim = state?.pendingSequenceClaim;
     return JSON.stringify({
       chips: state?.chips,
       targets,
       team: state?.you?.team,
       sel: selectedCardId,
       turn: state?.you?.isYourTurn,
+      claim,
     });
+  }
+
+  function isMySequenceClaim() {
+    const claim = state?.pendingSequenceClaim;
+    return Boolean(claim && state?.you?.id === claim.playerId);
   }
 
   function paintHeader() {
@@ -139,7 +148,11 @@ export function renderPlayView(root) {
     }
 
     const card = selectedCardId ? CARD_CATALOG[selectedCardId] : null;
-    if (!state.you.isYourTurn) {
+    const claim = state.pendingSequenceClaim;
+    if (claim && state.you.id === claim.playerId) {
+      const n = claim.pickedCells?.length ?? 0;
+      hintEl.textContent = `Pick 5 in a row for your sequence (${n}/5)`;
+    } else if (!state.you.isYourTurn) {
       hintEl.textContent = '';
     } else if (!selectedCardId) {
       hintEl.textContent = 'Tap a card in your hand';
@@ -178,17 +191,42 @@ export function renderPlayView(root) {
     lastBoardSig = sig;
 
     const targets = getTargets();
-    const canPlay = Boolean(selectedCardId && state.you?.isYourTurn);
+    const claim = state.pendingSequenceClaim;
+    const myClaim = isMySequenceClaim();
+
     renderBoard(miniBoardEl, {
       chips: state.chips,
-      highlights: targets,
-      interactive: canPlay,
-      onCellClick: (row, col) => handleBoardTap(row, col),
+      highlights: myClaim ? [] : targets,
+      interactive: myClaim || Boolean(selectedCardId && state.you?.isYourTurn),
+      onCellClick: myClaim ? handleSequencePick : (row, col) => handleBoardTap(row, col),
       playerTeam: state.you.team,
       highlightMode: 'token',
       boardSize: 'mobile',
       snapToTarget: true,
+      sequenceEligible: myClaim ? (claim.eligibleCells ?? []) : [],
+      sequencePicked: myClaim ? (claim.pickedCells ?? []) : [],
+      sequenceTeam: claim?.team ?? state.you.team,
     });
+  }
+
+  async function handleSequencePick(row, col) {
+    if (!isMySequenceClaim()) return;
+    const claim = state.pendingSequenceClaim;
+    const key = `${row},${col}`;
+    if (claim.pickedCells?.some((c) => c.row === row && c.col === col)) return;
+    if (!claim.eligibleCells?.some((c) => c.row === row && c.col === col)) return;
+
+    claim.pickedCells = [...(claim.pickedCells ?? []), { row, col }];
+    lastBoardSig = '';
+    paintBoard();
+
+    const ok = await pickSequenceCell(row, col);
+    if (!ok) {
+      claim.pickedCells = claim.pickedCells.filter((c) => `${c.row},${c.col}` !== key);
+      lastBoardSig = '';
+      paintBoard();
+      await refreshState();
+    }
   }
 
   function paintHand(fullRebuild = false) {
@@ -210,6 +248,7 @@ export function renderPlayView(root) {
 
   function onHandCardTap(cardId) {
     if (!state?.you?.isYourTurn) return;
+    if (state.pendingSequenceClaim?.playerId === state.you.id) return;
     showError(playError, '');
     selectedCardId = cardId;
     selectCard(cardId);
@@ -246,6 +285,19 @@ export function renderPlayView(root) {
     paintHeader();
     paintBoard();
     paintHand(true);
+
+    const claimNeeded = detectSequenceClaimRequired(state.chips, team, row, col);
+    if (claimNeeded) {
+      state.pendingSequenceClaim = {
+        playerId: state.you.id,
+        team,
+        eligibleCells: claimNeeded.eligibleCells,
+        pickedCells: [],
+      };
+      lastBoardSig = '';
+      paintHeader();
+      paintBoard();
+    }
 
     const ok = isRemove
       ? await playRemove(cardId, row, col)

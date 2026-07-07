@@ -137,7 +137,9 @@ export function renderTvView(root) {
       .join('');
 
     startBtn.classList.toggle('hidden', state.phase !== 'lobby' || (state.players?.length ?? 0) < 2);
-    statusEl.textContent = state.pendingSelection
+    statusEl.textContent = state.pendingSequenceClaim
+      ? `${state.players?.find((p) => p.id === state.pendingSequenceClaim.playerId)?.name ?? 'Player'} — pick 5 for sequence`
+      : state.pendingSelection
       ? 'A player is choosing where to play…'
       : state.phase === 'playing'
         ? `${state.deckRemaining ?? 0} cards left in deck`

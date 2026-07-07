@@ -99,6 +99,21 @@ export function winningTeam(chips) {
 }
 
 /**
+ * @param {{ team: string, cells: { row: number, col: number }[] }[]} claims
+ * @returns {string | null}
+ */
+export function winningTeamFromClaims(claims) {
+  const counts = {};
+  for (const claim of claims) {
+    counts[claim.team] = (counts[claim.team] ?? 0) + 1;
+  }
+  for (const [team, count] of Object.entries(counts)) {
+    if (count >= SEQUENCES_TO_WIN) return team;
+  }
+  return null;
+}
+
+/**
  * Corners count for any team when checking placement validity for normal cards.
  * @param {number} row
  * @param {number} col

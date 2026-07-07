@@ -20,6 +20,17 @@ function addPlacedToken(cellEl, team) {
 /**
  * @param {HTMLElement} cellEl
  * @param {'red' | 'blue' | 'green'} team
+ */
+function addFrozenToken(cellEl, team) {
+  const token = document.createElement('span');
+  token.className = `chip-token-frozen chip-token-placed chip-token-placed-${team}`;
+  token.setAttribute('aria-hidden', 'true');
+  cellEl.appendChild(token);
+}
+
+/**
+ * @param {HTMLElement} cellEl
+ * @param {'red' | 'blue' | 'green'} team
  * @param {'place' | 'remove'} kind
  */
 function addTokenPreview(cellEl, team, kind) {
@@ -41,6 +52,9 @@ function addTokenPreview(cellEl, team, kind) {
  * @param {'token' | 'flash'} [opts.highlightMode]
  * @param {'mobile' | 'default'} [opts.boardSize]
  * @param {boolean} [opts.snapToTarget]
+ * @param {{ row: number, col: number }[]} [opts.sequenceEligible]
+ * @param {{ row: number, col: number }[]} [opts.sequencePicked]
+ * @param {'red' | 'blue' | 'green'} [opts.sequenceTeam]
  */
 export function renderBoard(container, {
   chips,
@@ -52,6 +66,9 @@ export function renderBoard(container, {
   highlightMode = 'token',
   boardSize = 'default',
   snapToTarget = false,
+  sequenceEligible = [],
+  sequencePicked = [],
+  sequenceTeam,
 }) {
   const tokens = tokenHighlights ?? highlights;
   const highlightPlace = new Set(
@@ -68,6 +85,9 @@ export function renderBoard(container, {
   );
   const useToken = highlightMode === 'token';
   const isMobile = boardSize === 'mobile';
+  const sequenceEligibleSet = new Set(sequenceEligible.map((h) => `${h.row},${h.col}`));
+  const sequencePickedSet = new Set(sequencePicked.map((h) => `${h.row},${h.col}`));
+  const claimTeam = sequenceTeam ?? playerTeam;
 
   const grid = document.createElement('div');
   grid.className = [
@@ -123,18 +143,32 @@ export function renderBoard(container, {
 
       el.appendChild(face);
 
+      const cellKey = `${r},${c}`;
+      const isSeqPicked = sequencePickedSet.has(cellKey);
+      const isSeqEligible = sequenceEligibleSet.has(cellKey) && !isSeqPicked;
+
       if (cell.team && !wildCorner) {
         addPlacedToken(el, cell.team);
       }
 
-      const showPreview = useToken
+      if (isSeqPicked && claimTeam) {
+        el.classList.add('board-cell-has-preview', 'board-cell-seq-picked');
+        if (wildCorner || !cell.team) {
+          addFrozenToken(el, claimTeam);
+        }
+      } else if (isSeqEligible && claimTeam) {
+        el.classList.add('board-cell-has-preview');
+        addTokenPreview(el, claimTeam, 'place');
+      } else if (
+        useToken
         && playerTeam
         && !wildCorner
-        && (tokenPlace.has(`${r},${c}`) || tokenRemove.has(`${r},${c}`));
-      if (showPreview) {
+        && (tokenPlace.has(cellKey) || tokenRemove.has(cellKey))
+      ) {
         el.classList.add('board-cell-has-preview');
-        addTokenPreview(el, playerTeam, tokenRemove.has(`${r},${c}`) ? 'remove' : 'place');
+        addTokenPreview(el, playerTeam, tokenRemove.has(cellKey) ? 'remove' : 'place');
       }
+
       if (cell.locked) {
         const seq = document.createElement('span');
         seq.className = 'absolute top-0.5 right-0.5 text-[8px] bg-black/60 px-1 rounded z-10';
@@ -146,21 +180,30 @@ export function renderBoard(container, {
     }
   }
 
-  if (interactive && onCellClick && highlights.length) {
+  if (interactive && onCellClick) {
+    const clickTargets = highlights.length
+      ? highlights
+      : sequenceEligible.length
+        ? sequenceEligible
+        : [];
     const onPointer = (e) => {
       if (e.pointerType === 'mouse' && e.button !== 0) return;
-      const snapped = snapToTarget
-        ? snapTargetFromPointer(e.clientX, e.clientY, grid, highlights)
-        : null;
-      if (snapped) {
-        onCellClick(snapped.row, snapped.col);
-        return;
+      if (clickTargets.length && snapToTarget) {
+        const snapped = snapTargetFromPointer(e.clientX, e.clientY, grid, clickTargets);
+        if (snapped) {
+          onCellClick(snapped.row, snapped.col);
+          return;
+        }
       }
       const cellEl = e.target.closest('.board-cell');
       if (!cellEl || !grid.contains(cellEl)) return;
       const row = Number(cellEl.dataset.row);
       const col = Number(cellEl.dataset.col);
       const key = `${row},${col}`;
+      if (sequenceEligibleSet.has(key) && !sequencePickedSet.has(key)) {
+        onCellClick(row, col);
+        return;
+      }
       if (highlightPlace.has(key) || highlightRemove.has(key)) {
         onCellClick(row, col);
       }

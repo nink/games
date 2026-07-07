@@ -285,6 +285,11 @@ export async function clearSelection() {
   return apiPost('clear_selection');
 }
 
+export async function pickSequenceCell(row, col) {
+  if (useWebSocket) return wsSend('pick_sequence_cell', { row, col });
+  return apiPost('pick_sequence_cell', { row, col });
+}
+
 export async function playPlace(cardId, row, col) {
   if (useWebSocket) return wsSend('play_place', { cardId, row, col });
   return apiPost('play_place', { cardId, row, col });

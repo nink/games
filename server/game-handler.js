@@ -2,6 +2,7 @@ import {
   clearSelection,
   joinRoom,
   markDisconnected,
+  pickSequenceCell,
   playPlace,
   playRemove,
   playerState,
@@ -116,6 +117,21 @@ export async function handleGameAction(body) {
       const room = await loadRoom(code);
       if (!room) return { ok: false, error: 'Not in a room' };
       clearSelection(room, playerId);
+      await saveRoom(room);
+      return {
+        ok: true,
+        messages: [{ type: 'state', payload: stateForRole(room, role, playerId) }],
+        broadcast: true,
+        roomCode: room.code,
+        revision: Date.now(),
+      };
+    }
+
+    case 'pick_sequence_cell': {
+      const room = await loadRoom(code);
+      if (!room) return { ok: false, error: 'Not in a room' };
+      const result = pickSequenceCell(room, playerId, Number(row), Number(col));
+      if (!result.ok) return { ok: false, error: result.reason };
       await saveRoom(room);
       return {
         ok: true,

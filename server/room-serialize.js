@@ -14,6 +14,8 @@ export function serializeRoomState(room) {
     currentPlayerIndex: room.currentPlayerIndex,
     winnerTeam: room.winnerTeam,
     pendingSelection: room.pendingSelection,
+    pendingSequenceClaim: room.pendingSequenceClaim,
+    sequenceClaims: room.sequenceClaims ?? [],
     activeTeams: [...room.activeTeams],
   };
 }
@@ -33,6 +35,8 @@ export function deserializeRoom(code, state) {
     currentPlayerIndex: state.currentPlayerIndex ?? 0,
     winnerTeam: state.winnerTeam ?? null,
     pendingSelection: state.pendingSelection ?? null,
+    pendingSequenceClaim: state.pendingSequenceClaim ?? null,
+    sequenceClaims: state.sequenceClaims ?? [],
     activeTeams: new Set(state.activeTeams ?? []),
   };
 }

@@ -378,3 +378,14 @@
 .chip-token-placed-red { background: radial-gradient(circle at 35% 28%, #fca5a5, #ef4444 55%, #b91c1c); }
 .chip-token-placed-blue { background: radial-gradient(circle at 35% 28%, #93c5fd, #3b82f6 55%, #1d4ed8); }
 .chip-token-placed-green { background: radial-gradient(circle at 35% 28%, #86efac, #22c55e 55%, #15803d); }
+
+.board-cell-seq-picked .chip-token-placed,
+.chip-token-frozen {
+  box-shadow:
+    0 0 0 3px #fbbf24,
+    inset 0 -4px 8px rgba(0, 0, 0, 0.35),
+    inset 0 2px 5px rgba(255, 255, 255, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.5);
+  animation: none !important;
+  opacity: 1 !important;
+}

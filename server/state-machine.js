@@ -7,11 +7,18 @@ import {
 import { buildDeck, shuffle } from '../shared/cards.js';
 import {
   createChipMatrix,
-  lockSequenceChips,
   serializeChips,
-  sequenceCountByTeam,
-  winningTeam,
+  winningTeamFromClaims,
+  isCorner,
 } from './win-check.js';
+import {
+  autoLockExactFives,
+  detectSequenceClaimRequired,
+  areColinear,
+  isValidSequencePick,
+  lockClaimedCells,
+  sequenceCountByClaims,
+} from '../shared/sequence-claim.js';
 import {
   handContains,
   legalTargetsForCard,
@@ -41,6 +48,8 @@ const CODE_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
  * @property {string | null} winnerTeam
  * @property {string | null} selectedCardByPlayer
  * @property {{ playerId: string, cardId: string } | null} pendingSelection
+ * @property {{ playerId: string, team: string, eligibleCells: { row: number, col: number }[], pickedCells: { row: number, col: number }[] } | null} pendingSequenceClaim
+ * @property {{ team: string, cells: { row: number, col: number }[] }[]} sequenceClaims
  * @property {Set<string>} activeTeams
  */
 
@@ -70,6 +79,8 @@ export function createRoomObject(code) {
     winnerTeam: null,
     selectedCardByPlayer: null,
     pendingSelection: null,
+    pendingSequenceClaim: null,
+    sequenceClaims: [],
     activeTeams: new Set(),
   };
 }
@@ -145,6 +156,8 @@ export function startGame(room) {
   room.currentPlayerIndex = 0;
   room.winnerTeam = null;
   room.pendingSelection = null;
+  room.pendingSequenceClaim = null;
+  room.sequenceClaims = [];
 
   for (const player of room.players) {
     player.hand = drawCards(room, HAND_SIZE);
@@ -184,6 +197,9 @@ export function selectCard(room, playerId, cardId) {
   if (room.phase !== GAME_PHASE.PLAYING) {
     return { ok: false, reason: 'Game not in progress' };
   }
+  if (room.pendingSequenceClaim) {
+    return { ok: false, reason: 'Finish claiming your sequence first' };
+  }
   const player = room.players.find((p) => p.id === playerId);
   const turn = currentPlayer(room);
   if (!player || !turn || player.id !== turn.id) {
@@ -221,6 +237,9 @@ export function playPlace(room, playerId, cardId, row, col) {
   if (room.phase !== GAME_PHASE.PLAYING) {
     return { ok: false, reason: 'Game not in progress' };
   }
+  if (room.pendingSequenceClaim) {
+    return { ok: false, reason: 'Finish claiming your sequence first' };
+  }
   const player = room.players.find((p) => p.id === playerId);
   const turn = currentPlayer(room);
   if (!player || !turn || player.id !== turn.id) {
@@ -244,8 +263,32 @@ export function playPlace(room, playerId, cardId, row, col) {
   const drawn = drawCards(room, 1);
   if (drawn.length) player.hand.push(drawn[0]);
 
-  lockSequenceChips(room.chips);
-  const winner = winningTeam(room.chips);
+  const claimRequired = detectSequenceClaimRequired(room.chips, player.team, row, col);
+  if (claimRequired) {
+    room.pendingSequenceClaim = {
+      playerId: player.id,
+      team: player.team,
+      eligibleCells: claimRequired.eligibleCells,
+      pickedCells: [],
+    };
+    room.pendingSelection = null;
+    return {
+      ok: true,
+      action: validation.action,
+      row,
+      col,
+      team: player.team,
+      needsSequenceClaim: true,
+      sequenceCounts: sequenceCountByClaims(room.chips, room.sequenceClaims),
+    };
+  }
+
+  const newLines = autoLockExactFives(room.chips, player.team, row, col);
+  for (const line of newLines) {
+    room.sequenceClaims.push({ team: player.team, cells: line });
+  }
+
+  const winner = winningTeamFromClaims(room.sequenceClaims);
   if (winner) {
     room.phase = GAME_PHASE.GAME_OVER;
     room.winnerTeam = winner;
@@ -261,7 +304,7 @@ export function playPlace(room, playerId, cardId, row, col) {
     col,
     team: player.team,
     winner,
-    sequenceCounts: sequenceCountByTeam(room.chips),
+    sequenceCounts: sequenceCountByClaims(room.chips, room.sequenceClaims),
   };
 }
 
@@ -307,6 +350,67 @@ export function playRemove(room, playerId, cardId, row, col) {
 }
 
 /**
+ * @param {GameRoom} room
+ * @param {string} playerId
+ * @param {number} row
+ * @param {number} col
+ */
+export function pickSequenceCell(room, playerId, row, col) {
+  const claim = room.pendingSequenceClaim;
+  if (!claim) return { ok: false, reason: 'No sequence to claim' };
+  if (claim.playerId !== playerId) {
+    return { ok: false, reason: 'Not your sequence claim' };
+  }
+
+  const eligible = claim.eligibleCells.some((c) => c.row === row && c.col === col);
+  if (!eligible) return { ok: false, reason: 'Not part of this run' };
+
+  if (claim.pickedCells.some((c) => c.row === row && c.col === col)) {
+    return { ok: false, reason: 'Already selected' };
+  }
+
+  const picked = [...claim.pickedCells, { row, col }];
+  if (!areColinear(picked)) {
+    return { ok: false, reason: 'Picks must be in a straight line' };
+  }
+
+  claim.pickedCells = picked;
+
+  if (picked.length < 5) {
+    return {
+      ok: true,
+      complete: false,
+      pickedCells: picked,
+      sequenceCounts: sequenceCountByClaims(room.chips, room.sequenceClaims),
+    };
+  }
+
+  if (!isValidSequencePick(picked)) {
+    claim.pickedCells = claim.pickedCells.slice(0, -1);
+    return { ok: false, reason: 'Pick 5 adjacent spaces in a row' };
+  }
+
+  lockClaimedCells(room.chips, picked);
+  room.sequenceClaims.push({ team: claim.team, cells: [...picked] });
+  room.pendingSequenceClaim = null;
+
+  const winner = winningTeamFromClaims(room.sequenceClaims);
+  if (winner) {
+    room.phase = GAME_PHASE.GAME_OVER;
+    room.winnerTeam = winner;
+  } else {
+    advanceTurn(room);
+  }
+
+  return {
+    ok: true,
+    complete: true,
+    winner,
+    sequenceCounts: sequenceCountByClaims(room.chips, room.sequenceClaims),
+  };
+}
+
+/**
  * @param {Player} player
  * @param {string} cardId
  */
@@ -343,8 +447,17 @@ export function publicState(room) {
     currentPlayerName: turn?.name ?? null,
     currentTeam: turn?.team ?? null,
     winnerTeam: room.winnerTeam,
-    sequenceCounts: sequenceCountByTeam(room.chips),
+    sequenceCounts: sequenceCountByClaims(room.chips, room.sequenceClaims ?? []),
+    sequenceClaims: room.sequenceClaims ?? [],
     deckRemaining: room.deck.length,
+    pendingSequenceClaim: room.pendingSequenceClaim
+      ? {
+          playerId: room.pendingSequenceClaim.playerId,
+          team: room.pendingSequenceClaim.team,
+          eligibleCells: room.pendingSequenceClaim.eligibleCells,
+          pickedCells: room.pendingSequenceClaim.pickedCells,
+        }
+      : null,
     pendingSelection: room.pendingSelection
       ? {
           playerId: room.pendingSelection.playerId,
