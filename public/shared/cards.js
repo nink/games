@@ -21,6 +21,7 @@ export const BRANDS = {
   facebook: { id: 'facebook', name: 'Facebook', logo: 'facebook-logo.svg', accent: '#0866FF' },
   x: { id: 'x', name: 'X', logo: 'x-logo.svg', accent: '#000000' },
   linkedin: { id: 'linkedin', name: 'LinkedIn', logo: 'linkedin-logo.svg', accent: '#0A66C2' },
+  amazon: { id: 'amazon', name: 'Amazon', logo: 'amazon-logo.svg', accent: '#FF9900' },
   microsoft: { id: 'microsoft', name: 'Microsoft', logo: 'microsoft-logo.svg', accent: '#00A4EF' },
   ikea: { id: 'ikea', name: 'IKEA', logo: 'ikea-logo.svg', accent: '#0058A3' },
   samsung: { id: 'samsung', name: 'Samsung', logo: 'samsung-logo.svg', accent: '#1428A0' },
@@ -48,7 +49,6 @@ export const BRANDS = {
   adidas: { id: 'adidas', name: 'Adidas', logo: 'adidas-logo.svg', accent: '#000000' },
   puma: { id: 'puma', name: 'Puma', logo: 'puma-logo.svg', accent: '#000000' },
   underarmour: { id: 'underarmour', name: 'Under Armour', logo: 'underarmour-logo.svg', accent: '#1D1D1D' },
-  ibm: { id: 'ibm', name: 'IBM', logo: 'ibm-logo.svg', accent: '#0F62FE' },
   free: { id: 'free', name: 'Wild Space', logo: 'wild-space.svg', accent: '#F59E0B' },
 };
 
@@ -256,7 +256,7 @@ export function jackTypeOf(cardId) {
  * @param {string} cellCardId
  */
 export function brandForCell(cellCardId) {
-  if (cellCardId === 'FREE') return BRANDS.ibm;
+  if (cellCardId === 'FREE') return BRANDS.amazon;
   const card = getCard(cellCardId);
   if (!card) return BRANDS.apple;
   return BRANDS[card.brandId] ?? BRANDS.apple;
@@ -326,7 +326,7 @@ export function buildLogoMapping() {
 }
 
 /**
- * Logos that appear on the board (48 card types, 12 brands). Excludes jacks and IBM corners.
+ * Logos that appear on the board (48 card types, 12 brands). Excludes jacks and wild corners.
  * @returns {{ brandId: string, brandName: string, rank: string, cardIds: string[], boardCells: number }[]}
  */
 export function buildBoardLogoList() {

@@ -29,7 +29,7 @@ export function createCardFace(card, { variant = 'board' } = {}) {
 }
 
 /**
- * Wild corner — IBM logo + "Wild" label only.
+ * Wild corner — Amazon icon + "Wild" label only.
  */
 export function createWildFace() {
   const wrap = document.createElement('div');
@@ -38,7 +38,7 @@ export function createWildFace() {
 
   const logoWrap = document.createElement('div');
   logoWrap.className = 'card-face-logo';
-  logoWrap.appendChild(createLogoImg('ibm', 'w-full h-full object-contain'));
+  logoWrap.appendChild(createLogoImg('amazon', 'w-full h-full object-contain'));
   wrap.appendChild(logoWrap);
 
   const wild = document.createElement('span');

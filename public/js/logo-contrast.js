@@ -14,7 +14,7 @@ const DARK_LOGOS = new Set([
   'puma',
   'uber',
   'tiktok',
-  'ibm',
+  'amazon',
   'meta',
   'netflix',
   'disney',
