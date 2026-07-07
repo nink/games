@@ -157,7 +157,7 @@ export function renderPlayView(root) {
     } else if (!selectedCardId) {
       hintEl.textContent = 'Tap a card in your hand';
     } else if (card?.jackType === 'one_eyed') {
-      hintEl.textContent = 'Pepsi — tap an opponent chip to remove';
+      hintEl.textContent = 'Pepsi — tap an opponent chip to remove it';
     } else if (card?.jackType === 'two_eyed') {
       hintEl.textContent = 'Coke — tap any open space';
     } else {
@@ -202,7 +202,8 @@ export function renderPlayView(root) {
       playerTeam: state.you.team,
       highlightMode: 'token',
       boardSize: 'mobile',
-      snapToTarget: true,
+      snapToTarget: false,
+      showTargetPreviews: false,
       sequenceEligible: myClaim ? (claim.eligibleCells ?? []) : [],
       sequencePicked: myClaim ? (claim.pickedCells ?? []) : [],
       sequenceTeam: claim?.team ?? state.you.team,
@@ -286,7 +287,9 @@ export function renderPlayView(root) {
     paintBoard();
     paintHand(true);
 
-    const claimNeeded = detectSequenceClaimRequired(state.chips, team, row, col);
+    const claimNeeded = !isRemove
+      ? detectSequenceClaimRequired(state.chips, team, row, col)
+      : null;
     if (claimNeeded) {
       state.pendingSequenceClaim = {
         playerId: state.you.id,

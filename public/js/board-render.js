@@ -1,6 +1,5 @@
 import { CARD_CATALOG } from '/shared/cards.js';
 import { createCardFace, createWildFace } from './suit-ui.js';
-import { snapTargetFromPointer } from './play-targets.js';
 
 function isWildCorner(cardId) {
   return cardId === 'FREE';
@@ -52,6 +51,7 @@ function addTokenPreview(cellEl, team, kind) {
  * @param {'token' | 'flash'} [opts.highlightMode]
  * @param {'mobile' | 'default'} [opts.boardSize]
  * @param {boolean} [opts.snapToTarget]
+ * @param {boolean} [opts.showTargetPreviews]
  * @param {{ row: number, col: number }[]} [opts.sequenceEligible]
  * @param {{ row: number, col: number }[]} [opts.sequencePicked]
  * @param {'red' | 'blue' | 'green'} [opts.sequenceTeam]
@@ -66,6 +66,7 @@ export function renderBoard(container, {
   highlightMode = 'token',
   boardSize = 'default',
   snapToTarget = false,
+  showTargetPreviews = true,
   sequenceEligible = [],
   sequencePicked = [],
   sequenceTeam,
@@ -160,7 +161,8 @@ export function renderBoard(container, {
         el.classList.add('board-cell-has-preview');
         addTokenPreview(el, claimTeam, 'place');
       } else if (
-        useToken
+        showTargetPreviews
+        && useToken
         && playerTeam
         && !wildCorner
         && (tokenPlace.has(cellKey) || tokenRemove.has(cellKey))
@@ -181,20 +183,8 @@ export function renderBoard(container, {
   }
 
   if (interactive && onCellClick) {
-    const clickTargets = highlights.length
-      ? highlights
-      : sequenceEligible.length
-        ? sequenceEligible
-        : [];
     const onPointer = (e) => {
       if (e.pointerType === 'mouse' && e.button !== 0) return;
-      if (clickTargets.length && snapToTarget) {
-        const snapped = snapTargetFromPointer(e.clientX, e.clientY, grid, clickTargets);
-        if (snapped) {
-          onCellClick(snapped.row, snapped.col);
-          return;
-        }
-      }
       const cellEl = e.target.closest('.board-cell');
       if (!cellEl || !grid.contains(cellEl)) return;
       const row = Number(cellEl.dataset.row);
