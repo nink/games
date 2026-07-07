@@ -193,10 +193,10 @@ export function renderHand(container, hand, selectedCardId, onSelect, { compact 
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = [
-      'hand-card card-tap rounded-lg bg-slate-900 flex flex-col items-stretch justify-between overflow-hidden',
-      compact ? 'hand-card-compact' : 'p-1.5 aspect-[3/4] rounded-xl',
-      selectedCardId === cardId ? 'card-selected' : 'border border-slate-700',
-    ].join(' ');
+      'hand-card card-tap rounded-md flex flex-col items-stretch justify-between overflow-hidden',
+      compact ? 'hand-card-compact' : 'p-1.5 aspect-[3/4] rounded-xl bg-slate-900',
+      selectedCardId === cardId ? 'card-selected' : compact ? '' : 'border border-slate-700',
+    ].filter(Boolean).join(' ');
     btn.setAttribute('aria-label', card?.label ?? cardId);
     btn.dataset.cardId = cardId;
 
@@ -225,10 +225,13 @@ export function renderHand(container, hand, selectedCardId, onSelect, { compact 
  * @param {string | null} selectedCardId
  */
 export function updateHandSelection(container, selectedCardId) {
+  const compact = Boolean(container.querySelector('.hand-card-compact'));
   for (const btn of container.querySelectorAll('.hand-card')) {
     const selected = btn.dataset.cardId === selectedCardId;
     btn.classList.toggle('card-selected', selected);
-    btn.classList.toggle('border', !selected);
-    btn.classList.toggle('border-slate-700', !selected);
+    if (!compact) {
+      btn.classList.toggle('border', !selected);
+      btn.classList.toggle('border-slate-700', !selected);
+    }
   }
 }

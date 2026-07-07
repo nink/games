@@ -66,10 +66,9 @@ export function renderPlayView(root) {
         </div>
         <span id="play-team-badge" class="rounded-full px-3 py-1 text-xs font-bold uppercase"></span>
       </header>
-      <div class="play-main flex-1 min-h-0 flex flex-col gap-2">
-        <div id="play-mini-board" class="play-board-pane rounded-xl border border-slate-800 flex justify-center items-center">
-          <p id="play-hint" class="play-hint-overlay text-center text-xs text-amber-300/90 px-2"></p>
-        </div>
+      <div class="play-main flex-1 min-h-0 flex flex-col gap-1">
+        <div id="play-mini-board" class="play-board-pane flex justify-center items-center"></div>
+        <p id="play-hint" class="text-center text-xs text-amber-300/80 shrink-0 px-1"></p>
         <section class="play-hand-pane shrink-0">
           <h2 class="text-[10px] uppercase tracking-widest text-slate-500 mb-1 px-1">Your hand</h2>
           <div id="play-hand"></div>
