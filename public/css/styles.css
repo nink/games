@@ -223,21 +223,39 @@
   padding: 2px;
 }
 
-/* Mobile board — larger logos */
+/* Mobile board — logos fill the white card face */
+.take5-board-mobile .board-cell img {
+  padding: 0 !important;
+}
+
 .take5-board-mobile .card-face-logo {
-  inset: 2px !important;
-  padding: 1px !important;
+  inset: 0 !important;
+  padding: 0 !important;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .take5-board-mobile .card-face-logo img {
+  position: absolute;
+  inset: 0;
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain;
+  padding: 0 !important;
+  object-fit: cover;
+  object-position: center;
+  /* SVG logos ship with ~33% built-in margin — zoom to fill the cell */
+  transform: scale(2);
+  transform-origin: center;
+}
+
+.take5-board-mobile .card-face-chipped .card-face-logo {
+  inset: 3px !important;
   padding: 0 !important;
 }
 
 .take5-board-mobile .card-face-wild .card-face-logo {
-  inset: 2px 2px 12px !important;
+  inset: 0 0 9px !important;
+  padding: 0 !important;
 }
 
 .take5-board-mobile .board-cell {
