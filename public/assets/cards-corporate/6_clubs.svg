@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="X · Yellow">
+  <title>X · Yellow</title>
+  <rect width="200" height="200" rx="12" fill="#eab308" stroke="rgba(15, 23, 42, 0.15)" stroke-width="1"/>
+  <rect x="10" y="10" width="180" height="180" rx="8" fill="#ffffff" filter="url(#shadow)"/>
+  <svg x="16" y="16" width="168" height="168" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
+    <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <g transform="translate(20 20) scale(3.333333)">
+    <path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z" fill="#000000"/>
+  </g>
+  </svg>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+</svg>

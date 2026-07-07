@@ -3,11 +3,11 @@
  * @param {HTMLElement} container
  * @param {string} [roomCode]
  */
+import { playJoinQuery } from './logo-mode.js';
+
 export async function renderPlayQr(container, roomCode = '') {
   const code = roomCode?.toUpperCase() || '';
-  const url = code
-    ? `${location.origin}/play?code=${encodeURIComponent(code)}`
-    : `${location.origin}/play`;
+  const url = `${location.origin}/play${playJoinQuery(code ? { code } : {})}`;
 
   container.innerHTML = '';
   const wrap = document.createElement('div');

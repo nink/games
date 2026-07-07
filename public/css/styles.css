@@ -99,8 +99,8 @@
 }
 
 .take5-board-grid .card-face-logo {
-  inset: 6px !important;
-  padding: 1px !important;
+  inset: 4px !important;
+  padding: 0 !important;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -111,23 +111,22 @@
   padding: 0 !important;
   object-fit: contain !important;
   object-position: center;
-  /* Mild zoom inside white box only — overflow:hidden keeps suit border clear */
-  transform: scale(1.32);
+  transform: scale(1.55);
   transform-origin: center;
 }
 
 .take5-board-grid .card-face-chipped .card-face-logo {
-  inset: 5px !important;
-  padding: 1px !important;
+  inset: 4px !important;
+  padding: 0 !important;
 }
 
 .take5-board-grid .card-face-wild .card-face-logo {
-  inset: 6px 6px 15px !important;
-  padding: 2px 4px !important;
+  inset: 4px 4px 14px !important;
+  padding: 1px 2px !important;
 }
 
 .take5-board-grid .card-face-wild .card-face-logo img {
-  transform: none;
+  transform: scale(1.35);
 }
 
 /* Card face — suit = full background colour */
@@ -140,19 +139,24 @@
 
 .card-face-logo {
   position: absolute;
-  inset: 5px;
+  inset: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #ffffff;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-  padding: 3px;
+  padding: 1px;
 }
 
 .card-face-hand .card-face-logo {
-  inset: 6px;
-  padding: 4px;
+  inset: 4px;
+  padding: 1px;
+}
+
+.card-face-logo img {
+  transform: scale(1.45);
+  transform-origin: center;
 }
 
 .card-face-wild {
@@ -162,8 +166,8 @@
 
 .card-face-wild .card-face-logo {
   background: rgba(255, 255, 255, 0.95);
-  inset: 4px 3px 16px;
-  padding: 2px 4px;
+  inset: 3px 3px 14px;
+  padding: 1px 2px;
 }
 
 .card-face-wild .card-face-logo img {
@@ -172,6 +176,8 @@
   object-fit: contain;
   object-position: center;
   padding: 0;
+  transform: scale(1.3);
+  transform-origin: center;
 }
 
 .card-face-wild-label {
@@ -390,8 +396,13 @@
 }
 
 .hand-card-compact .card-face-hand .card-face-logo {
-  inset: 3px;
-  padding: 2px;
+  inset: 2px;
+  padding: 0;
+}
+
+.hand-card-compact .card-face-hand .card-face-logo img {
+  transform: scale(1.45);
+  transform-origin: center;
 }
 
 .take5-board-mobile .board-cell {
@@ -400,7 +411,7 @@
 
 /* Mobile — slightly tighter borders so logos stay readable at small sizes */
 .take5-board-mobile .card-face-logo {
-  inset: 4px !important;
+  inset: 3px !important;
 }
 
 .take5-board-mobile .card-face-chipped .card-face-logo {
@@ -408,11 +419,11 @@
 }
 
 .take5-board-mobile .card-face-wild .card-face-logo {
-  inset: 4px 4px 12px !important;
+  inset: 3px 3px 11px !important;
 }
 
 .take5-board-mobile .card-face-logo img {
-  transform: scale(1.2);
+  transform: scale(1.45);
 }
 
 /* Sequence-style preview token on valid targets — hard blink team / black */

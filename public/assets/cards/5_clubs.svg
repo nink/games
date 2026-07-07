@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Netflix · Yellow">
-  <title>Netflix · Yellow</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Orbit · Yellow">
+  <title>Orbit · Yellow</title>
   <rect width="200" height="200" rx="12" fill="#eab308" stroke="rgba(15, 23, 42, 0.15)" stroke-width="1"/>
-  <rect x="10" y="10" width="180" height="180" rx="8" fill="#ffffff" filter="url(#shadow)"/>
-  <svg x="16" y="16" width="168" height="168" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
+  <rect x="6" y="6" width="188" height="188" rx="8" fill="#ffffff" filter="url(#shadow)"/>
+  <svg x="8" y="8" width="184" height="184" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
     <rect width="120" height="120" rx="14" fill="#ffffff"/>
-  <g transform="translate(20 20) scale(3.333333)">
-    <path d="m5.398 0 8.348 23.602c2.346.059 4.856.398 4.856.398L10.113 0H5.398zm8.489 0v9.172l4.715 13.33V0h-4.715zM5.398 1.5V24c1.873-.225 2.81-.312 4.715-.398V14.83L5.398 1.5z" fill="#E50914"/>
-  </g>
+  <svg x="12" y="12" width="96" height="96" viewBox="0 0 48 48" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    
+    <ellipse cx="24" cy="24" rx="16" ry="8" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
+    <circle cx="36" cy="20" r="5" fill="#2563eb"/>
+  
+  </svg>
   </svg>
   <defs>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">

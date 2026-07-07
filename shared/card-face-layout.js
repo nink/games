@@ -7,20 +7,20 @@ export const BOARD_TILE_SIZE = 200;
 /** Ratios from .card-face / .card-face-logo (5px inset on ~100px cell). */
 export const BOARD_FACE_LAYOUT = {
   outerRadius: 12,
-  logoInset: 10,
+  logoInset: 6,
   logoRadius: 8,
-  logoPadding: 6,
+  logoPadding: 2,
   stroke: 'rgba(15, 23, 42, 0.15)',
 };
 
 export const WILD_FACE_LAYOUT = {
   outerRadius: 12,
-  logoInsetTop: 8,
-  logoInsetSide: 6,
-  logoInsetBottom: 32,
+  logoInsetTop: 6,
+  logoInsetSide: 5,
+  logoInsetBottom: 28,
   logoRadius: 8,
-  logoPaddingX: 8,
-  logoPaddingY: 4,
+  logoPaddingX: 4,
+  logoPaddingY: 2,
   wildLabelBottom: 4,
   wildLabelSize: 14,
   gradientStart: '#fbbf24',

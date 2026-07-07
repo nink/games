@@ -72,7 +72,7 @@ export function validatePlaceMove({ chips, cardId, row, col, playerTeam }) {
 export function validateRemoveMove({ chips, cardId, row, col, playerTeam }) {
   const jack = jackTypeOf(cardId);
   if (jack !== JACK_TYPE.ONE_EYED) {
-    return { ok: false, reason: 'Only one-eyed Jack (Pepsi) can remove chips' };
+    return { ok: false, reason: 'Only one-eyed Jack can remove chips' };
   }
 
   const target = chips[row][col];

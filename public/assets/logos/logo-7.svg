@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Ridge">
+  <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <svg x="12" y="12" width="96" height="96" viewBox="0 0 48 48" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    
+    <path d="M6 36 L16 20 L24 28 L32 14 L42 30 V36 Z" fill="#64748b"/>
+    <path d="M6 36 H42" stroke="#334155" stroke-width="2"/>
+  
+  </svg>
+</svg>

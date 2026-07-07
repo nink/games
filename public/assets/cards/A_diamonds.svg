@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="McDonald's · Orange">
-  <title>McDonald's · Orange</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Beacon · Orange">
+  <title>Beacon · Orange</title>
   <rect width="200" height="200" rx="12" fill="#f97316" stroke="rgba(15, 23, 42, 0.15)" stroke-width="1"/>
-  <rect x="10" y="10" width="180" height="180" rx="8" fill="#ffffff" filter="url(#shadow)"/>
-  <svg x="16" y="16" width="168" height="168" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
+  <rect x="6" y="6" width="188" height="188" rx="8" fill="#ffffff" filter="url(#shadow)"/>
+  <svg x="8" y="8" width="184" height="184" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet">
     <rect width="120" height="120" rx="14" fill="#ffffff"/>
-  <g transform="translate(20 20) scale(3.333333)">
-    <path d="M17.243 3.006c2.066 0 3.742 8.714 3.742 19.478H24c0-11.588-3.042-20.968-6.766-20.968-2.127 0-4.007 2.81-5.248 7.227-1.241-4.416-3.121-7.227-5.231-7.227C3.031 1.516 0 10.888 0 22.476h3.014c0-10.763 1.658-19.47 3.724-19.47 2.066 0 3.741 8.05 3.741 17.98h2.997c0-9.93 1.684-17.98 3.75-17.98Z" fill="#FBC817"/>
-  </g>
+  <svg x="12" y="12" width="96" height="96" viewBox="0 0 48 48" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    
+    <circle cx="24" cy="22" r="10" fill="none" stroke="#d97706" stroke-width="3"/>
+    <path d="M24 8 L28 18 L24 14 L20 18 Z" fill="#f59e0b"/>
+    <rect x="22" y="30" width="4" height="10" rx="1" fill="#b45309"/>
+  
+  </svg>
   </svg>
   <defs>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">

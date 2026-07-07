@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Take 5 — Corporate logo gallery (private demo backup)</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 24px; background: #0f172a; color: #e2e8f0; }
+    h1 { margin: 0 0 8px; }
+    .muted { color: #94a3b8; font-weight: normal; font-size: 0.9em; }
+    p, li { color: #94a3b8; max-width: 52rem; line-height: 1.5; }
+    .logo-group { margin-top: 32px; padding-top: 24px; border-top: 1px solid #334155; }
+    .tile-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+    .tile { margin: 0; text-align: center; width: 120px; }
+    .tile img { width: 100%; aspect-ratio: 1; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.35); }
+    figcaption { font-size: 10px; margin-top: 6px; line-height: 1.3; }
+    table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 12px; }
+    th, td { border: 1px solid #334155; padding: 6px 8px; text-align: left; }
+    th { background: #1e293b; }
+    tr:nth-child(even) { background: #111827; }
+    .wild { margin-top: 32px; }
+    .wild img { width: 120px; aspect-ratio: 1; border-radius: 6px; }
+    a { color: #93c5fd; }
+  </style>
+</head>
+<body>
+  <h1>Take 5 corporate logo gallery</h1>
+  <p class="muted">Private demo backup — not for public distribution. Live board: <code>/tv?logo</code></p>
+  <p>Square tiles match the <strong>TV board</strong> layout (1:1 cells). Print two copies of each deck card for 104 cards. See <a href="mapping.md">mapping.md</a> or <a href="mapping.json">mapping.json</a>.</p>
+  
+      <section class="logo-group">
+        <h2>Apple <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="2_hearts.svg" alt="Apple · Purple" width="200" height="200"/>
+          <figcaption>2 Hearts<br><span class="muted">Apple · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="2_spades.svg" alt="Apple · Teal" width="200" height="200"/>
+          <figcaption>2 Spades<br><span class="muted">Apple · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="2_diamonds.svg" alt="Apple · Orange" width="200" height="200"/>
+          <figcaption>2 Diamonds<br><span class="muted">Apple · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="2_clubs.svg" alt="Apple · Yellow" width="200" height="200"/>
+          <figcaption>2 Clubs<br><span class="muted">Apple · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>BMW <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="8_hearts.svg" alt="BMW · Purple" width="200" height="200"/>
+          <figcaption>8 Hearts<br><span class="muted">BMW · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="8_spades.svg" alt="BMW · Teal" width="200" height="200"/>
+          <figcaption>8 Spades<br><span class="muted">BMW · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="8_diamonds.svg" alt="BMW · Orange" width="200" height="200"/>
+          <figcaption>8 Diamonds<br><span class="muted">BMW · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="8_clubs.svg" alt="BMW · Yellow" width="200" height="200"/>
+          <figcaption>8 Clubs<br><span class="muted">BMW · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>Burger King <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="10_hearts.svg" alt="Burger King · Purple" width="200" height="200"/>
+          <figcaption>10 Hearts<br><span class="muted">Burger King · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="10_spades.svg" alt="Burger King · Teal" width="200" height="200"/>
+          <figcaption>10 Spades<br><span class="muted">Burger King · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="10_diamonds.svg" alt="Burger King · Orange" width="200" height="200"/>
+          <figcaption>10 Diamonds<br><span class="muted">Burger King · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="10_clubs.svg" alt="Burger King · Yellow" width="200" height="200"/>
+          <figcaption>10 Clubs<br><span class="muted">Burger King · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>Facebook <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="4_hearts.svg" alt="Facebook · Purple" width="200" height="200"/>
+          <figcaption>4 Hearts<br><span class="muted">Facebook · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="4_spades.svg" alt="Facebook · Teal" width="200" height="200"/>
+          <figcaption>4 Spades<br><span class="muted">Facebook · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="4_diamonds.svg" alt="Facebook · Orange" width="200" height="200"/>
+          <figcaption>4 Diamonds<br><span class="muted">Facebook · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="4_clubs.svg" alt="Facebook · Yellow" width="200" height="200"/>
+          <figcaption>4 Clubs<br><span class="muted">Facebook · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>Google <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="3_hearts.svg" alt="Google · Purple" width="200" height="200"/>
+          <figcaption>3 Hearts<br><span class="muted">Google · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="3_spades.svg" alt="Google · Teal" width="200" height="200"/>
+          <figcaption>3 Spades<br><span class="muted">Google · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="3_diamonds.svg" alt="Google · Orange" width="200" height="200"/>
+          <figcaption>3 Diamonds<br><span class="muted">Google · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="3_clubs.svg" alt="Google · Yellow" width="200" height="200"/>
+          <figcaption>3 Clubs<br><span class="muted">Google · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>KFC <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="K_hearts.svg" alt="KFC · Purple" width="200" height="200"/>
+          <figcaption>King Hearts<br><span class="muted">KFC · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="K_spades.svg" alt="KFC · Teal" width="200" height="200"/>
+          <figcaption>King Spades<br><span class="muted">KFC · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="K_diamonds.svg" alt="KFC · Orange" width="200" height="200"/>
+          <figcaption>King Diamonds<br><span class="muted">KFC · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="K_clubs.svg" alt="KFC · Yellow" width="200" height="200"/>
+          <figcaption>King Clubs<br><span class="muted">KFC · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>LinkedIn <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="Q_hearts.svg" alt="LinkedIn · Purple" width="200" height="200"/>
+          <figcaption>Queen Hearts<br><span class="muted">LinkedIn · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="Q_spades.svg" alt="LinkedIn · Teal" width="200" height="200"/>
+          <figcaption>Queen Spades<br><span class="muted">LinkedIn · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="Q_diamonds.svg" alt="LinkedIn · Orange" width="200" height="200"/>
+          <figcaption>Queen Diamonds<br><span class="muted">LinkedIn · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="Q_clubs.svg" alt="LinkedIn · Yellow" width="200" height="200"/>
+          <figcaption>Queen Clubs<br><span class="muted">LinkedIn · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>McDonald's <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="A_hearts.svg" alt="McDonald's · Purple" width="200" height="200"/>
+          <figcaption>Ace Hearts<br><span class="muted">McDonald's · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="A_spades.svg" alt="McDonald's · Teal" width="200" height="200"/>
+          <figcaption>Ace Spades<br><span class="muted">McDonald's · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="A_diamonds.svg" alt="McDonald's · Orange" width="200" height="200"/>
+          <figcaption>Ace Diamonds<br><span class="muted">McDonald's · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="A_clubs.svg" alt="McDonald's · Yellow" width="200" height="200"/>
+          <figcaption>Ace Clubs<br><span class="muted">McDonald's · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>Netflix <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="5_hearts.svg" alt="Netflix · Purple" width="200" height="200"/>
+          <figcaption>5 Hearts<br><span class="muted">Netflix · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="5_spades.svg" alt="Netflix · Teal" width="200" height="200"/>
+          <figcaption>5 Spades<br><span class="muted">Netflix · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="5_diamonds.svg" alt="Netflix · Orange" width="200" height="200"/>
+          <figcaption>5 Diamonds<br><span class="muted">Netflix · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="5_clubs.svg" alt="Netflix · Yellow" width="200" height="200"/>
+          <figcaption>5 Clubs<br><span class="muted">Netflix · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>Nike <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="9_hearts.svg" alt="Nike · Purple" width="200" height="200"/>
+          <figcaption>9 Hearts<br><span class="muted">Nike · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="9_spades.svg" alt="Nike · Teal" width="200" height="200"/>
+          <figcaption>9 Spades<br><span class="muted">Nike · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="9_diamonds.svg" alt="Nike · Orange" width="200" height="200"/>
+          <figcaption>9 Diamonds<br><span class="muted">Nike · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="9_clubs.svg" alt="Nike · Yellow" width="200" height="200"/>
+          <figcaption>9 Clubs<br><span class="muted">Nike · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>Starbucks <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="7_hearts.svg" alt="Starbucks · Purple" width="200" height="200"/>
+          <figcaption>7 Hearts<br><span class="muted">Starbucks · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="7_spades.svg" alt="Starbucks · Teal" width="200" height="200"/>
+          <figcaption>7 Spades<br><span class="muted">Starbucks · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="7_diamonds.svg" alt="Starbucks · Orange" width="200" height="200"/>
+          <figcaption>7 Diamonds<br><span class="muted">Starbucks · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="7_clubs.svg" alt="Starbucks · Yellow" width="200" height="200"/>
+          <figcaption>7 Clubs<br><span class="muted">Starbucks · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+      <section class="logo-group">
+        <h2>X <span class="muted">(8 board cells)</span></h2>
+        <div class="tile-row">
+        <figure class="tile">
+          <img src="6_hearts.svg" alt="X · Purple" width="200" height="200"/>
+          <figcaption>6 Hearts<br><span class="muted">X · Purple</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="6_spades.svg" alt="X · Teal" width="200" height="200"/>
+          <figcaption>6 Spades<br><span class="muted">X · Teal</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="6_diamonds.svg" alt="X · Orange" width="200" height="200"/>
+          <figcaption>6 Diamonds<br><span class="muted">X · Orange</span></figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="6_clubs.svg" alt="X · Yellow" width="200" height="200"/>
+          <figcaption>6 Clubs<br><span class="muted">X · Yellow</span></figcaption>
+        </figure></div>
+      </section>
+  <section class="wild">
+    <h2>IBM — Wild corner (×4 on board)</h2>
+    <figure class="tile">
+      <img src="wild-corner.svg" alt="Wild corner" width="200" height="200"/>
+      <figcaption>Corner FREE<br><span class="muted">IBM · Wild</span></figcaption>
+    </figure>
+  </section>
+  <h2 id="all-cards">Full card list</h2>
+  <table>
+    <thead><tr><th>Card</th><th>Logo</th><th>Colour</th><th>Label</th><th>Board positions</th></tr></thead>
+    <tbody><tr>
+        <td>Ace Hearts</td>
+        <td>McDonald's</td>
+        <td>Purple</td>
+        <td>McDonald's · Purple</td>
+        <td>(1,5), (4,6)</td>
+      </tr><tr>
+        <td>Ace Spades</td>
+        <td>McDonald's</td>
+        <td>Teal</td>
+        <td>McDonald's · Teal</td>
+        <td>(2,1), (4,9)</td>
+      </tr><tr>
+        <td>Ace Diamonds</td>
+        <td>McDonald's</td>
+        <td>Orange</td>
+        <td>McDonald's · Orange</td>
+        <td>(7,6), (9,1)</td>
+      </tr><tr>
+        <td>Ace Clubs</td>
+        <td>McDonald's</td>
+        <td>Yellow</td>
+        <td>McDonald's · Yellow</td>
+        <td>(7,5), (8,0)</td>
+      </tr><tr>
+        <td>2 Hearts</td>
+        <td>Apple</td>
+        <td>Purple</td>
+        <td>Apple · Purple</td>
+        <td>(5,4), (8,7)</td>
+      </tr><tr>
+        <td>2 Spades</td>
+        <td>Apple</td>
+        <td>Teal</td>
+        <td>Apple · Teal</td>
+        <td>(0,1), (8,6)</td>
+      </tr><tr>
+        <td>2 Diamonds</td>
+        <td>Apple</td>
+        <td>Orange</td>
+        <td>Apple · Orange</td>
+        <td>(2,2), (5,9)</td>
+      </tr><tr>
+        <td>2 Clubs</td>
+        <td>Apple</td>
+        <td>Yellow</td>
+        <td>Apple · Yellow</td>
+        <td>(1,4), (3,6)</td>
+      </tr><tr>
+        <td>3 Hearts</td>
+        <td>Google</td>
+        <td>Purple</td>
+        <td>Google · Purple</td>
+        <td>(5,5), (8,8)</td>
+      </tr><tr>
+        <td>3 Spades</td>
+        <td>Google</td>
+        <td>Teal</td>
+        <td>Google · Teal</td>
+        <td>(0,2), (8,5)</td>
+      </tr><tr>
+        <td>3 Diamonds</td>
+        <td>Google</td>
+        <td>Orange</td>
+        <td>Google · Orange</td>
+        <td>(2,3), (6,9)</td>
+      </tr><tr>
+        <td>3 Clubs</td>
+        <td>Google</td>
+        <td>Yellow</td>
+        <td>Google · Yellow</td>
+        <td>(1,3), (3,5)</td>
+      </tr><tr>
+        <td>4 Hearts</td>
+        <td>Facebook</td>
+        <td>Purple</td>
+        <td>Facebook · Purple</td>
+        <td>(4,5), (7,8)</td>
+      </tr><tr>
+        <td>4 Spades</td>
+        <td>Facebook</td>
+        <td>Teal</td>
+        <td>Facebook · Teal</td>
+        <td>(0,3), (8,4)</td>
+      </tr><tr>
+        <td>4 Diamonds</td>
+        <td>Facebook</td>
+        <td>Orange</td>
+        <td>Facebook · Orange</td>
+        <td>(2,4), (7,9)</td>
+      </tr><tr>
+        <td>4 Clubs</td>
+        <td>Facebook</td>
+        <td>Yellow</td>
+        <td>Facebook · Yellow</td>
+        <td>(1,2), (3,4)</td>
+      </tr><tr>
+        <td>5 Hearts</td>
+        <td>Netflix</td>
+        <td>Purple</td>
+        <td>Netflix · Purple</td>
+        <td>(4,4), (6,8)</td>
+      </tr><tr>
+        <td>5 Spades</td>
+        <td>Netflix</td>
+        <td>Teal</td>
+        <td>Netflix · Teal</td>
+        <td>(0,4), (8,3)</td>
+      </tr><tr>
+        <td>5 Diamonds</td>
+        <td>Netflix</td>
+        <td>Orange</td>
+        <td>Netflix · Orange</td>
+        <td>(2,5), (8,9)</td>
+      </tr><tr>
+        <td>5 Clubs</td>
+        <td>Netflix</td>
+        <td>Yellow</td>
+        <td>Netflix · Yellow</td>
+        <td>(1,1), (3,3)</td>
+      </tr><tr>
+        <td>6 Hearts</td>
+        <td>X</td>
+        <td>Purple</td>
+        <td>X · Purple</td>
+        <td>(4,3), (5,8)</td>
+      </tr><tr>
+        <td>6 Spades</td>
+        <td>X</td>
+        <td>Teal</td>
+        <td>X · Teal</td>
+        <td>(0,5), (8,2)</td>
+      </tr><tr>
+        <td>6 Diamonds</td>
+        <td>X</td>
+        <td>Orange</td>
+        <td>X · Orange</td>
+        <td>(2,6), (9,8)</td>
+      </tr><tr>
+        <td>6 Clubs</td>
+        <td>X</td>
+        <td>Yellow</td>
+        <td>X · Yellow</td>
+        <td>(1,0), (3,2)</td>
+      </tr><tr>
+        <td>7 Hearts</td>
+        <td>Starbucks</td>
+        <td>Purple</td>
+        <td>Starbucks · Purple</td>
+        <td>(4,8), (5,3)</td>
+      </tr><tr>
+        <td>7 Spades</td>
+        <td>Starbucks</td>
+        <td>Teal</td>
+        <td>Starbucks · Teal</td>
+        <td>(0,6), (8,1)</td>
+      </tr><tr>
+        <td>7 Diamonds</td>
+        <td>Starbucks</td>
+        <td>Orange</td>
+        <td>Starbucks · Orange</td>
+        <td>(2,7), (9,7)</td>
+      </tr><tr>
+        <td>7 Clubs</td>
+        <td>Starbucks</td>
+        <td>Yellow</td>
+        <td>Starbucks · Yellow</td>
+        <td>(2,0), (4,2)</td>
+      </tr><tr>
+        <td>8 Hearts</td>
+        <td>BMW</td>
+        <td>Purple</td>
+        <td>BMW · Purple</td>
+        <td>(3,8), (6,3)</td>
+      </tr><tr>
+        <td>8 Spades</td>
+        <td>BMW</td>
+        <td>Teal</td>
+        <td>BMW · Teal</td>
+        <td>(0,7), (7,1)</td>
+      </tr><tr>
+        <td>8 Diamonds</td>
+        <td>BMW</td>
+        <td>Orange</td>
+        <td>BMW · Orange</td>
+        <td>(3,7), (9,6)</td>
+      </tr><tr>
+        <td>8 Clubs</td>
+        <td>BMW</td>
+        <td>Yellow</td>
+        <td>BMW · Yellow</td>
+        <td>(3,0), (5,2)</td>
+      </tr><tr>
+        <td>9 Hearts</td>
+        <td>Nike</td>
+        <td>Purple</td>
+        <td>Nike · Purple</td>
+        <td>(2,8), (6,4)</td>
+      </tr><tr>
+        <td>9 Spades</td>
+        <td>Nike</td>
+        <td>Teal</td>
+        <td>Nike · Teal</td>
+        <td>(0,8), (6,1)</td>
+      </tr><tr>
+        <td>9 Diamonds</td>
+        <td>Nike</td>
+        <td>Orange</td>
+        <td>Nike · Orange</td>
+        <td>(4,7), (9,5)</td>
+      </tr><tr>
+        <td>9 Clubs</td>
+        <td>Nike</td>
+        <td>Yellow</td>
+        <td>Nike · Yellow</td>
+        <td>(4,0), (6,2)</td>
+      </tr><tr>
+        <td>10 Hearts</td>
+        <td>Burger King</td>
+        <td>Purple</td>
+        <td>Burger King · Purple</td>
+        <td>(1,8), (6,5)</td>
+      </tr><tr>
+        <td>10 Spades</td>
+        <td>Burger King</td>
+        <td>Teal</td>
+        <td>Burger King · Teal</td>
+        <td>(1,9), (5,1)</td>
+      </tr><tr>
+        <td>10 Diamonds</td>
+        <td>Burger King</td>
+        <td>Orange</td>
+        <td>Burger King · Orange</td>
+        <td>(5,7), (9,4)</td>
+      </tr><tr>
+        <td>10 Clubs</td>
+        <td>Burger King</td>
+        <td>Yellow</td>
+        <td>Burger King · Yellow</td>
+        <td>(5,0), (7,2)</td>
+      </tr><tr>
+        <td>Jack Hearts</td>
+        <td>Pepsi</td>
+        <td>Purple</td>
+        <td>Pepsi (Remove) · Purple</td>
+        <td>deck only</td>
+      </tr><tr>
+        <td>Jack Spades</td>
+        <td>Pepsi</td>
+        <td>Teal</td>
+        <td>Pepsi (Remove) · Teal</td>
+        <td>deck only</td>
+      </tr><tr>
+        <td>Jack Diamonds</td>
+        <td>Coke</td>
+        <td>Orange</td>
+        <td>Coke (Wild) · Orange</td>
+        <td>deck only</td>
+      </tr><tr>
+        <td>Jack Clubs</td>
+        <td>Coke</td>
+        <td>Yellow</td>
+        <td>Coke (Wild) · Yellow</td>
+        <td>deck only</td>
+      </tr><tr>
+        <td>Queen Hearts</td>
+        <td>LinkedIn</td>
+        <td>Purple</td>
+        <td>LinkedIn · Purple</td>
+        <td>(1,7), (6,6)</td>
+      </tr><tr>
+        <td>Queen Spades</td>
+        <td>LinkedIn</td>
+        <td>Teal</td>
+        <td>LinkedIn · Teal</td>
+        <td>(2,9), (4,1)</td>
+      </tr><tr>
+        <td>Queen Diamonds</td>
+        <td>LinkedIn</td>
+        <td>Orange</td>
+        <td>LinkedIn · Orange</td>
+        <td>(6,7), (9,3)</td>
+      </tr><tr>
+        <td>Queen Clubs</td>
+        <td>LinkedIn</td>
+        <td>Yellow</td>
+        <td>LinkedIn · Yellow</td>
+        <td>(6,0), (7,3)</td>
+      </tr><tr>
+        <td>King Hearts</td>
+        <td>KFC</td>
+        <td>Purple</td>
+        <td>KFC · Purple</td>
+        <td>(1,6), (5,6)</td>
+      </tr><tr>
+        <td>King Spades</td>
+        <td>KFC</td>
+        <td>Teal</td>
+        <td>KFC · Teal</td>
+        <td>(3,1), (3,9)</td>
+      </tr><tr>
+        <td>King Diamonds</td>
+        <td>KFC</td>
+        <td>Orange</td>
+        <td>KFC · Orange</td>
+        <td>(7,7), (9,2)</td>
+      </tr><tr>
+        <td>King Clubs</td>
+        <td>KFC</td>
+        <td>Yellow</td>
+        <td>KFC · Yellow</td>
+        <td>(7,0), (7,4)</td>
+      </tr></tbody>
+  </table>
+</body>
+</html>

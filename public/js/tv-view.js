@@ -9,6 +9,7 @@ import {
 import { emptyBoardChips } from '/shared/cards.js';
 import { renderBoard } from './board-render.js';
 import { renderPlayQr } from './play-qr.js';
+import { mountCorporateDemoBanner } from './demo-banner.js';
 
 /**
  * @param {HTMLElement} root
@@ -18,7 +19,8 @@ export function renderTvView(root) {
   let roomCode = sessionStorage.getItem('take5_room_code') || '';
 
   root.innerHTML = `
-    <div class="min-h-screen flex flex-col lg:flex-row gap-4 p-4 lg:p-6">
+    <div class="min-h-screen flex flex-col gap-2 p-4 lg:p-6">
+      <div class="flex flex-1 flex-col lg:flex-row gap-4 min-h-0">
       <section class="flex-1 flex flex-col items-center justify-center">
         <div id="tv-board" class="w-full flex justify-center"></div>
         <p id="tv-status" class="mt-4 text-center text-slate-400 text-sm"></p>
@@ -48,8 +50,11 @@ export function renderTvView(root) {
           Create new room
         </button>
       </aside>
+      </div>
     </div>
   `;
+
+  mountCorporateDemoBanner(root.querySelector('.min-h-screen'));
 
   const boardEl = root.querySelector('#tv-board');
   const codeEl = root.querySelector('#tv-code');

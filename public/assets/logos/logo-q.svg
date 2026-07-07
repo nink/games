@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Crown">
+  <rect width="120" height="120" rx="14" fill="#ffffff"/>
+  <svg x="12" y="12" width="96" height="96" viewBox="0 0 48 48" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    
+    <path d="M8 32 H40 V36 H8 Z" fill="#ca8a04"/>
+    <path d="M8 32 L14 16 L24 26 L34 16 L40 32 Z" fill="#eab308"/>
+    <circle cx="14" cy="14" r="3" fill="#facc15"/>
+    <circle cx="24" cy="10" r="3" fill="#facc15"/>
+    <circle cx="34" cy="14" r="3" fill="#facc15"/>
+  
+  </svg>
+</svg>

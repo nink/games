@@ -1,0 +1,2254 @@
+{
+  "cards": [
+    {
+      "cardId": "A_hearts",
+      "rank": "A",
+      "suit": "hearts",
+      "rankLabel": "Ace",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "mcdonalds",
+      "brandName": "McDonald's",
+      "label": "McDonald's · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 1,
+          "col": 5
+        },
+        {
+          "row": 4,
+          "col": 6
+        }
+      ]
+    },
+    {
+      "cardId": "A_spades",
+      "rank": "A",
+      "suit": "spades",
+      "rankLabel": "Ace",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "mcdonalds",
+      "brandName": "McDonald's",
+      "label": "McDonald's · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 2,
+          "col": 1
+        },
+        {
+          "row": 4,
+          "col": 9
+        }
+      ]
+    },
+    {
+      "cardId": "A_diamonds",
+      "rank": "A",
+      "suit": "diamonds",
+      "rankLabel": "Ace",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "mcdonalds",
+      "brandName": "McDonald's",
+      "label": "McDonald's · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 7,
+          "col": 6
+        },
+        {
+          "row": 9,
+          "col": 1
+        }
+      ]
+    },
+    {
+      "cardId": "A_clubs",
+      "rank": "A",
+      "suit": "clubs",
+      "rankLabel": "Ace",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "mcdonalds",
+      "brandName": "McDonald's",
+      "label": "McDonald's · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 7,
+          "col": 5
+        },
+        {
+          "row": 8,
+          "col": 0
+        }
+      ]
+    },
+    {
+      "cardId": "2_hearts",
+      "rank": "2",
+      "suit": "hearts",
+      "rankLabel": "2",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "apple",
+      "brandName": "Apple",
+      "label": "Apple · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 5,
+          "col": 4
+        },
+        {
+          "row": 8,
+          "col": 7
+        }
+      ]
+    },
+    {
+      "cardId": "2_spades",
+      "rank": "2",
+      "suit": "spades",
+      "rankLabel": "2",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "apple",
+      "brandName": "Apple",
+      "label": "Apple · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 0,
+          "col": 1
+        },
+        {
+          "row": 8,
+          "col": 6
+        }
+      ]
+    },
+    {
+      "cardId": "2_diamonds",
+      "rank": "2",
+      "suit": "diamonds",
+      "rankLabel": "2",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "apple",
+      "brandName": "Apple",
+      "label": "Apple · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 2,
+          "col": 2
+        },
+        {
+          "row": 5,
+          "col": 9
+        }
+      ]
+    },
+    {
+      "cardId": "2_clubs",
+      "rank": "2",
+      "suit": "clubs",
+      "rankLabel": "2",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "apple",
+      "brandName": "Apple",
+      "label": "Apple · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 1,
+          "col": 4
+        },
+        {
+          "row": 3,
+          "col": 6
+        }
+      ]
+    },
+    {
+      "cardId": "3_hearts",
+      "rank": "3",
+      "suit": "hearts",
+      "rankLabel": "3",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "google",
+      "brandName": "Google",
+      "label": "Google · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 5,
+          "col": 5
+        },
+        {
+          "row": 8,
+          "col": 8
+        }
+      ]
+    },
+    {
+      "cardId": "3_spades",
+      "rank": "3",
+      "suit": "spades",
+      "rankLabel": "3",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "google",
+      "brandName": "Google",
+      "label": "Google · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 0,
+          "col": 2
+        },
+        {
+          "row": 8,
+          "col": 5
+        }
+      ]
+    },
+    {
+      "cardId": "3_diamonds",
+      "rank": "3",
+      "suit": "diamonds",
+      "rankLabel": "3",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "google",
+      "brandName": "Google",
+      "label": "Google · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 2,
+          "col": 3
+        },
+        {
+          "row": 6,
+          "col": 9
+        }
+      ]
+    },
+    {
+      "cardId": "3_clubs",
+      "rank": "3",
+      "suit": "clubs",
+      "rankLabel": "3",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "google",
+      "brandName": "Google",
+      "label": "Google · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 1,
+          "col": 3
+        },
+        {
+          "row": 3,
+          "col": 5
+        }
+      ]
+    },
+    {
+      "cardId": "4_hearts",
+      "rank": "4",
+      "suit": "hearts",
+      "rankLabel": "4",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "facebook",
+      "brandName": "Facebook",
+      "label": "Facebook · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 4,
+          "col": 5
+        },
+        {
+          "row": 7,
+          "col": 8
+        }
+      ]
+    },
+    {
+      "cardId": "4_spades",
+      "rank": "4",
+      "suit": "spades",
+      "rankLabel": "4",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "facebook",
+      "brandName": "Facebook",
+      "label": "Facebook · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 0,
+          "col": 3
+        },
+        {
+          "row": 8,
+          "col": 4
+        }
+      ]
+    },
+    {
+      "cardId": "4_diamonds",
+      "rank": "4",
+      "suit": "diamonds",
+      "rankLabel": "4",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "facebook",
+      "brandName": "Facebook",
+      "label": "Facebook · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 2,
+          "col": 4
+        },
+        {
+          "row": 7,
+          "col": 9
+        }
+      ]
+    },
+    {
+      "cardId": "4_clubs",
+      "rank": "4",
+      "suit": "clubs",
+      "rankLabel": "4",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "facebook",
+      "brandName": "Facebook",
+      "label": "Facebook · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 1,
+          "col": 2
+        },
+        {
+          "row": 3,
+          "col": 4
+        }
+      ]
+    },
+    {
+      "cardId": "5_hearts",
+      "rank": "5",
+      "suit": "hearts",
+      "rankLabel": "5",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "netflix",
+      "brandName": "Netflix",
+      "label": "Netflix · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 4,
+          "col": 4
+        },
+        {
+          "row": 6,
+          "col": 8
+        }
+      ]
+    },
+    {
+      "cardId": "5_spades",
+      "rank": "5",
+      "suit": "spades",
+      "rankLabel": "5",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "netflix",
+      "brandName": "Netflix",
+      "label": "Netflix · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 0,
+          "col": 4
+        },
+        {
+          "row": 8,
+          "col": 3
+        }
+      ]
+    },
+    {
+      "cardId": "5_diamonds",
+      "rank": "5",
+      "suit": "diamonds",
+      "rankLabel": "5",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "netflix",
+      "brandName": "Netflix",
+      "label": "Netflix · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 2,
+          "col": 5
+        },
+        {
+          "row": 8,
+          "col": 9
+        }
+      ]
+    },
+    {
+      "cardId": "5_clubs",
+      "rank": "5",
+      "suit": "clubs",
+      "rankLabel": "5",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "netflix",
+      "brandName": "Netflix",
+      "label": "Netflix · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 1,
+          "col": 1
+        },
+        {
+          "row": 3,
+          "col": 3
+        }
+      ]
+    },
+    {
+      "cardId": "6_hearts",
+      "rank": "6",
+      "suit": "hearts",
+      "rankLabel": "6",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "x",
+      "brandName": "X",
+      "label": "X · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 4,
+          "col": 3
+        },
+        {
+          "row": 5,
+          "col": 8
+        }
+      ]
+    },
+    {
+      "cardId": "6_spades",
+      "rank": "6",
+      "suit": "spades",
+      "rankLabel": "6",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "x",
+      "brandName": "X",
+      "label": "X · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 0,
+          "col": 5
+        },
+        {
+          "row": 8,
+          "col": 2
+        }
+      ]
+    },
+    {
+      "cardId": "6_diamonds",
+      "rank": "6",
+      "suit": "diamonds",
+      "rankLabel": "6",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "x",
+      "brandName": "X",
+      "label": "X · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 2,
+          "col": 6
+        },
+        {
+          "row": 9,
+          "col": 8
+        }
+      ]
+    },
+    {
+      "cardId": "6_clubs",
+      "rank": "6",
+      "suit": "clubs",
+      "rankLabel": "6",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "x",
+      "brandName": "X",
+      "label": "X · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 1,
+          "col": 0
+        },
+        {
+          "row": 3,
+          "col": 2
+        }
+      ]
+    },
+    {
+      "cardId": "7_hearts",
+      "rank": "7",
+      "suit": "hearts",
+      "rankLabel": "7",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "starbucks",
+      "brandName": "Starbucks",
+      "label": "Starbucks · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 4,
+          "col": 8
+        },
+        {
+          "row": 5,
+          "col": 3
+        }
+      ]
+    },
+    {
+      "cardId": "7_spades",
+      "rank": "7",
+      "suit": "spades",
+      "rankLabel": "7",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "starbucks",
+      "brandName": "Starbucks",
+      "label": "Starbucks · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 0,
+          "col": 6
+        },
+        {
+          "row": 8,
+          "col": 1
+        }
+      ]
+    },
+    {
+      "cardId": "7_diamonds",
+      "rank": "7",
+      "suit": "diamonds",
+      "rankLabel": "7",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "starbucks",
+      "brandName": "Starbucks",
+      "label": "Starbucks · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 2,
+          "col": 7
+        },
+        {
+          "row": 9,
+          "col": 7
+        }
+      ]
+    },
+    {
+      "cardId": "7_clubs",
+      "rank": "7",
+      "suit": "clubs",
+      "rankLabel": "7",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "starbucks",
+      "brandName": "Starbucks",
+      "label": "Starbucks · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 2,
+          "col": 0
+        },
+        {
+          "row": 4,
+          "col": 2
+        }
+      ]
+    },
+    {
+      "cardId": "8_hearts",
+      "rank": "8",
+      "suit": "hearts",
+      "rankLabel": "8",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "bmw",
+      "brandName": "BMW",
+      "label": "BMW · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 3,
+          "col": 8
+        },
+        {
+          "row": 6,
+          "col": 3
+        }
+      ]
+    },
+    {
+      "cardId": "8_spades",
+      "rank": "8",
+      "suit": "spades",
+      "rankLabel": "8",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "bmw",
+      "brandName": "BMW",
+      "label": "BMW · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 0,
+          "col": 7
+        },
+        {
+          "row": 7,
+          "col": 1
+        }
+      ]
+    },
+    {
+      "cardId": "8_diamonds",
+      "rank": "8",
+      "suit": "diamonds",
+      "rankLabel": "8",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "bmw",
+      "brandName": "BMW",
+      "label": "BMW · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 3,
+          "col": 7
+        },
+        {
+          "row": 9,
+          "col": 6
+        }
+      ]
+    },
+    {
+      "cardId": "8_clubs",
+      "rank": "8",
+      "suit": "clubs",
+      "rankLabel": "8",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "bmw",
+      "brandName": "BMW",
+      "label": "BMW · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 3,
+          "col": 0
+        },
+        {
+          "row": 5,
+          "col": 2
+        }
+      ]
+    },
+    {
+      "cardId": "9_hearts",
+      "rank": "9",
+      "suit": "hearts",
+      "rankLabel": "9",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "nike",
+      "brandName": "Nike",
+      "label": "Nike · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 2,
+          "col": 8
+        },
+        {
+          "row": 6,
+          "col": 4
+        }
+      ]
+    },
+    {
+      "cardId": "9_spades",
+      "rank": "9",
+      "suit": "spades",
+      "rankLabel": "9",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "nike",
+      "brandName": "Nike",
+      "label": "Nike · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 0,
+          "col": 8
+        },
+        {
+          "row": 6,
+          "col": 1
+        }
+      ]
+    },
+    {
+      "cardId": "9_diamonds",
+      "rank": "9",
+      "suit": "diamonds",
+      "rankLabel": "9",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "nike",
+      "brandName": "Nike",
+      "label": "Nike · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 4,
+          "col": 7
+        },
+        {
+          "row": 9,
+          "col": 5
+        }
+      ]
+    },
+    {
+      "cardId": "9_clubs",
+      "rank": "9",
+      "suit": "clubs",
+      "rankLabel": "9",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "nike",
+      "brandName": "Nike",
+      "label": "Nike · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 4,
+          "col": 0
+        },
+        {
+          "row": 6,
+          "col": 2
+        }
+      ]
+    },
+    {
+      "cardId": "10_hearts",
+      "rank": "10",
+      "suit": "hearts",
+      "rankLabel": "10",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "burgerking",
+      "brandName": "Burger King",
+      "label": "Burger King · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 1,
+          "col": 8
+        },
+        {
+          "row": 6,
+          "col": 5
+        }
+      ]
+    },
+    {
+      "cardId": "10_spades",
+      "rank": "10",
+      "suit": "spades",
+      "rankLabel": "10",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "burgerking",
+      "brandName": "Burger King",
+      "label": "Burger King · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 1,
+          "col": 9
+        },
+        {
+          "row": 5,
+          "col": 1
+        }
+      ]
+    },
+    {
+      "cardId": "10_diamonds",
+      "rank": "10",
+      "suit": "diamonds",
+      "rankLabel": "10",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "burgerking",
+      "brandName": "Burger King",
+      "label": "Burger King · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 5,
+          "col": 7
+        },
+        {
+          "row": 9,
+          "col": 4
+        }
+      ]
+    },
+    {
+      "cardId": "10_clubs",
+      "rank": "10",
+      "suit": "clubs",
+      "rankLabel": "10",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "burgerking",
+      "brandName": "Burger King",
+      "label": "Burger King · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 5,
+          "col": 0
+        },
+        {
+          "row": 7,
+          "col": 2
+        }
+      ]
+    },
+    {
+      "cardId": "J_hearts",
+      "rank": "J",
+      "suit": "hearts",
+      "rankLabel": "Jack",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "pepsi",
+      "brandName": "Pepsi",
+      "label": "Pepsi (Remove) · Purple",
+      "onBoard": false,
+      "boardCells": []
+    },
+    {
+      "cardId": "J_spades",
+      "rank": "J",
+      "suit": "spades",
+      "rankLabel": "Jack",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "pepsi",
+      "brandName": "Pepsi",
+      "label": "Pepsi (Remove) · Teal",
+      "onBoard": false,
+      "boardCells": []
+    },
+    {
+      "cardId": "J_diamonds",
+      "rank": "J",
+      "suit": "diamonds",
+      "rankLabel": "Jack",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "coke",
+      "brandName": "Coke",
+      "label": "Coke (Wild) · Orange",
+      "onBoard": false,
+      "boardCells": []
+    },
+    {
+      "cardId": "J_clubs",
+      "rank": "J",
+      "suit": "clubs",
+      "rankLabel": "Jack",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "coke",
+      "brandName": "Coke",
+      "label": "Coke (Wild) · Yellow",
+      "onBoard": false,
+      "boardCells": []
+    },
+    {
+      "cardId": "Q_hearts",
+      "rank": "Q",
+      "suit": "hearts",
+      "rankLabel": "Queen",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "linkedin",
+      "brandName": "LinkedIn",
+      "label": "LinkedIn · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 1,
+          "col": 7
+        },
+        {
+          "row": 6,
+          "col": 6
+        }
+      ]
+    },
+    {
+      "cardId": "Q_spades",
+      "rank": "Q",
+      "suit": "spades",
+      "rankLabel": "Queen",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "linkedin",
+      "brandName": "LinkedIn",
+      "label": "LinkedIn · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 2,
+          "col": 9
+        },
+        {
+          "row": 4,
+          "col": 1
+        }
+      ]
+    },
+    {
+      "cardId": "Q_diamonds",
+      "rank": "Q",
+      "suit": "diamonds",
+      "rankLabel": "Queen",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "linkedin",
+      "brandName": "LinkedIn",
+      "label": "LinkedIn · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 6,
+          "col": 7
+        },
+        {
+          "row": 9,
+          "col": 3
+        }
+      ]
+    },
+    {
+      "cardId": "Q_clubs",
+      "rank": "Q",
+      "suit": "clubs",
+      "rankLabel": "Queen",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "linkedin",
+      "brandName": "LinkedIn",
+      "label": "LinkedIn · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 6,
+          "col": 0
+        },
+        {
+          "row": 7,
+          "col": 3
+        }
+      ]
+    },
+    {
+      "cardId": "K_hearts",
+      "rank": "K",
+      "suit": "hearts",
+      "rankLabel": "King",
+      "suitLabel": "Hearts",
+      "colorName": "Purple",
+      "brandId": "kfc",
+      "brandName": "KFC",
+      "label": "KFC · Purple",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 1,
+          "col": 6
+        },
+        {
+          "row": 5,
+          "col": 6
+        }
+      ]
+    },
+    {
+      "cardId": "K_spades",
+      "rank": "K",
+      "suit": "spades",
+      "rankLabel": "King",
+      "suitLabel": "Spades",
+      "colorName": "Teal",
+      "brandId": "kfc",
+      "brandName": "KFC",
+      "label": "KFC · Teal",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 3,
+          "col": 1
+        },
+        {
+          "row": 3,
+          "col": 9
+        }
+      ]
+    },
+    {
+      "cardId": "K_diamonds",
+      "rank": "K",
+      "suit": "diamonds",
+      "rankLabel": "King",
+      "suitLabel": "Diamonds",
+      "colorName": "Orange",
+      "brandId": "kfc",
+      "brandName": "KFC",
+      "label": "KFC · Orange",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 7,
+          "col": 7
+        },
+        {
+          "row": 9,
+          "col": 2
+        }
+      ]
+    },
+    {
+      "cardId": "K_clubs",
+      "rank": "K",
+      "suit": "clubs",
+      "rankLabel": "King",
+      "suitLabel": "Clubs",
+      "colorName": "Yellow",
+      "brandId": "kfc",
+      "brandName": "KFC",
+      "label": "KFC · Yellow",
+      "onBoard": true,
+      "boardCells": [
+        {
+          "row": 7,
+          "col": 0
+        },
+        {
+          "row": 7,
+          "col": 4
+        }
+      ]
+    }
+  ],
+  "logos": {
+    "mcdonalds": {
+      "brandId": "mcdonalds",
+      "brandName": "McDonald's",
+      "cards": [
+        {
+          "cardId": "A_hearts",
+          "rank": "A",
+          "suit": "hearts",
+          "rankLabel": "Ace",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "mcdonalds",
+          "brandName": "McDonald's",
+          "label": "McDonald's · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 1,
+              "col": 5
+            },
+            {
+              "row": 4,
+              "col": 6
+            }
+          ]
+        },
+        {
+          "cardId": "A_spades",
+          "rank": "A",
+          "suit": "spades",
+          "rankLabel": "Ace",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "mcdonalds",
+          "brandName": "McDonald's",
+          "label": "McDonald's · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 2,
+              "col": 1
+            },
+            {
+              "row": 4,
+              "col": 9
+            }
+          ]
+        },
+        {
+          "cardId": "A_diamonds",
+          "rank": "A",
+          "suit": "diamonds",
+          "rankLabel": "Ace",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "mcdonalds",
+          "brandName": "McDonald's",
+          "label": "McDonald's · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 7,
+              "col": 6
+            },
+            {
+              "row": 9,
+              "col": 1
+            }
+          ]
+        },
+        {
+          "cardId": "A_clubs",
+          "rank": "A",
+          "suit": "clubs",
+          "rankLabel": "Ace",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "mcdonalds",
+          "brandName": "McDonald's",
+          "label": "McDonald's · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 7,
+              "col": 5
+            },
+            {
+              "row": 8,
+              "col": 0
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "apple": {
+      "brandId": "apple",
+      "brandName": "Apple",
+      "cards": [
+        {
+          "cardId": "2_hearts",
+          "rank": "2",
+          "suit": "hearts",
+          "rankLabel": "2",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "apple",
+          "brandName": "Apple",
+          "label": "Apple · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 5,
+              "col": 4
+            },
+            {
+              "row": 8,
+              "col": 7
+            }
+          ]
+        },
+        {
+          "cardId": "2_spades",
+          "rank": "2",
+          "suit": "spades",
+          "rankLabel": "2",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "apple",
+          "brandName": "Apple",
+          "label": "Apple · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 0,
+              "col": 1
+            },
+            {
+              "row": 8,
+              "col": 6
+            }
+          ]
+        },
+        {
+          "cardId": "2_diamonds",
+          "rank": "2",
+          "suit": "diamonds",
+          "rankLabel": "2",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "apple",
+          "brandName": "Apple",
+          "label": "Apple · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 2,
+              "col": 2
+            },
+            {
+              "row": 5,
+              "col": 9
+            }
+          ]
+        },
+        {
+          "cardId": "2_clubs",
+          "rank": "2",
+          "suit": "clubs",
+          "rankLabel": "2",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "apple",
+          "brandName": "Apple",
+          "label": "Apple · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 1,
+              "col": 4
+            },
+            {
+              "row": 3,
+              "col": 6
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "google": {
+      "brandId": "google",
+      "brandName": "Google",
+      "cards": [
+        {
+          "cardId": "3_hearts",
+          "rank": "3",
+          "suit": "hearts",
+          "rankLabel": "3",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "google",
+          "brandName": "Google",
+          "label": "Google · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 5,
+              "col": 5
+            },
+            {
+              "row": 8,
+              "col": 8
+            }
+          ]
+        },
+        {
+          "cardId": "3_spades",
+          "rank": "3",
+          "suit": "spades",
+          "rankLabel": "3",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "google",
+          "brandName": "Google",
+          "label": "Google · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 0,
+              "col": 2
+            },
+            {
+              "row": 8,
+              "col": 5
+            }
+          ]
+        },
+        {
+          "cardId": "3_diamonds",
+          "rank": "3",
+          "suit": "diamonds",
+          "rankLabel": "3",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "google",
+          "brandName": "Google",
+          "label": "Google · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 2,
+              "col": 3
+            },
+            {
+              "row": 6,
+              "col": 9
+            }
+          ]
+        },
+        {
+          "cardId": "3_clubs",
+          "rank": "3",
+          "suit": "clubs",
+          "rankLabel": "3",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "google",
+          "brandName": "Google",
+          "label": "Google · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 1,
+              "col": 3
+            },
+            {
+              "row": 3,
+              "col": 5
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "facebook": {
+      "brandId": "facebook",
+      "brandName": "Facebook",
+      "cards": [
+        {
+          "cardId": "4_hearts",
+          "rank": "4",
+          "suit": "hearts",
+          "rankLabel": "4",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "facebook",
+          "brandName": "Facebook",
+          "label": "Facebook · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 4,
+              "col": 5
+            },
+            {
+              "row": 7,
+              "col": 8
+            }
+          ]
+        },
+        {
+          "cardId": "4_spades",
+          "rank": "4",
+          "suit": "spades",
+          "rankLabel": "4",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "facebook",
+          "brandName": "Facebook",
+          "label": "Facebook · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 0,
+              "col": 3
+            },
+            {
+              "row": 8,
+              "col": 4
+            }
+          ]
+        },
+        {
+          "cardId": "4_diamonds",
+          "rank": "4",
+          "suit": "diamonds",
+          "rankLabel": "4",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "facebook",
+          "brandName": "Facebook",
+          "label": "Facebook · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 2,
+              "col": 4
+            },
+            {
+              "row": 7,
+              "col": 9
+            }
+          ]
+        },
+        {
+          "cardId": "4_clubs",
+          "rank": "4",
+          "suit": "clubs",
+          "rankLabel": "4",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "facebook",
+          "brandName": "Facebook",
+          "label": "Facebook · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 1,
+              "col": 2
+            },
+            {
+              "row": 3,
+              "col": 4
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "netflix": {
+      "brandId": "netflix",
+      "brandName": "Netflix",
+      "cards": [
+        {
+          "cardId": "5_hearts",
+          "rank": "5",
+          "suit": "hearts",
+          "rankLabel": "5",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "netflix",
+          "brandName": "Netflix",
+          "label": "Netflix · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 4,
+              "col": 4
+            },
+            {
+              "row": 6,
+              "col": 8
+            }
+          ]
+        },
+        {
+          "cardId": "5_spades",
+          "rank": "5",
+          "suit": "spades",
+          "rankLabel": "5",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "netflix",
+          "brandName": "Netflix",
+          "label": "Netflix · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 0,
+              "col": 4
+            },
+            {
+              "row": 8,
+              "col": 3
+            }
+          ]
+        },
+        {
+          "cardId": "5_diamonds",
+          "rank": "5",
+          "suit": "diamonds",
+          "rankLabel": "5",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "netflix",
+          "brandName": "Netflix",
+          "label": "Netflix · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 2,
+              "col": 5
+            },
+            {
+              "row": 8,
+              "col": 9
+            }
+          ]
+        },
+        {
+          "cardId": "5_clubs",
+          "rank": "5",
+          "suit": "clubs",
+          "rankLabel": "5",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "netflix",
+          "brandName": "Netflix",
+          "label": "Netflix · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 1,
+              "col": 1
+            },
+            {
+              "row": 3,
+              "col": 3
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "x": {
+      "brandId": "x",
+      "brandName": "X",
+      "cards": [
+        {
+          "cardId": "6_hearts",
+          "rank": "6",
+          "suit": "hearts",
+          "rankLabel": "6",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "x",
+          "brandName": "X",
+          "label": "X · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 4,
+              "col": 3
+            },
+            {
+              "row": 5,
+              "col": 8
+            }
+          ]
+        },
+        {
+          "cardId": "6_spades",
+          "rank": "6",
+          "suit": "spades",
+          "rankLabel": "6",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "x",
+          "brandName": "X",
+          "label": "X · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 0,
+              "col": 5
+            },
+            {
+              "row": 8,
+              "col": 2
+            }
+          ]
+        },
+        {
+          "cardId": "6_diamonds",
+          "rank": "6",
+          "suit": "diamonds",
+          "rankLabel": "6",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "x",
+          "brandName": "X",
+          "label": "X · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 2,
+              "col": 6
+            },
+            {
+              "row": 9,
+              "col": 8
+            }
+          ]
+        },
+        {
+          "cardId": "6_clubs",
+          "rank": "6",
+          "suit": "clubs",
+          "rankLabel": "6",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "x",
+          "brandName": "X",
+          "label": "X · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 1,
+              "col": 0
+            },
+            {
+              "row": 3,
+              "col": 2
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "starbucks": {
+      "brandId": "starbucks",
+      "brandName": "Starbucks",
+      "cards": [
+        {
+          "cardId": "7_hearts",
+          "rank": "7",
+          "suit": "hearts",
+          "rankLabel": "7",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "starbucks",
+          "brandName": "Starbucks",
+          "label": "Starbucks · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 4,
+              "col": 8
+            },
+            {
+              "row": 5,
+              "col": 3
+            }
+          ]
+        },
+        {
+          "cardId": "7_spades",
+          "rank": "7",
+          "suit": "spades",
+          "rankLabel": "7",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "starbucks",
+          "brandName": "Starbucks",
+          "label": "Starbucks · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 0,
+              "col": 6
+            },
+            {
+              "row": 8,
+              "col": 1
+            }
+          ]
+        },
+        {
+          "cardId": "7_diamonds",
+          "rank": "7",
+          "suit": "diamonds",
+          "rankLabel": "7",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "starbucks",
+          "brandName": "Starbucks",
+          "label": "Starbucks · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 2,
+              "col": 7
+            },
+            {
+              "row": 9,
+              "col": 7
+            }
+          ]
+        },
+        {
+          "cardId": "7_clubs",
+          "rank": "7",
+          "suit": "clubs",
+          "rankLabel": "7",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "starbucks",
+          "brandName": "Starbucks",
+          "label": "Starbucks · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 2,
+              "col": 0
+            },
+            {
+              "row": 4,
+              "col": 2
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "bmw": {
+      "brandId": "bmw",
+      "brandName": "BMW",
+      "cards": [
+        {
+          "cardId": "8_hearts",
+          "rank": "8",
+          "suit": "hearts",
+          "rankLabel": "8",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "bmw",
+          "brandName": "BMW",
+          "label": "BMW · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 3,
+              "col": 8
+            },
+            {
+              "row": 6,
+              "col": 3
+            }
+          ]
+        },
+        {
+          "cardId": "8_spades",
+          "rank": "8",
+          "suit": "spades",
+          "rankLabel": "8",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "bmw",
+          "brandName": "BMW",
+          "label": "BMW · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 0,
+              "col": 7
+            },
+            {
+              "row": 7,
+              "col": 1
+            }
+          ]
+        },
+        {
+          "cardId": "8_diamonds",
+          "rank": "8",
+          "suit": "diamonds",
+          "rankLabel": "8",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "bmw",
+          "brandName": "BMW",
+          "label": "BMW · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 3,
+              "col": 7
+            },
+            {
+              "row": 9,
+              "col": 6
+            }
+          ]
+        },
+        {
+          "cardId": "8_clubs",
+          "rank": "8",
+          "suit": "clubs",
+          "rankLabel": "8",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "bmw",
+          "brandName": "BMW",
+          "label": "BMW · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 3,
+              "col": 0
+            },
+            {
+              "row": 5,
+              "col": 2
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "nike": {
+      "brandId": "nike",
+      "brandName": "Nike",
+      "cards": [
+        {
+          "cardId": "9_hearts",
+          "rank": "9",
+          "suit": "hearts",
+          "rankLabel": "9",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "nike",
+          "brandName": "Nike",
+          "label": "Nike · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 2,
+              "col": 8
+            },
+            {
+              "row": 6,
+              "col": 4
+            }
+          ]
+        },
+        {
+          "cardId": "9_spades",
+          "rank": "9",
+          "suit": "spades",
+          "rankLabel": "9",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "nike",
+          "brandName": "Nike",
+          "label": "Nike · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 0,
+              "col": 8
+            },
+            {
+              "row": 6,
+              "col": 1
+            }
+          ]
+        },
+        {
+          "cardId": "9_diamonds",
+          "rank": "9",
+          "suit": "diamonds",
+          "rankLabel": "9",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "nike",
+          "brandName": "Nike",
+          "label": "Nike · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 4,
+              "col": 7
+            },
+            {
+              "row": 9,
+              "col": 5
+            }
+          ]
+        },
+        {
+          "cardId": "9_clubs",
+          "rank": "9",
+          "suit": "clubs",
+          "rankLabel": "9",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "nike",
+          "brandName": "Nike",
+          "label": "Nike · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 4,
+              "col": 0
+            },
+            {
+              "row": 6,
+              "col": 2
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "burgerking": {
+      "brandId": "burgerking",
+      "brandName": "Burger King",
+      "cards": [
+        {
+          "cardId": "10_hearts",
+          "rank": "10",
+          "suit": "hearts",
+          "rankLabel": "10",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "burgerking",
+          "brandName": "Burger King",
+          "label": "Burger King · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 1,
+              "col": 8
+            },
+            {
+              "row": 6,
+              "col": 5
+            }
+          ]
+        },
+        {
+          "cardId": "10_spades",
+          "rank": "10",
+          "suit": "spades",
+          "rankLabel": "10",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "burgerking",
+          "brandName": "Burger King",
+          "label": "Burger King · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 1,
+              "col": 9
+            },
+            {
+              "row": 5,
+              "col": 1
+            }
+          ]
+        },
+        {
+          "cardId": "10_diamonds",
+          "rank": "10",
+          "suit": "diamonds",
+          "rankLabel": "10",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "burgerking",
+          "brandName": "Burger King",
+          "label": "Burger King · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 5,
+              "col": 7
+            },
+            {
+              "row": 9,
+              "col": 4
+            }
+          ]
+        },
+        {
+          "cardId": "10_clubs",
+          "rank": "10",
+          "suit": "clubs",
+          "rankLabel": "10",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "burgerking",
+          "brandName": "Burger King",
+          "label": "Burger King · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 5,
+              "col": 0
+            },
+            {
+              "row": 7,
+              "col": 2
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "linkedin": {
+      "brandId": "linkedin",
+      "brandName": "LinkedIn",
+      "cards": [
+        {
+          "cardId": "Q_hearts",
+          "rank": "Q",
+          "suit": "hearts",
+          "rankLabel": "Queen",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "linkedin",
+          "brandName": "LinkedIn",
+          "label": "LinkedIn · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 1,
+              "col": 7
+            },
+            {
+              "row": 6,
+              "col": 6
+            }
+          ]
+        },
+        {
+          "cardId": "Q_spades",
+          "rank": "Q",
+          "suit": "spades",
+          "rankLabel": "Queen",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "linkedin",
+          "brandName": "LinkedIn",
+          "label": "LinkedIn · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 2,
+              "col": 9
+            },
+            {
+              "row": 4,
+              "col": 1
+            }
+          ]
+        },
+        {
+          "cardId": "Q_diamonds",
+          "rank": "Q",
+          "suit": "diamonds",
+          "rankLabel": "Queen",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "linkedin",
+          "brandName": "LinkedIn",
+          "label": "LinkedIn · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 6,
+              "col": 7
+            },
+            {
+              "row": 9,
+              "col": 3
+            }
+          ]
+        },
+        {
+          "cardId": "Q_clubs",
+          "rank": "Q",
+          "suit": "clubs",
+          "rankLabel": "Queen",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "linkedin",
+          "brandName": "LinkedIn",
+          "label": "LinkedIn · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 6,
+              "col": 0
+            },
+            {
+              "row": 7,
+              "col": 3
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    },
+    "kfc": {
+      "brandId": "kfc",
+      "brandName": "KFC",
+      "cards": [
+        {
+          "cardId": "K_hearts",
+          "rank": "K",
+          "suit": "hearts",
+          "rankLabel": "King",
+          "suitLabel": "Hearts",
+          "colorName": "Purple",
+          "brandId": "kfc",
+          "brandName": "KFC",
+          "label": "KFC · Purple",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 1,
+              "col": 6
+            },
+            {
+              "row": 5,
+              "col": 6
+            }
+          ]
+        },
+        {
+          "cardId": "K_spades",
+          "rank": "K",
+          "suit": "spades",
+          "rankLabel": "King",
+          "suitLabel": "Spades",
+          "colorName": "Teal",
+          "brandId": "kfc",
+          "brandName": "KFC",
+          "label": "KFC · Teal",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 3,
+              "col": 1
+            },
+            {
+              "row": 3,
+              "col": 9
+            }
+          ]
+        },
+        {
+          "cardId": "K_diamonds",
+          "rank": "K",
+          "suit": "diamonds",
+          "rankLabel": "King",
+          "suitLabel": "Diamonds",
+          "colorName": "Orange",
+          "brandId": "kfc",
+          "brandName": "KFC",
+          "label": "KFC · Orange",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 7,
+              "col": 7
+            },
+            {
+              "row": 9,
+              "col": 2
+            }
+          ]
+        },
+        {
+          "cardId": "K_clubs",
+          "rank": "K",
+          "suit": "clubs",
+          "rankLabel": "King",
+          "suitLabel": "Clubs",
+          "colorName": "Yellow",
+          "brandId": "kfc",
+          "brandName": "KFC",
+          "label": "KFC · Yellow",
+          "onBoard": true,
+          "boardCells": [
+            {
+              "row": 7,
+              "col": 0
+            },
+            {
+              "row": 7,
+              "col": 4
+            }
+          ]
+        }
+      ],
+      "boardCellCount": 8
+    }
+  }
+}

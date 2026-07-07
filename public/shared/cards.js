@@ -1,5 +1,5 @@
 /**
- * Corporate rebrand dictionary + canonical Sequence-style 10×10 board.
+ * Fictional brand dictionary + canonical Sequence-style 10×10 board.
  * Each cell holds a card id (or "FREE" for corner wild spaces).
  * Jacks are deck-only — not printed on the board.
  */
@@ -9,47 +9,27 @@ export const RANKS = /** @type {const} */ (['2', '3', '4', '5', '6', '7', '8', '
 
 /** @typedef {{ id: string, rank: string, suit: string, brandId: string, label: string, jackType?: 'two_eyed' | 'one_eyed' }} CardDef */
 
-/** Brand metadata — globally recognized logos only */
+/** Original abstract icons only — no third-party trademarks */
 export const BRANDS = {
-  mcdonalds: { id: 'mcdonalds', name: "McDonald's", logo: 'mcdonalds-logo.svg', accent: '#DA291C' },
-  kfc: { id: 'kfc', name: 'KFC', logo: 'kfc-logo.svg', accent: '#E4002B' },
-  burgerking: { id: 'burgerking', name: 'Burger King', logo: 'burgerking-logo.svg', accent: '#D62300' },
-  coke: { id: 'coke', name: 'Coke', logo: 'coke-logo.svg', accent: '#F40009' },
-  pepsi: { id: 'pepsi', name: 'Pepsi', logo: 'pepsi-logo.svg', accent: '#004B93' },
-  apple: { id: 'apple', name: 'Apple', logo: 'apple-logo.svg', accent: '#555555' },
-  google: { id: 'google', name: 'Google', logo: 'google-logo.svg', accent: '#4285F4' },
-  facebook: { id: 'facebook', name: 'Facebook', logo: 'facebook-logo.svg', accent: '#0866FF' },
-  x: { id: 'x', name: 'X', logo: 'x-logo.svg', accent: '#000000' },
-  linkedin: { id: 'linkedin', name: 'LinkedIn', logo: 'linkedin-logo.svg', accent: '#0A66C2' },
-  microsoft: { id: 'microsoft', name: 'Microsoft', logo: 'microsoft-logo.svg', accent: '#00A4EF' },
-  ikea: { id: 'ikea', name: 'IKEA', logo: 'ikea-logo.svg', accent: '#0058A3' },
-  samsung: { id: 'samsung', name: 'Samsung', logo: 'samsung-logo.svg', accent: '#1428A0' },
-  meta: { id: 'meta', name: 'Meta', logo: 'meta-logo.svg', accent: '#0467DF' },
-  netflix: { id: 'netflix', name: 'Netflix', logo: 'netflix-logo.svg', accent: '#E50914' },
-  disney: { id: 'disney', name: 'Disney', logo: 'disney-logo.svg', accent: '#113CCF' },
-  spotify: { id: 'spotify', name: 'Spotify', logo: 'spotify-logo.svg', accent: '#1DB954' },
-  youtube: { id: 'youtube', name: 'YouTube', logo: 'youtube-logo.svg', accent: '#FF0000' },
-  instagram: { id: 'instagram', name: 'Instagram', logo: 'instagram-logo.svg', accent: '#E4405F' },
-  tiktok: { id: 'tiktok', name: 'TikTok', logo: 'tiktok-logo.svg', accent: '#000000' },
-  uber: { id: 'uber', name: 'Uber', logo: 'uber-logo.svg', accent: '#000000' },
-  airbnb: { id: 'airbnb', name: 'Airbnb', logo: 'airbnb-logo.svg', accent: '#FF5A5F' },
-  paypal: { id: 'paypal', name: 'PayPal', logo: 'paypal-logo.svg', accent: '#003087' },
-  visa: { id: 'visa', name: 'Visa', logo: 'visa-logo.svg', accent: '#1A1F71' },
-  mastercard: { id: 'mastercard', name: 'Mastercard', logo: 'mastercard-logo.svg', accent: '#EB001B' },
-  starbucks: { id: 'starbucks', name: 'Starbucks', logo: 'starbucks-logo.svg', accent: '#00704A' },
-  dominos: { id: 'dominos', name: "Domino's", logo: 'dominos-logo.svg', accent: '#006491' },
-  pizzahut: { id: 'pizzahut', name: 'Pizza Hut', logo: 'pizzahut-logo.svg', accent: '#EE3A23' },
-  tacobell: { id: 'tacobell', name: 'Taco Bell', logo: 'tacobell-logo.svg', accent: '#702082' },
-  tesla: { id: 'tesla', name: 'Tesla', logo: 'tesla-logo.svg', accent: '#CC0000' },
-  toyota: { id: 'toyota', name: 'Toyota', logo: 'toyota-logo.svg', accent: '#EB0A1E' },
-  bmw: { id: 'bmw', name: 'BMW', logo: 'bmw-logo.svg', accent: '#0066B1' },
-  ford: { id: 'ford', name: 'Ford', logo: 'ford-logo.svg', accent: '#003478' },
-  nike: { id: 'nike', name: 'Nike', logo: 'nike-logo.svg', accent: '#111111' },
-  adidas: { id: 'adidas', name: 'Adidas', logo: 'adidas-logo.svg', accent: '#000000' },
-  puma: { id: 'puma', name: 'Puma', logo: 'puma-logo.svg', accent: '#000000' },
-  underarmour: { id: 'underarmour', name: 'Under Armour', logo: 'underarmour-logo.svg', accent: '#1D1D1D' },
-  free: { id: 'free', name: 'Wild Space', logo: 'wild-space.svg', accent: '#F59E0B' },
+  logo_a: { id: 'logo_a', name: 'Beacon', logo: 'logo-a.svg', accent: '#d97706' },
+  logo_2: { id: 'logo_2', name: 'Spark', logo: 'logo-2.svg', accent: '#ef4444' },
+  logo_3: { id: 'logo_3', name: 'Nova', logo: 'logo-3.svg', accent: '#8b5cf6' },
+  logo_4: { id: 'logo_4', name: 'Prism', logo: 'logo-4.svg', accent: '#06b6d4' },
+  logo_5: { id: 'logo_5', name: 'Orbit', logo: 'logo-5.svg', accent: '#3b82f6' },
+  logo_6: { id: 'logo_6', name: 'Pulse', logo: 'logo-6.svg', accent: '#10b981' },
+  logo_7: { id: 'logo_7', name: 'Ridge', logo: 'logo-7.svg', accent: '#64748b' },
+  logo_8: { id: 'logo_8', name: 'Glyph', logo: 'logo-8.svg', accent: '#f97316' },
+  logo_9: { id: 'logo_9', name: 'Apex', logo: 'logo-9.svg', accent: '#0ea5e9' },
+  logo_10: { id: 'logo_10', name: 'Flux', logo: 'logo-10.svg', accent: '#ec4899' },
+  logo_j: { id: 'logo_j', name: 'Jack', logo: 'logo-j.svg', accent: '#7c3aed' },
+  logo_q: { id: 'logo_q', name: 'Crown', logo: 'logo-q.svg', accent: '#eab308' },
+  logo_k: { id: 'logo_k', name: 'Shield', logo: 'logo-k.svg', accent: '#059669' },
+  yourlogo: { id: 'yourlogo', name: 'YOUR LOGO', logo: 'your-logo.svg', accent: '#dc2626' },
 };
+
+/** Wild corner sponsor tile (generic production). */
+export const WILD_CORNER_BRAND_ID = 'yourlogo';
+export const FALLBACK_BRAND_ID = 'logo_2';
 
 /**
  * One brand per rank — same logo on all four suit colours.
@@ -57,18 +37,18 @@ export const BRANDS = {
  * (2 purple, 2 orange, 2 yellow, 2 teal).
  */
 const RANK_BRAND = {
-  2: 'apple',
-  3: 'google',
-  4: 'facebook',
-  5: 'netflix',
-  6: 'x',
-  7: 'starbucks',
-  8: 'bmw',
-  9: 'nike',
-  10: 'burgerking',
-  Q: 'linkedin',
-  K: 'kfc',
-  A: 'mcdonalds',
+  2: 'logo_2',
+  3: 'logo_3',
+  4: 'logo_4',
+  5: 'logo_5',
+  6: 'logo_6',
+  7: 'logo_7',
+  8: 'logo_8',
+  9: 'logo_9',
+  10: 'logo_10',
+  Q: 'logo_q',
+  K: 'logo_k',
+  A: 'logo_a',
 };
 
 /** Suit → card/board background (distinct from team chip colours: red, blue, green). */
@@ -80,7 +60,7 @@ export const SUIT_META = {
 };
 
 /**
- * Display label: "McDonald's · Red"
+ * Display label: "Beacon · Purple"
  * @param {string} brandName
  * @param {string} suit
  */
@@ -96,7 +76,7 @@ export function brandSuitLabel(brandName, suit) {
  */
 export function brandForRankSuit(rank, suit) {
   if (rank === 'J') return null;
-  return RANK_BRAND[rank] ?? 'apple';
+  return RANK_BRAND[rank] ?? 'logo_2';
 }
 
 /**
@@ -108,9 +88,8 @@ export function makeCard(rank, suit) {
   const id = `${rank}_${suit}`;
   if (rank === 'J') {
     const twoEyed = suit === 'clubs' || suit === 'diamonds';
-    const brandId = twoEyed ? 'coke' : 'pepsi';
-    const brand = BRANDS[brandId];
-    const base = twoEyed ? 'Coke (Wild)' : 'Pepsi (Remove)';
+    const brandId = 'logo_j';
+    const base = twoEyed ? 'Jack (Place)' : 'Jack (Remove)';
     return {
       id,
       rank,
@@ -255,10 +234,10 @@ export function jackTypeOf(cardId) {
  * @param {string} cellCardId
  */
 export function brandForCell(cellCardId) {
-  if (cellCardId === 'FREE') return BRANDS.spotify;
+  if (cellCardId === 'FREE') return BRANDS.yourlogo;
   const card = getCard(cellCardId);
-  if (!card) return BRANDS.apple;
-  return BRANDS[card.brandId] ?? BRANDS.apple;
+  if (!card) return BRANDS.logo_2;
+  return BRANDS[card.brandId] ?? BRANDS.logo_2;
 }
 
 const MAPPING_RANK_ORDER = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];

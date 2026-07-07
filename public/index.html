@@ -4,16 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="Cache-Control" content="no-cache" />
-  <meta name="asset-version" content="__ASSET_VERSION__" />
+  <meta name="asset-version" content="5da6f88" />
   <title>Take 5</title>
-  <script type="importmap">
-  {
-    "imports": {
-      "/shared/cards.js": "/shared/cards.js?v=__ASSET_VERSION__",
-      "/shared/constants.js": "/shared/constants.js?v=__ASSET_VERSION__",
-      "/shared/card-face-layout.js": "/shared/card-face-layout.js?v=__ASSET_VERSION__"
-    }
-  }
+  <script>
+    window.__TAKE5_LOGO_DEMO__ = new URLSearchParams(location.search).has('logo');
+  </script>
+  <script>
+    (function () {
+      const v = document.querySelector('meta[name="asset-version"]').content;
+      const demo = window.__TAKE5_LOGO_DEMO__;
+      const cardsUrl = demo
+        ? `/shared/cards-corporate.js?v=${v}`
+        : `/shared/cards.js?v=${v}`;
+      const im = document.createElement('script');
+      im.type = 'importmap';
+      im.textContent = JSON.stringify({
+        imports: {
+          '/shared/cards.js': cardsUrl,
+          '/shared/constants.js': `/shared/constants.js?v=${v}`,
+          '/shared/card-face-layout.js': `/shared/card-face-layout.js?v=${v}`,
+          '/shared/sequence-claim.js': `/shared/sequence-claim.js?v=${v}`,
+        },
+      });
+      document.currentScript.after(im);
+    })();
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -39,10 +53,10 @@
       ],
     };
   </script>
-  <link rel="stylesheet" href="/css/styles.css?v=__ASSET_VERSION__" />
+  <link rel="stylesheet" href="/css/styles.css?v=5da6f88" />
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen antialiased">
   <div id="app" class="min-h-screen"></div>
-  <script type="module" src="/js/app.js?v=__ASSET_VERSION__"></script>
+  <script type="module" src="/js/app.js?v=5da6f88"></script>
 </body>
 </html>

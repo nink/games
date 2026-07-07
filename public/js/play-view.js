@@ -13,6 +13,8 @@ import {
   startGame,
 } from './ws-client.js';
 import { detectSequenceClaimRequired } from '/shared/sequence-claim.js';
+import { isCorporateLogoDemo } from './logo-mode.js';
+import { mountCorporateDemoBanner } from './demo-banner.js';
 
 /**
  * @param {HTMLElement} root
@@ -98,6 +100,8 @@ export function renderPlayView(root) {
   const teamBadge = root.querySelector('#play-team-badge');
   const startBtn = root.querySelector('#play-start');
   const playError = root.querySelector('#play-error');
+
+  mountCorporateDemoBanner(gameEl);
 
   const mobileMq = window.matchMedia('(max-width: 767px)');
   let lockedBoardSide = 0;
@@ -195,9 +199,13 @@ export function renderPlayView(root) {
     } else if (!selectedCardId) {
       hintEl.textContent = 'Tap a card in your hand';
     } else if (card?.jackType === 'one_eyed') {
-      hintEl.textContent = 'Pepsi — tap an opponent chip to remove it';
+      hintEl.textContent = isCorporateLogoDemo()
+        ? 'Pepsi — tap an opponent chip to remove it'
+        : 'Remove jack — tap an opponent chip to remove it';
     } else if (card?.jackType === 'two_eyed') {
-      hintEl.textContent = 'Coke — tap one empty square';
+      hintEl.textContent = isCorporateLogoDemo()
+        ? 'Coke — tap one empty square'
+        : 'Place jack — tap one empty square';
     } else {
       hintEl.textContent = 'Tap a matching space on the board';
     }

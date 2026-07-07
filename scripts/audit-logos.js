@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const logosDir = path.join(__dirname, '../public/assets/logos');
 
 const used = new Set(Object.values(CARD_CATALOG).map((c) => c.brandId));
-used.add('spotify');
+used.add('yourlogo');
 
 for (const id of [...used].sort()) {
   const file = path.join(logosDir, BRANDS[id]?.logo ?? '');

@@ -85,7 +85,7 @@ function boardTileSvg(card) {
 
 /** Wild corner tile — matches .card-face-wild on board. */
 function wildCornerSvg() {
-  const logo = loadLogo('spotify');
+  const logo = loadLogo('yourlogo');
   const x = W.logoInsetSide;
   const y = W.logoInsetTop;
   const w = S - W.logoInsetSide * 2;
@@ -132,7 +132,7 @@ function mappingMarkdown() {
       (b) => `| ${b.rank} | ${b.brandName} | ${b.cardIds.join(', ')} | ${b.boardCells} |`
     ),
     '',
-    'Corners: **IBM** + Wild (not in deck). Jacks: **Coke** / **Pepsi** (deck only).',
+    'Corners: **Your Logo** sponsor + Wild (not in deck). Jacks: **Place** / **Remove** (deck only).',
     '',
     '## Suit colours',
     '',
@@ -146,8 +146,8 @@ function mappingMarkdown() {
 
   const byLogo = buildLogoMapping();
   const logoOrder = [
-    'mcdonalds', 'apple', 'google', 'facebook', 'netflix', 'x', 'starbucks', 'bmw', 'nike',
-    'burgerking', 'coke', 'pepsi', 'linkedin', 'kfc', 'spotify',
+    'logo_a', 'logo_2', 'logo_3', 'logo_4', 'logo_5', 'logo_6', 'logo_7', 'logo_8', 'logo_9', 'logo_10',
+    'logo_q', 'logo_k', 'logo_j', 'yourlogo',
   ];
   const seen = new Set();
   for (const id of logoOrder) {

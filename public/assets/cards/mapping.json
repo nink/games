@@ -7,9 +7,9 @@
       "rankLabel": "Ace",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "mcdonalds",
-      "brandName": "McDonald's",
-      "label": "McDonald's · Purple",
+      "brandId": "logo_a",
+      "brandName": "Beacon",
+      "label": "Beacon · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -29,9 +29,9 @@
       "rankLabel": "Ace",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "mcdonalds",
-      "brandName": "McDonald's",
-      "label": "McDonald's · Teal",
+      "brandId": "logo_a",
+      "brandName": "Beacon",
+      "label": "Beacon · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -51,9 +51,9 @@
       "rankLabel": "Ace",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "mcdonalds",
-      "brandName": "McDonald's",
-      "label": "McDonald's · Orange",
+      "brandId": "logo_a",
+      "brandName": "Beacon",
+      "label": "Beacon · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -73,9 +73,9 @@
       "rankLabel": "Ace",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "mcdonalds",
-      "brandName": "McDonald's",
-      "label": "McDonald's · Yellow",
+      "brandId": "logo_a",
+      "brandName": "Beacon",
+      "label": "Beacon · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -95,9 +95,9 @@
       "rankLabel": "2",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "apple",
-      "brandName": "Apple",
-      "label": "Apple · Purple",
+      "brandId": "logo_2",
+      "brandName": "Spark",
+      "label": "Spark · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -117,9 +117,9 @@
       "rankLabel": "2",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "apple",
-      "brandName": "Apple",
-      "label": "Apple · Teal",
+      "brandId": "logo_2",
+      "brandName": "Spark",
+      "label": "Spark · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -139,9 +139,9 @@
       "rankLabel": "2",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "apple",
-      "brandName": "Apple",
-      "label": "Apple · Orange",
+      "brandId": "logo_2",
+      "brandName": "Spark",
+      "label": "Spark · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -161,9 +161,9 @@
       "rankLabel": "2",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "apple",
-      "brandName": "Apple",
-      "label": "Apple · Yellow",
+      "brandId": "logo_2",
+      "brandName": "Spark",
+      "label": "Spark · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -183,9 +183,9 @@
       "rankLabel": "3",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "google",
-      "brandName": "Google",
-      "label": "Google · Purple",
+      "brandId": "logo_3",
+      "brandName": "Nova",
+      "label": "Nova · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -205,9 +205,9 @@
       "rankLabel": "3",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "google",
-      "brandName": "Google",
-      "label": "Google · Teal",
+      "brandId": "logo_3",
+      "brandName": "Nova",
+      "label": "Nova · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -227,9 +227,9 @@
       "rankLabel": "3",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "google",
-      "brandName": "Google",
-      "label": "Google · Orange",
+      "brandId": "logo_3",
+      "brandName": "Nova",
+      "label": "Nova · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -249,9 +249,9 @@
       "rankLabel": "3",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "google",
-      "brandName": "Google",
-      "label": "Google · Yellow",
+      "brandId": "logo_3",
+      "brandName": "Nova",
+      "label": "Nova · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -271,9 +271,9 @@
       "rankLabel": "4",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "facebook",
-      "brandName": "Facebook",
-      "label": "Facebook · Purple",
+      "brandId": "logo_4",
+      "brandName": "Prism",
+      "label": "Prism · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -293,9 +293,9 @@
       "rankLabel": "4",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "facebook",
-      "brandName": "Facebook",
-      "label": "Facebook · Teal",
+      "brandId": "logo_4",
+      "brandName": "Prism",
+      "label": "Prism · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -315,9 +315,9 @@
       "rankLabel": "4",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "facebook",
-      "brandName": "Facebook",
-      "label": "Facebook · Orange",
+      "brandId": "logo_4",
+      "brandName": "Prism",
+      "label": "Prism · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -337,9 +337,9 @@
       "rankLabel": "4",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "facebook",
-      "brandName": "Facebook",
-      "label": "Facebook · Yellow",
+      "brandId": "logo_4",
+      "brandName": "Prism",
+      "label": "Prism · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -359,9 +359,9 @@
       "rankLabel": "5",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "netflix",
-      "brandName": "Netflix",
-      "label": "Netflix · Purple",
+      "brandId": "logo_5",
+      "brandName": "Orbit",
+      "label": "Orbit · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -381,9 +381,9 @@
       "rankLabel": "5",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "netflix",
-      "brandName": "Netflix",
-      "label": "Netflix · Teal",
+      "brandId": "logo_5",
+      "brandName": "Orbit",
+      "label": "Orbit · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -403,9 +403,9 @@
       "rankLabel": "5",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "netflix",
-      "brandName": "Netflix",
-      "label": "Netflix · Orange",
+      "brandId": "logo_5",
+      "brandName": "Orbit",
+      "label": "Orbit · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -425,9 +425,9 @@
       "rankLabel": "5",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "netflix",
-      "brandName": "Netflix",
-      "label": "Netflix · Yellow",
+      "brandId": "logo_5",
+      "brandName": "Orbit",
+      "label": "Orbit · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -447,9 +447,9 @@
       "rankLabel": "6",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "x",
-      "brandName": "X",
-      "label": "X · Purple",
+      "brandId": "logo_6",
+      "brandName": "Pulse",
+      "label": "Pulse · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -469,9 +469,9 @@
       "rankLabel": "6",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "x",
-      "brandName": "X",
-      "label": "X · Teal",
+      "brandId": "logo_6",
+      "brandName": "Pulse",
+      "label": "Pulse · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -491,9 +491,9 @@
       "rankLabel": "6",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "x",
-      "brandName": "X",
-      "label": "X · Orange",
+      "brandId": "logo_6",
+      "brandName": "Pulse",
+      "label": "Pulse · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -513,9 +513,9 @@
       "rankLabel": "6",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "x",
-      "brandName": "X",
-      "label": "X · Yellow",
+      "brandId": "logo_6",
+      "brandName": "Pulse",
+      "label": "Pulse · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -535,9 +535,9 @@
       "rankLabel": "7",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "starbucks",
-      "brandName": "Starbucks",
-      "label": "Starbucks · Purple",
+      "brandId": "logo_7",
+      "brandName": "Ridge",
+      "label": "Ridge · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -557,9 +557,9 @@
       "rankLabel": "7",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "starbucks",
-      "brandName": "Starbucks",
-      "label": "Starbucks · Teal",
+      "brandId": "logo_7",
+      "brandName": "Ridge",
+      "label": "Ridge · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -579,9 +579,9 @@
       "rankLabel": "7",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "starbucks",
-      "brandName": "Starbucks",
-      "label": "Starbucks · Orange",
+      "brandId": "logo_7",
+      "brandName": "Ridge",
+      "label": "Ridge · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -601,9 +601,9 @@
       "rankLabel": "7",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "starbucks",
-      "brandName": "Starbucks",
-      "label": "Starbucks · Yellow",
+      "brandId": "logo_7",
+      "brandName": "Ridge",
+      "label": "Ridge · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -623,9 +623,9 @@
       "rankLabel": "8",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "bmw",
-      "brandName": "BMW",
-      "label": "BMW · Purple",
+      "brandId": "logo_8",
+      "brandName": "Glyph",
+      "label": "Glyph · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -645,9 +645,9 @@
       "rankLabel": "8",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "bmw",
-      "brandName": "BMW",
-      "label": "BMW · Teal",
+      "brandId": "logo_8",
+      "brandName": "Glyph",
+      "label": "Glyph · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -667,9 +667,9 @@
       "rankLabel": "8",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "bmw",
-      "brandName": "BMW",
-      "label": "BMW · Orange",
+      "brandId": "logo_8",
+      "brandName": "Glyph",
+      "label": "Glyph · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -689,9 +689,9 @@
       "rankLabel": "8",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "bmw",
-      "brandName": "BMW",
-      "label": "BMW · Yellow",
+      "brandId": "logo_8",
+      "brandName": "Glyph",
+      "label": "Glyph · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -711,9 +711,9 @@
       "rankLabel": "9",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "nike",
-      "brandName": "Nike",
-      "label": "Nike · Purple",
+      "brandId": "logo_9",
+      "brandName": "Apex",
+      "label": "Apex · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -733,9 +733,9 @@
       "rankLabel": "9",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "nike",
-      "brandName": "Nike",
-      "label": "Nike · Teal",
+      "brandId": "logo_9",
+      "brandName": "Apex",
+      "label": "Apex · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -755,9 +755,9 @@
       "rankLabel": "9",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "nike",
-      "brandName": "Nike",
-      "label": "Nike · Orange",
+      "brandId": "logo_9",
+      "brandName": "Apex",
+      "label": "Apex · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -777,9 +777,9 @@
       "rankLabel": "9",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "nike",
-      "brandName": "Nike",
-      "label": "Nike · Yellow",
+      "brandId": "logo_9",
+      "brandName": "Apex",
+      "label": "Apex · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -799,9 +799,9 @@
       "rankLabel": "10",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "burgerking",
-      "brandName": "Burger King",
-      "label": "Burger King · Purple",
+      "brandId": "logo_10",
+      "brandName": "Flux",
+      "label": "Flux · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -821,9 +821,9 @@
       "rankLabel": "10",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "burgerking",
-      "brandName": "Burger King",
-      "label": "Burger King · Teal",
+      "brandId": "logo_10",
+      "brandName": "Flux",
+      "label": "Flux · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -843,9 +843,9 @@
       "rankLabel": "10",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "burgerking",
-      "brandName": "Burger King",
-      "label": "Burger King · Orange",
+      "brandId": "logo_10",
+      "brandName": "Flux",
+      "label": "Flux · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -865,9 +865,9 @@
       "rankLabel": "10",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "burgerking",
-      "brandName": "Burger King",
-      "label": "Burger King · Yellow",
+      "brandId": "logo_10",
+      "brandName": "Flux",
+      "label": "Flux · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -887,9 +887,9 @@
       "rankLabel": "Jack",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "pepsi",
-      "brandName": "Pepsi",
-      "label": "Pepsi (Remove) · Purple",
+      "brandId": "logo_j",
+      "brandName": "Jack",
+      "label": "Jack (Remove) · Purple",
       "onBoard": false,
       "boardCells": []
     },
@@ -900,9 +900,9 @@
       "rankLabel": "Jack",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "pepsi",
-      "brandName": "Pepsi",
-      "label": "Pepsi (Remove) · Teal",
+      "brandId": "logo_j",
+      "brandName": "Jack",
+      "label": "Jack (Remove) · Teal",
       "onBoard": false,
       "boardCells": []
     },
@@ -913,9 +913,9 @@
       "rankLabel": "Jack",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "coke",
-      "brandName": "Coke",
-      "label": "Coke (Wild) · Orange",
+      "brandId": "logo_j",
+      "brandName": "Jack",
+      "label": "Jack (Place) · Orange",
       "onBoard": false,
       "boardCells": []
     },
@@ -926,9 +926,9 @@
       "rankLabel": "Jack",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "coke",
-      "brandName": "Coke",
-      "label": "Coke (Wild) · Yellow",
+      "brandId": "logo_j",
+      "brandName": "Jack",
+      "label": "Jack (Place) · Yellow",
       "onBoard": false,
       "boardCells": []
     },
@@ -939,9 +939,9 @@
       "rankLabel": "Queen",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "linkedin",
-      "brandName": "LinkedIn",
-      "label": "LinkedIn · Purple",
+      "brandId": "logo_q",
+      "brandName": "Crown",
+      "label": "Crown · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -961,9 +961,9 @@
       "rankLabel": "Queen",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "linkedin",
-      "brandName": "LinkedIn",
-      "label": "LinkedIn · Teal",
+      "brandId": "logo_q",
+      "brandName": "Crown",
+      "label": "Crown · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -983,9 +983,9 @@
       "rankLabel": "Queen",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "linkedin",
-      "brandName": "LinkedIn",
-      "label": "LinkedIn · Orange",
+      "brandId": "logo_q",
+      "brandName": "Crown",
+      "label": "Crown · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -1005,9 +1005,9 @@
       "rankLabel": "Queen",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "linkedin",
-      "brandName": "LinkedIn",
-      "label": "LinkedIn · Yellow",
+      "brandId": "logo_q",
+      "brandName": "Crown",
+      "label": "Crown · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -1027,9 +1027,9 @@
       "rankLabel": "King",
       "suitLabel": "Hearts",
       "colorName": "Purple",
-      "brandId": "kfc",
-      "brandName": "KFC",
-      "label": "KFC · Purple",
+      "brandId": "logo_k",
+      "brandName": "Shield",
+      "label": "Shield · Purple",
       "onBoard": true,
       "boardCells": [
         {
@@ -1049,9 +1049,9 @@
       "rankLabel": "King",
       "suitLabel": "Spades",
       "colorName": "Teal",
-      "brandId": "kfc",
-      "brandName": "KFC",
-      "label": "KFC · Teal",
+      "brandId": "logo_k",
+      "brandName": "Shield",
+      "label": "Shield · Teal",
       "onBoard": true,
       "boardCells": [
         {
@@ -1071,9 +1071,9 @@
       "rankLabel": "King",
       "suitLabel": "Diamonds",
       "colorName": "Orange",
-      "brandId": "kfc",
-      "brandName": "KFC",
-      "label": "KFC · Orange",
+      "brandId": "logo_k",
+      "brandName": "Shield",
+      "label": "Shield · Orange",
       "onBoard": true,
       "boardCells": [
         {
@@ -1093,9 +1093,9 @@
       "rankLabel": "King",
       "suitLabel": "Clubs",
       "colorName": "Yellow",
-      "brandId": "kfc",
-      "brandName": "KFC",
-      "label": "KFC · Yellow",
+      "brandId": "logo_k",
+      "brandName": "Shield",
+      "label": "Shield · Yellow",
       "onBoard": true,
       "boardCells": [
         {
@@ -1110,9 +1110,9 @@
     }
   ],
   "logos": {
-    "mcdonalds": {
-      "brandId": "mcdonalds",
-      "brandName": "McDonald's",
+    "logo_a": {
+      "brandId": "logo_a",
+      "brandName": "Beacon",
       "cards": [
         {
           "cardId": "A_hearts",
@@ -1121,9 +1121,9 @@
           "rankLabel": "Ace",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "mcdonalds",
-          "brandName": "McDonald's",
-          "label": "McDonald's · Purple",
+          "brandId": "logo_a",
+          "brandName": "Beacon",
+          "label": "Beacon · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1143,9 +1143,9 @@
           "rankLabel": "Ace",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "mcdonalds",
-          "brandName": "McDonald's",
-          "label": "McDonald's · Teal",
+          "brandId": "logo_a",
+          "brandName": "Beacon",
+          "label": "Beacon · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1165,9 +1165,9 @@
           "rankLabel": "Ace",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "mcdonalds",
-          "brandName": "McDonald's",
-          "label": "McDonald's · Orange",
+          "brandId": "logo_a",
+          "brandName": "Beacon",
+          "label": "Beacon · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1187,9 +1187,9 @@
           "rankLabel": "Ace",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "mcdonalds",
-          "brandName": "McDonald's",
-          "label": "McDonald's · Yellow",
+          "brandId": "logo_a",
+          "brandName": "Beacon",
+          "label": "Beacon · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -1205,9 +1205,9 @@
       ],
       "boardCellCount": 8
     },
-    "apple": {
-      "brandId": "apple",
-      "brandName": "Apple",
+    "logo_2": {
+      "brandId": "logo_2",
+      "brandName": "Spark",
       "cards": [
         {
           "cardId": "2_hearts",
@@ -1216,9 +1216,9 @@
           "rankLabel": "2",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "apple",
-          "brandName": "Apple",
-          "label": "Apple · Purple",
+          "brandId": "logo_2",
+          "brandName": "Spark",
+          "label": "Spark · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1238,9 +1238,9 @@
           "rankLabel": "2",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "apple",
-          "brandName": "Apple",
-          "label": "Apple · Teal",
+          "brandId": "logo_2",
+          "brandName": "Spark",
+          "label": "Spark · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1260,9 +1260,9 @@
           "rankLabel": "2",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "apple",
-          "brandName": "Apple",
-          "label": "Apple · Orange",
+          "brandId": "logo_2",
+          "brandName": "Spark",
+          "label": "Spark · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1282,9 +1282,9 @@
           "rankLabel": "2",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "apple",
-          "brandName": "Apple",
-          "label": "Apple · Yellow",
+          "brandId": "logo_2",
+          "brandName": "Spark",
+          "label": "Spark · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -1300,9 +1300,9 @@
       ],
       "boardCellCount": 8
     },
-    "google": {
-      "brandId": "google",
-      "brandName": "Google",
+    "logo_3": {
+      "brandId": "logo_3",
+      "brandName": "Nova",
       "cards": [
         {
           "cardId": "3_hearts",
@@ -1311,9 +1311,9 @@
           "rankLabel": "3",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "google",
-          "brandName": "Google",
-          "label": "Google · Purple",
+          "brandId": "logo_3",
+          "brandName": "Nova",
+          "label": "Nova · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1333,9 +1333,9 @@
           "rankLabel": "3",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "google",
-          "brandName": "Google",
-          "label": "Google · Teal",
+          "brandId": "logo_3",
+          "brandName": "Nova",
+          "label": "Nova · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1355,9 +1355,9 @@
           "rankLabel": "3",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "google",
-          "brandName": "Google",
-          "label": "Google · Orange",
+          "brandId": "logo_3",
+          "brandName": "Nova",
+          "label": "Nova · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1377,9 +1377,9 @@
           "rankLabel": "3",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "google",
-          "brandName": "Google",
-          "label": "Google · Yellow",
+          "brandId": "logo_3",
+          "brandName": "Nova",
+          "label": "Nova · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -1395,9 +1395,9 @@
       ],
       "boardCellCount": 8
     },
-    "facebook": {
-      "brandId": "facebook",
-      "brandName": "Facebook",
+    "logo_4": {
+      "brandId": "logo_4",
+      "brandName": "Prism",
       "cards": [
         {
           "cardId": "4_hearts",
@@ -1406,9 +1406,9 @@
           "rankLabel": "4",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "facebook",
-          "brandName": "Facebook",
-          "label": "Facebook · Purple",
+          "brandId": "logo_4",
+          "brandName": "Prism",
+          "label": "Prism · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1428,9 +1428,9 @@
           "rankLabel": "4",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "facebook",
-          "brandName": "Facebook",
-          "label": "Facebook · Teal",
+          "brandId": "logo_4",
+          "brandName": "Prism",
+          "label": "Prism · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1450,9 +1450,9 @@
           "rankLabel": "4",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "facebook",
-          "brandName": "Facebook",
-          "label": "Facebook · Orange",
+          "brandId": "logo_4",
+          "brandName": "Prism",
+          "label": "Prism · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1472,9 +1472,9 @@
           "rankLabel": "4",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "facebook",
-          "brandName": "Facebook",
-          "label": "Facebook · Yellow",
+          "brandId": "logo_4",
+          "brandName": "Prism",
+          "label": "Prism · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -1490,9 +1490,9 @@
       ],
       "boardCellCount": 8
     },
-    "netflix": {
-      "brandId": "netflix",
-      "brandName": "Netflix",
+    "logo_5": {
+      "brandId": "logo_5",
+      "brandName": "Orbit",
       "cards": [
         {
           "cardId": "5_hearts",
@@ -1501,9 +1501,9 @@
           "rankLabel": "5",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "netflix",
-          "brandName": "Netflix",
-          "label": "Netflix · Purple",
+          "brandId": "logo_5",
+          "brandName": "Orbit",
+          "label": "Orbit · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1523,9 +1523,9 @@
           "rankLabel": "5",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "netflix",
-          "brandName": "Netflix",
-          "label": "Netflix · Teal",
+          "brandId": "logo_5",
+          "brandName": "Orbit",
+          "label": "Orbit · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1545,9 +1545,9 @@
           "rankLabel": "5",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "netflix",
-          "brandName": "Netflix",
-          "label": "Netflix · Orange",
+          "brandId": "logo_5",
+          "brandName": "Orbit",
+          "label": "Orbit · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1567,9 +1567,9 @@
           "rankLabel": "5",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "netflix",
-          "brandName": "Netflix",
-          "label": "Netflix · Yellow",
+          "brandId": "logo_5",
+          "brandName": "Orbit",
+          "label": "Orbit · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -1585,9 +1585,9 @@
       ],
       "boardCellCount": 8
     },
-    "x": {
-      "brandId": "x",
-      "brandName": "X",
+    "logo_6": {
+      "brandId": "logo_6",
+      "brandName": "Pulse",
       "cards": [
         {
           "cardId": "6_hearts",
@@ -1596,9 +1596,9 @@
           "rankLabel": "6",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "x",
-          "brandName": "X",
-          "label": "X · Purple",
+          "brandId": "logo_6",
+          "brandName": "Pulse",
+          "label": "Pulse · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1618,9 +1618,9 @@
           "rankLabel": "6",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "x",
-          "brandName": "X",
-          "label": "X · Teal",
+          "brandId": "logo_6",
+          "brandName": "Pulse",
+          "label": "Pulse · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1640,9 +1640,9 @@
           "rankLabel": "6",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "x",
-          "brandName": "X",
-          "label": "X · Orange",
+          "brandId": "logo_6",
+          "brandName": "Pulse",
+          "label": "Pulse · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1662,9 +1662,9 @@
           "rankLabel": "6",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "x",
-          "brandName": "X",
-          "label": "X · Yellow",
+          "brandId": "logo_6",
+          "brandName": "Pulse",
+          "label": "Pulse · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -1680,9 +1680,9 @@
       ],
       "boardCellCount": 8
     },
-    "starbucks": {
-      "brandId": "starbucks",
-      "brandName": "Starbucks",
+    "logo_7": {
+      "brandId": "logo_7",
+      "brandName": "Ridge",
       "cards": [
         {
           "cardId": "7_hearts",
@@ -1691,9 +1691,9 @@
           "rankLabel": "7",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "starbucks",
-          "brandName": "Starbucks",
-          "label": "Starbucks · Purple",
+          "brandId": "logo_7",
+          "brandName": "Ridge",
+          "label": "Ridge · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1713,9 +1713,9 @@
           "rankLabel": "7",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "starbucks",
-          "brandName": "Starbucks",
-          "label": "Starbucks · Teal",
+          "brandId": "logo_7",
+          "brandName": "Ridge",
+          "label": "Ridge · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1735,9 +1735,9 @@
           "rankLabel": "7",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "starbucks",
-          "brandName": "Starbucks",
-          "label": "Starbucks · Orange",
+          "brandId": "logo_7",
+          "brandName": "Ridge",
+          "label": "Ridge · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1757,9 +1757,9 @@
           "rankLabel": "7",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "starbucks",
-          "brandName": "Starbucks",
-          "label": "Starbucks · Yellow",
+          "brandId": "logo_7",
+          "brandName": "Ridge",
+          "label": "Ridge · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -1775,9 +1775,9 @@
       ],
       "boardCellCount": 8
     },
-    "bmw": {
-      "brandId": "bmw",
-      "brandName": "BMW",
+    "logo_8": {
+      "brandId": "logo_8",
+      "brandName": "Glyph",
       "cards": [
         {
           "cardId": "8_hearts",
@@ -1786,9 +1786,9 @@
           "rankLabel": "8",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "bmw",
-          "brandName": "BMW",
-          "label": "BMW · Purple",
+          "brandId": "logo_8",
+          "brandName": "Glyph",
+          "label": "Glyph · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1808,9 +1808,9 @@
           "rankLabel": "8",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "bmw",
-          "brandName": "BMW",
-          "label": "BMW · Teal",
+          "brandId": "logo_8",
+          "brandName": "Glyph",
+          "label": "Glyph · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1830,9 +1830,9 @@
           "rankLabel": "8",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "bmw",
-          "brandName": "BMW",
-          "label": "BMW · Orange",
+          "brandId": "logo_8",
+          "brandName": "Glyph",
+          "label": "Glyph · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1852,9 +1852,9 @@
           "rankLabel": "8",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "bmw",
-          "brandName": "BMW",
-          "label": "BMW · Yellow",
+          "brandId": "logo_8",
+          "brandName": "Glyph",
+          "label": "Glyph · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -1870,9 +1870,9 @@
       ],
       "boardCellCount": 8
     },
-    "nike": {
-      "brandId": "nike",
-      "brandName": "Nike",
+    "logo_9": {
+      "brandId": "logo_9",
+      "brandName": "Apex",
       "cards": [
         {
           "cardId": "9_hearts",
@@ -1881,9 +1881,9 @@
           "rankLabel": "9",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "nike",
-          "brandName": "Nike",
-          "label": "Nike · Purple",
+          "brandId": "logo_9",
+          "brandName": "Apex",
+          "label": "Apex · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1903,9 +1903,9 @@
           "rankLabel": "9",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "nike",
-          "brandName": "Nike",
-          "label": "Nike · Teal",
+          "brandId": "logo_9",
+          "brandName": "Apex",
+          "label": "Apex · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -1925,9 +1925,9 @@
           "rankLabel": "9",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "nike",
-          "brandName": "Nike",
-          "label": "Nike · Orange",
+          "brandId": "logo_9",
+          "brandName": "Apex",
+          "label": "Apex · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -1947,9 +1947,9 @@
           "rankLabel": "9",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "nike",
-          "brandName": "Nike",
-          "label": "Nike · Yellow",
+          "brandId": "logo_9",
+          "brandName": "Apex",
+          "label": "Apex · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -1965,9 +1965,9 @@
       ],
       "boardCellCount": 8
     },
-    "burgerking": {
-      "brandId": "burgerking",
-      "brandName": "Burger King",
+    "logo_10": {
+      "brandId": "logo_10",
+      "brandName": "Flux",
       "cards": [
         {
           "cardId": "10_hearts",
@@ -1976,9 +1976,9 @@
           "rankLabel": "10",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "burgerking",
-          "brandName": "Burger King",
-          "label": "Burger King · Purple",
+          "brandId": "logo_10",
+          "brandName": "Flux",
+          "label": "Flux · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -1998,9 +1998,9 @@
           "rankLabel": "10",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "burgerking",
-          "brandName": "Burger King",
-          "label": "Burger King · Teal",
+          "brandId": "logo_10",
+          "brandName": "Flux",
+          "label": "Flux · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -2020,9 +2020,9 @@
           "rankLabel": "10",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "burgerking",
-          "brandName": "Burger King",
-          "label": "Burger King · Orange",
+          "brandId": "logo_10",
+          "brandName": "Flux",
+          "label": "Flux · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -2042,9 +2042,9 @@
           "rankLabel": "10",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "burgerking",
-          "brandName": "Burger King",
-          "label": "Burger King · Yellow",
+          "brandId": "logo_10",
+          "brandName": "Flux",
+          "label": "Flux · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -2060,9 +2060,9 @@
       ],
       "boardCellCount": 8
     },
-    "linkedin": {
-      "brandId": "linkedin",
-      "brandName": "LinkedIn",
+    "logo_q": {
+      "brandId": "logo_q",
+      "brandName": "Crown",
       "cards": [
         {
           "cardId": "Q_hearts",
@@ -2071,9 +2071,9 @@
           "rankLabel": "Queen",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "linkedin",
-          "brandName": "LinkedIn",
-          "label": "LinkedIn · Purple",
+          "brandId": "logo_q",
+          "brandName": "Crown",
+          "label": "Crown · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -2093,9 +2093,9 @@
           "rankLabel": "Queen",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "linkedin",
-          "brandName": "LinkedIn",
-          "label": "LinkedIn · Teal",
+          "brandId": "logo_q",
+          "brandName": "Crown",
+          "label": "Crown · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -2115,9 +2115,9 @@
           "rankLabel": "Queen",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "linkedin",
-          "brandName": "LinkedIn",
-          "label": "LinkedIn · Orange",
+          "brandId": "logo_q",
+          "brandName": "Crown",
+          "label": "Crown · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -2137,9 +2137,9 @@
           "rankLabel": "Queen",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "linkedin",
-          "brandName": "LinkedIn",
-          "label": "LinkedIn · Yellow",
+          "brandId": "logo_q",
+          "brandName": "Crown",
+          "label": "Crown · Yellow",
           "onBoard": true,
           "boardCells": [
             {
@@ -2155,9 +2155,9 @@
       ],
       "boardCellCount": 8
     },
-    "kfc": {
-      "brandId": "kfc",
-      "brandName": "KFC",
+    "logo_k": {
+      "brandId": "logo_k",
+      "brandName": "Shield",
       "cards": [
         {
           "cardId": "K_hearts",
@@ -2166,9 +2166,9 @@
           "rankLabel": "King",
           "suitLabel": "Hearts",
           "colorName": "Purple",
-          "brandId": "kfc",
-          "brandName": "KFC",
-          "label": "KFC · Purple",
+          "brandId": "logo_k",
+          "brandName": "Shield",
+          "label": "Shield · Purple",
           "onBoard": true,
           "boardCells": [
             {
@@ -2188,9 +2188,9 @@
           "rankLabel": "King",
           "suitLabel": "Spades",
           "colorName": "Teal",
-          "brandId": "kfc",
-          "brandName": "KFC",
-          "label": "KFC · Teal",
+          "brandId": "logo_k",
+          "brandName": "Shield",
+          "label": "Shield · Teal",
           "onBoard": true,
           "boardCells": [
             {
@@ -2210,9 +2210,9 @@
           "rankLabel": "King",
           "suitLabel": "Diamonds",
           "colorName": "Orange",
-          "brandId": "kfc",
-          "brandName": "KFC",
-          "label": "KFC · Orange",
+          "brandId": "logo_k",
+          "brandName": "Shield",
+          "label": "Shield · Orange",
           "onBoard": true,
           "boardCells": [
             {
@@ -2232,9 +2232,9 @@
           "rankLabel": "King",
           "suitLabel": "Clubs",
           "colorName": "Yellow",
-          "brandId": "kfc",
-          "brandName": "KFC",
-          "label": "KFC · Yellow",
+          "brandId": "logo_k",
+          "brandName": "Shield",
+          "label": "Shield · Yellow",
           "onBoard": true,
           "boardCells": [
             {
