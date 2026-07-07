@@ -212,6 +212,7 @@ export function renderPlayView(root) {
       highlightMode: 'token',
       boardSize: 'mobile',
       showTargetPreviews: flashTargets,
+      snapToTarget: flashTargets,
       sequenceEligible: myClaim ? (claim.eligibleCells ?? []) : [],
       sequencePicked: myClaim ? (claim.pickedCells ?? []) : [],
       sequenceTeam: claim?.team ?? state.you.team,
