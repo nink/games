@@ -80,7 +80,7 @@ export function renderBoard(container, {
   Object.assign(grid.style, {
     display: 'grid',
     gridTemplateColumns: 'repeat(10, minmax(0, 1fr))',
-    gap: isMobile ? '3px' : '4px',
+    gap: isMobile ? '3px' : '6px',
     width: boardWidth,
     maxWidth: '100%',
     aspectRatio: '1',

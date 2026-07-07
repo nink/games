@@ -93,44 +93,39 @@
   padding: 2px;
 }
 
-/* Board (TV + play) — logos fill the white card face */
+/* Board (TV + play) — logos sized to leave visible suit-colour border */
 .take5-board-grid .board-cell img {
   padding: 0 !important;
 }
 
 .take5-board-grid .card-face-logo {
-  inset: 2px !important;
-  padding: 0 !important;
+  inset: 5px !important;
+  padding: 3px !important;
   border-radius: 4px;
   overflow: hidden;
 }
 
 .take5-board-grid .card-face-logo img {
-  position: absolute;
-  inset: 0;
   width: 100% !important;
   height: 100% !important;
   padding: 0 !important;
   object-fit: contain !important;
   object-position: center;
-  /* Compensate for built-in SVG margin without overflowing the cell */
-  transform: scale(1.55);
-  transform-origin: center;
+  transform: none;
 }
 
 .take5-board-grid .card-face-chipped .card-face-logo {
-  inset: 3px !important;
-  padding: 0 !important;
+  inset: 4px !important;
+  padding: 2px !important;
 }
 
 .take5-board-grid .card-face-wild .card-face-logo {
-  inset: 0 0 clamp(8px, 12%, 14px) !important;
-  padding: 0 !important;
+  inset: 4px 4px 16px !important;
+  padding: 2px 4px !important;
 }
 
 .take5-board-grid .card-face-wild .card-face-logo img {
-  object-fit: contain !important;
-  transform: scale(1.55);
+  transform: none;
 }
 
 /* Card face — suit = full background colour */
