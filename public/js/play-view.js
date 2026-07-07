@@ -68,9 +68,10 @@ export function renderPlayView(root) {
         </div>
         <span id="play-team-badge" class="rounded-full px-3 py-1 text-xs font-bold uppercase"></span>
       </header>
-      <div class="play-main flex-1 min-h-0 flex flex-col">
+      <div class="play-main flex flex-col">
         <div class="play-stack">
           <div id="play-mini-board" class="play-board-pane flex justify-center items-center"></div>
+          <button id="play-start" class="hidden play-start-btn rounded-xl bg-emerald-600 font-bold py-3 shrink-0 w-full">Start game (host)</button>
           <p id="play-hint" class="text-center text-xs text-amber-300/80 shrink-0 px-1"></p>
           <section class="play-hand-pane shrink-0">
             <h2 class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5 px-0">Your hand</h2>
@@ -78,7 +79,6 @@ export function renderPlayView(root) {
           </section>
         </div>
       </div>
-      <button id="play-start" class="hidden play-start-btn rounded-xl bg-emerald-600 font-bold py-3 shrink-0 w-full">Start game (host)</button>
       <p id="play-error" class="text-red-400 text-sm text-center hidden shrink-0"></p>
     </div>
   `;

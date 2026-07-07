@@ -202,11 +202,15 @@
 
 /* —— Play view —— */
 .play-game {
-  height: 100dvh;
-  max-height: 100dvh;
+  min-height: 100dvh;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.play-game:not(.play-game-lobby) {
+  height: 100dvh;
+  max-height: 100dvh;
 }
 
 .play-main {
@@ -217,19 +221,19 @@
   align-items: center;
 }
 
-/* Board + hint + hand share one width — sized from width, not full viewport height */
+/* Board + hint + hand share one width */
 .play-stack {
   flex: 0 0 auto;
-  width: min(100%, 36rem);
+  width: min(100%, min(100vw - 1rem, 52dvh), 36rem);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.35rem;
 }
 
 .play-board-pane {
   flex: 0 0 auto;
-  width: min(100%, min(100vw - 1rem, 52dvh), 36rem);
+  width: 100%;
   aspect-ratio: 1;
   height: auto;
   margin: 0 auto;
@@ -239,9 +243,9 @@
   overflow: hidden;
 }
 
-/* Lobby — smaller board so Start button fits without scrolling */
-.play-game-lobby .play-board-pane {
-  width: min(100%, min(100vw - 1rem, 40dvh), 36rem);
+/* Lobby — compact board on phones; Start sits directly under board */
+.play-game-lobby .play-stack {
+  width: min(100%, min(100vw - 1rem, 44dvh), 34rem);
 }
 
 .play-game-lobby .play-hand-pane,
@@ -250,8 +254,22 @@
 }
 
 .play-start-btn:not(.hidden) {
-  margin-top: 0.5rem;
+  margin-top: 0;
   flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .play-stack {
+    width: min(100%, 44rem);
+  }
+
+  .play-game-lobby .play-stack {
+    width: min(100%, 38rem);
+  }
+
+  .take5-board-grid {
+    gap: 5px !important;
+  }
 }
 
 .play-board-pane .take5-board-grid {
