@@ -185,6 +185,12 @@ export function renderPlayView(root) {
     if (!state.you.isYourTurn) selectedCardId = null;
   }
 
+  function shouldFlashTargets(cardId) {
+    if (!cardId) return false;
+    const card = CARD_CATALOG[cardId];
+    return card?.jackType !== 'one_eyed' && card?.jackType !== 'two_eyed';
+  }
+
   function paintBoard() {
     if (!state?.chips) return;
     const sig = boardSignature();
@@ -194,17 +200,18 @@ export function renderPlayView(root) {
     const targets = getTargets();
     const claim = state.pendingSequenceClaim;
     const myClaim = isMySequenceClaim();
+    const flashTargets = shouldFlashTargets(selectedCardId);
 
     renderBoard(miniBoardEl, {
       chips: state.chips,
       validTargets: myClaim ? [] : targets,
-      highlights: [],
+      highlights: flashTargets ? targets : [],
       interactive: myClaim || Boolean(selectedCardId && state.you?.isYourTurn),
       onCellClick: myClaim ? handleSequencePick : (row, col) => handleBoardTap(row, col),
       playerTeam: state.you.team,
       highlightMode: 'token',
       boardSize: 'mobile',
-      showTargetPreviews: false,
+      showTargetPreviews: flashTargets,
       sequenceEligible: myClaim ? (claim.eligibleCells ?? []) : [],
       sequencePicked: myClaim ? (claim.pickedCells ?? []) : [],
       sequenceTeam: claim?.team ?? state.you.team,
