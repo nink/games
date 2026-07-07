@@ -1,9 +1,9 @@
 import { CARD_CATALOG } from '/shared/cards.js';
-import { renderBoard, renderHand } from './board-render.js';
+import { renderBoard, renderHand, updateHandSelection } from './board-render.js';
+import { legalTargetsClient } from './play-targets.js';
 import {
   clearSelection,
   connect,
-  getPlayerId,
   joinRoom,
   onMessage,
   playPlace,
@@ -19,6 +19,7 @@ export function renderPlayView(root) {
   let state = null;
   let selectedCardId = null;
   let joined = false;
+  let lastBoardSig = '';
 
   const savedName = localStorage.getItem('take5_name') || '';
   const savedTeam = localStorage.getItem('take5_team') || 'red';
@@ -57,22 +58,24 @@ export function renderPlayView(root) {
       <p id="join-error" class="text-red-400 text-sm hidden"></p>
     </div>
 
-    <div id="play-game" class="hidden min-h-screen flex flex-col p-4 gap-4 max-w-lg mx-auto">
-      <header class="flex items-center justify-between">
+    <div id="play-game" class="hidden play-game min-h-screen flex flex-col p-2 sm:p-4 gap-2 max-w-6xl mx-auto">
+      <header class="play-header flex items-center justify-between shrink-0 px-1">
         <div>
           <p class="text-xs text-slate-500">Room <span id="play-code" class="text-amber-400 font-bold"></span></p>
           <p id="play-turn" class="text-sm font-semibold"></p>
         </div>
         <span id="play-team-badge" class="rounded-full px-3 py-1 text-xs font-bold uppercase"></span>
       </header>
-      <div id="play-mini-board" class="rounded-xl overflow-hidden border border-slate-800 opacity-90"></div>
-      <p id="play-hint" class="text-center text-sm text-amber-300/80"></p>
-      <section>
-        <h2 class="text-xs uppercase tracking-widest text-slate-500 mb-2">Your hand</h2>
-        <div id="play-hand"></div>
-      </section>
-      <button id="play-start" class="hidden rounded-xl bg-emerald-600 font-bold py-3">Start game (host)</button>
-      <p id="play-error" class="text-red-400 text-sm text-center hidden"></p>
+      <div class="play-main flex-1 min-h-0 flex flex-col gap-2">
+        <div id="play-mini-board" class="play-board-pane rounded-xl overflow-hidden border border-slate-800 flex justify-center items-center"></div>
+        <p id="play-hint" class="text-center text-xs text-amber-300/80 shrink-0 px-1"></p>
+        <section class="play-hand-pane shrink-0">
+          <h2 class="text-[10px] uppercase tracking-widest text-slate-500 mb-1 px-1">Your hand</h2>
+          <div id="play-hand"></div>
+        </section>
+      </div>
+      <button id="play-start" class="hidden rounded-xl bg-emerald-600 font-bold py-3 shrink-0">Start game (host)</button>
+      <p id="play-error" class="text-red-400 text-sm text-center hidden shrink-0"></p>
     </div>
   `;
 
@@ -99,9 +102,27 @@ export function renderPlayView(root) {
     el.classList.remove('hidden');
   }
 
-  function paint() {
-    if (!state?.you) return;
+  function getTargets() {
+    if (!selectedCardId || !state?.you?.isYourTurn || !state.chips) return [];
+    if (state.pendingSelection?.cardId === selectedCardId) {
+      return state.pendingSelection.targets ?? [];
+    }
+    return legalTargetsClient(state.chips, selectedCardId, state.you.team);
+  }
 
+  function boardSignature() {
+    const targets = getTargets();
+    return JSON.stringify({
+      chips: state?.chips,
+      targets,
+      team: state?.you?.team,
+      sel: selectedCardId,
+      turn: state?.you?.isYourTurn,
+    });
+  }
+
+  function paintHeader() {
+    if (!state?.you) return;
     codeEl.textContent = state.code;
     teamBadge.textContent = state.you.team;
     teamBadge.className = `rounded-full px-3 py-1 text-xs font-bold uppercase bg-${state.you.team}-500/20 text-${state.you.team}-400 border border-${state.you.team}-500/40`;
@@ -112,28 +133,8 @@ export function renderPlayView(root) {
       turnEl.textContent = 'Your turn — pick a card';
     } else {
       turnEl.textContent = `Waiting for ${state.currentPlayerName ?? '…'}`;
+      showError(playError, '');
     }
-
-    const targets = selectedCardId && state.you.isYourTurn
-      ? (state.pendingSelection?.cardId === selectedCardId ? state.pendingSelection.targets : [])
-      : [];
-
-    if (state.chips) {
-      renderBoard(miniBoardEl, {
-        chips: state.chips,
-        highlights: targets,
-        interactive: Boolean(selectedCardId && state.you.isYourTurn),
-        onCellClick: (row, col) => handleBoardTap(row, col),
-        playerTeam: state.you.team,
-      });
-    }
-
-    renderHand(handEl, state.you.hand, selectedCardId, (cardId) => {
-      if (!state.you.isYourTurn) return;
-      selectedCardId = cardId;
-      selectCard(cardId);
-      paint();
-    });
 
     const card = selectedCardId ? CARD_CATALOG[selectedCardId] : null;
     if (!state.you.isYourTurn) {
@@ -141,26 +142,82 @@ export function renderPlayView(root) {
     } else if (!selectedCardId) {
       hintEl.textContent = 'Tap a card in your hand';
     } else if (card?.jackType === 'one_eyed') {
-      hintEl.textContent = 'Pepsi — tap an opponent chip on the board to remove';
+      hintEl.textContent = 'Pepsi — tap near an opponent chip to remove';
     } else if (card?.jackType === 'two_eyed') {
       hintEl.textContent = 'Coke — tap any open space';
     } else {
-      hintEl.textContent = 'Tap a highlighted space on the board';
+      hintEl.textContent = 'Tap near a matching space on the board';
     }
 
     startBtn.classList.toggle('hidden', state.phase !== 'lobby');
   }
 
+  function paintBoard() {
+    if (!state?.chips) return;
+    const sig = boardSignature();
+    if (sig === lastBoardSig) return;
+    lastBoardSig = sig;
+
+    const targets = getTargets();
+    const canPlay = Boolean(selectedCardId && state.you?.isYourTurn);
+
+    renderBoard(miniBoardEl, {
+      chips: state.chips,
+      highlights: targets,
+      interactive: canPlay,
+      onCellClick: (row, col) => handleBoardTap(row, col),
+      playerTeam: state.you.team,
+      highlightMode: 'token',
+      boardSize: 'mobile',
+      snapToTarget: true,
+    });
+  }
+
+  function paintHand(fullRebuild = false) {
+    if (!state?.you) return;
+    const hand = state.you.hand;
+    if (fullRebuild || !handEl.querySelector('.hand-card')) {
+      renderHand(handEl, hand, selectedCardId, onHandCardTap, { compact: true });
+    } else {
+      updateHandSelection(handEl, selectedCardId);
+    }
+  }
+
+  function paint(fullHandRebuild = true) {
+    if (!state?.you) return;
+    paintHeader();
+    paintBoard();
+    paintHand(fullHandRebuild);
+  }
+
+  function onHandCardTap(cardId) {
+    if (!state?.you?.isYourTurn) return;
+    showError(playError, '');
+    selectedCardId = cardId;
+    selectCard(cardId);
+    paintHeader();
+    paintBoard();
+    updateHandSelection(handEl, selectedCardId);
+  }
+
   function handleBoardTap(row, col) {
     if (!selectedCardId || !state?.you?.isYourTurn) return;
+
+    const targets = getTargets();
+    const valid = targets.some((t) => t.row === row && t.col === col);
+    if (!valid) return;
+
     const card = CARD_CATALOG[selectedCardId];
-    if (card?.jackType === 'one_eyed') {
+    const target = targets.find((t) => t.row === row && t.col === col);
+
+    if (target?.kind === 'remove' || card?.jackType === 'one_eyed') {
       playRemove(selectedCardId, row, col);
     } else {
       playPlace(selectedCardId, row, col);
     }
     selectedCardId = null;
     clearSelection();
+    showError(playError, '');
   }
 
   connect();
@@ -177,9 +234,15 @@ export function renderPlayView(root) {
       gameEl.classList.remove('hidden');
     }
     if (msg.type === 'state') {
+      const wasMyTurn = state?.you?.isYourTurn;
       state = msg.payload;
       if (!state.pendingSelection) selectedCardId = null;
-      paint();
+      if (!state.you?.isYourTurn || !wasMyTurn) showError(playError, '');
+      lastBoardSig = '';
+      const curHand = JSON.stringify(state.you?.hand ?? []);
+      const handChanged = curHand !== handEl.dataset.lastHand;
+      handEl.dataset.lastHand = curHand;
+      paint(handChanged);
     }
   });
 

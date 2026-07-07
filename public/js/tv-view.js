@@ -80,6 +80,7 @@ export function renderTvView(root) {
       highlights,
       interactive: false,
       playerTeam: team,
+      highlightMode: 'token',
     });
   }
 
