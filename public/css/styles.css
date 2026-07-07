@@ -99,7 +99,7 @@
 }
 
 .take5-board-grid .card-face-logo {
-  inset: 4px !important;
+  inset: 6px !important;
   padding: 1px !important;
   border-radius: 4px;
   overflow: hidden;
@@ -117,12 +117,12 @@
 }
 
 .take5-board-grid .card-face-chipped .card-face-logo {
-  inset: 4px !important;
+  inset: 5px !important;
   padding: 1px !important;
 }
 
 .take5-board-grid .card-face-wild .card-face-logo {
-  inset: 4px 4px 14px !important;
+  inset: 6px 6px 15px !important;
   padding: 2px 4px !important;
 }
 
