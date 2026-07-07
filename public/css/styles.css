@@ -204,40 +204,54 @@
 .play-game {
   height: 100dvh;
   max-height: 100dvh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .play-main {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow: hidden;
+  flex: 0 0 auto;
+  width: 100%;
   align-items: center;
-  justify-content: flex-start;
-  container-type: size;
 }
 
-/* Board + hint + hand share one width */
+/* Board + hint + hand share one width — sized from width, not full viewport height */
 .play-stack {
   flex: 0 0 auto;
-  width: min(100cqw, calc(100cqh - 5.5rem), 36rem);
-  max-width: 100%;
+  width: min(100%, 36rem);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 .play-board-pane {
   flex: 0 0 auto;
-  width: 100%;
+  width: min(100%, min(100vw - 1rem, 52dvh), 36rem);
   aspect-ratio: 1;
-  min-height: 0;
+  height: auto;
+  margin: 0 auto;
   display: flex;
   align-items: stretch;
   justify-content: center;
   overflow: hidden;
+}
+
+/* Lobby — smaller board so Start button fits without scrolling */
+.play-game-lobby .play-board-pane {
+  width: min(100%, min(100vw - 1rem, 40dvh), 36rem);
+}
+
+.play-game-lobby .play-hand-pane,
+.play-game-lobby #play-hint {
+  display: none;
+}
+
+.play-start-btn:not(.hidden) {
+  margin-top: 0.5rem;
+  flex-shrink: 0;
 }
 
 .play-board-pane .take5-board-grid {
@@ -251,6 +265,7 @@
 .play-hand-pane {
   flex: 0 0 auto;
   width: 100%;
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 /* Hand cards — equal width, height from aspect-ratio */

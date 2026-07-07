@@ -60,7 +60,7 @@ export function renderPlayView(root) {
       <p id="join-error" class="text-red-400 text-sm hidden"></p>
     </div>
 
-    <div id="play-game" class="hidden play-game min-h-screen flex flex-col p-2 gap-1 max-w-6xl mx-auto">
+    <div id="play-game" class="hidden play-game flex flex-col p-2 gap-1 max-w-6xl mx-auto w-full">
       <header class="play-header flex items-center justify-between shrink-0 px-1">
         <div>
           <p class="text-xs text-slate-500">Room <span id="play-code" class="text-amber-400 font-bold"></span></p>
@@ -78,7 +78,7 @@ export function renderPlayView(root) {
           </section>
         </div>
       </div>
-      <button id="play-start" class="hidden rounded-xl bg-emerald-600 font-bold py-3 shrink-0">Start game (host)</button>
+      <button id="play-start" class="hidden play-start-btn rounded-xl bg-emerald-600 font-bold py-3 shrink-0 w-full">Start game (host)</button>
       <p id="play-error" class="text-red-400 text-sm text-center hidden shrink-0"></p>
     </div>
   `;
@@ -165,6 +165,7 @@ export function renderPlayView(root) {
     }
 
     startBtn.classList.toggle('hidden', state.phase !== 'lobby');
+    gameEl.classList.toggle('play-game-lobby', state.phase === 'lobby');
   }
 
   function syncSelectionFromState() {
