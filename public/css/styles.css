@@ -123,11 +123,11 @@
 
 .take5-board-grid .card-face-wild .card-face-logo {
   inset: 4px 4px 14px !important;
-  padding: 1px 2px !important;
+  padding: 2px 4px !important;
 }
 
 .take5-board-grid .card-face-wild .card-face-logo img {
-  transform: scale(1.28);
+  transform: none;
 }
 
 /* Card face — suit = full background colour */

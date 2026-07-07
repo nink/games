@@ -91,10 +91,10 @@ const CUSTOM_SVG = {
 function fromAmazonIcon(raw, name) {
   const svgMatch = raw.match(/<svg[^>]*>([\s\S]*)<\/svg>/i);
   const body = svgMatch ? svgMatch[1].trim() : raw.trim();
-  const vb = raw.match(/viewBox=["']([^"']+)["']/i)?.[1] ?? '138 98 112 148';
+  const vb = raw.match(/viewBox=["']([^"']+)["']/i)?.[1] ?? '0 0 100 100';
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="${name}">
   <rect width="120" height="120" rx="14" fill="#ffffff"/>
-  <svg x="14" y="14" width="92" height="92" viewBox="${vb}" preserveAspectRatio="xMidYMid meet">
+  <svg x="16" y="16" width="88" height="88" viewBox="${vb}" preserveAspectRatio="xMidYMid meet">
     ${body}
   </svg>
 </svg>`;
