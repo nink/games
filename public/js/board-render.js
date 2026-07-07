@@ -212,8 +212,17 @@ export function renderBoard(container, {
     grid.addEventListener('pointerup', onPointer);
   }
 
-  container.innerHTML = '';
-  container.appendChild(grid);
+  const existing = container.querySelector('.take5-board-grid');
+  if (existing) {
+    const w = existing.offsetWidth;
+    const h = existing.offsetHeight;
+    if (w > 0 && h > 0) {
+      container.style.minWidth = `${w}px`;
+      container.style.minHeight = `${h}px`;
+    }
+  }
+
+  container.replaceChildren(grid);
 }
 
 /**

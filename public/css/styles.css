@@ -242,6 +242,7 @@
   overflow: hidden;
   container-type: size;
   container-name: play-board;
+  contain: layout style;
 }
 
 .play-board-pane .take5-board-grid {

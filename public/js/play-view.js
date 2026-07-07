@@ -100,27 +100,39 @@ export function renderPlayView(root) {
   const playError = root.querySelector('#play-error');
 
   const mobileMq = window.matchMedia('(max-width: 767px)');
+  let lockedBoardSide = 0;
+
   function updateViewportMode() {
     const mobile = mobileMq.matches;
     gameEl.classList.toggle('play-view-mobile', mobile);
     gameEl.classList.toggle('play-view-desktop', !mobile);
   }
-  mobileMq.addEventListener('change', () => {
-    updateViewportMode();
-    syncPlayWidths();
-  });
-  updateViewportMode();
-  window.addEventListener('resize', syncPlayWidths);
 
-  /** Keep hand / hint / start aligned to rendered board width */
-  function syncPlayWidths() {
+  function clearBoardSizeLock() {
+    lockedBoardSide = 0;
+    miniBoardEl.style.minWidth = '';
+    miniBoardEl.style.minHeight = '';
+  }
+
+  /** Keep hand / hint / start aligned to board width — lock after first measure to avoid tap flicker */
+  function syncPlayWidths(reset = false) {
+    if (reset) lockedBoardSide = 0;
     requestAnimationFrame(() => {
       const grid = miniBoardEl.querySelector('.take5-board-grid');
       if (!grid || !boardColumnEl) return;
+      if (lockedBoardSide > 0 && !reset) {
+        boardColumnEl.style.setProperty('--board-side', `${lockedBoardSide}px`);
+        return;
+      }
       const w = Math.round(grid.getBoundingClientRect().width);
-      if (w > 0) boardColumnEl.style.setProperty('--board-side', `${w}px`);
+      if (w <= 0) return;
+      lockedBoardSide = w;
+      boardColumnEl.style.setProperty('--board-side', `${w}px`);
     });
   }
+
+  mobileMq.addEventListener('change', onViewportChange);
+  updateViewportMode();
 
   function showError(el, text) {
     if (!text) {
@@ -319,9 +331,6 @@ export function renderPlayView(root) {
     selectedCardId = null;
     lastBoardSig = '';
     showError(playError, '');
-    paintHeader();
-    paintBoard();
-    paintHand(true);
 
     const claimNeeded = !isRemove
       ? detectSequenceClaimRequired(state.chips, team, row, col)
@@ -333,10 +342,11 @@ export function renderPlayView(root) {
         eligibleCells: claimNeeded.eligibleCells,
         pickedCells: [],
       };
-      lastBoardSig = '';
-      paintHeader();
-      paintBoard();
     }
+
+    paintHeader();
+    paintBoard();
+    paintHand(true);
 
     const ok = isRemove
       ? await playRemove(cardId, row, col)
@@ -345,8 +355,11 @@ export function renderPlayView(root) {
   }
 
   function onViewportChange() {
+    updateViewportMode();
+    clearBoardSizeLock();
     lastBoardSig = '';
     paintBoard();
+    syncPlayWidths(true);
   }
   window.addEventListener('resize', onViewportChange);
   window.addEventListener('orientationchange', () => {
@@ -368,6 +381,7 @@ export function renderPlayView(root) {
       joined = true;
       joinEl.classList.add('hidden');
       gameEl.classList.remove('hidden');
+      clearBoardSizeLock();
     }
     if (msg.type === 'state') {
       const wasMyTurn = state?.you?.isYourTurn;
