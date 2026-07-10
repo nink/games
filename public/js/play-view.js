@@ -12,7 +12,7 @@ import {
   selectCard,
   startGame,
 } from './ws-client.js';
-import { detectSequenceClaimRequired } from '/shared/sequence-claim.js';
+import { detectSequenceClaimRequired, pickAutoWinningSequence } from '/shared/sequence-claim.js';
 import { isCorporateLogoDemo } from './logo-mode.js';
 import { mountCorporateDemoBanner } from './demo-banner.js';
 import { getActiveTestScenarioId } from './test-mode.js';
@@ -379,7 +379,27 @@ export function renderPlayView(root) {
         state.sequenceClaims ?? [],
       )
       : null;
-    if (claimNeeded) {
+    const autoWin = !isRemove
+      ? pickAutoWinningSequence(
+        state.chips,
+        team,
+        row,
+        col,
+        state.sequenceClaims ?? [],
+      )
+      : null;
+
+    if (autoWin) {
+      state.pendingSequenceClaim = null;
+      state.sequenceClaims = [...(state.sequenceClaims ?? []), { team, cells: autoWin }];
+      for (const cell of autoWin) {
+        if (state.chips[cell.row]?.[cell.col]) {
+          state.chips[cell.row][cell.col].locked = true;
+        }
+      }
+      state.phase = 'game_over';
+      state.winnerTeam = team;
+    } else if (claimNeeded) {
       state.pendingSequenceClaim = {
         playerId: state.you.id,
         team,

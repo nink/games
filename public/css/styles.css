@@ -607,6 +607,50 @@
   background: #10b981;
 }
 
+/* Watch TV — remote-friendly on-screen keyboard */
+.watch-keyboard-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.watch-key {
+  min-height: 3.25rem;
+  border-radius: 0.85rem;
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #f8fafc;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.watch-key:hover,
+.watch-key:focus-visible {
+  background: #334155;
+  border-color: #fbbf24;
+  outline: none;
+}
+
+.watch-key:active {
+  transform: scale(0.96);
+  background: #0f172a;
+}
+
+@media (min-width: 640px) {
+  .watch-keyboard-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .watch-key {
+    min-height: 3.75rem;
+    font-size: 1.5rem;
+  }
+}
+
 .board-cell-seq-picked .chip-token-placed,
 .chip-token-frozen {
   box-shadow:

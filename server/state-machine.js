@@ -14,6 +14,7 @@ import {
 import {
   autoLockExactFives,
   detectSequenceClaimRequired,
+  pickAutoWinningSequence,
   areColinear,
   isValidSequencePick,
   isValidNewSequenceClaim,
@@ -269,6 +270,31 @@ export function playPlace(room, playerId, cardId, row, col) {
   removeCardFromHand(player, cardId);
   const drawn = drawCards(room, 1);
   if (drawn.length) player.hand.push(drawn[0]);
+
+  const autoWinLine = pickAutoWinningSequence(
+    room.chips,
+    player.team,
+    row,
+    col,
+    room.sequenceClaims,
+  );
+  if (autoWinLine) {
+    lockClaimedCells(room.chips, autoWinLine);
+    room.sequenceClaims.push({ team: player.team, cells: [...autoWinLine] });
+    room.pendingSelection = null;
+    room.pendingSequenceClaim = null;
+    room.phase = GAME_PHASE.GAME_OVER;
+    room.winnerTeam = player.team;
+    return {
+      ok: true,
+      action: validation.action,
+      row,
+      col,
+      team: player.team,
+      winner: player.team,
+      sequenceCounts: sequenceCountByClaims(room.chips, room.sequenceClaims),
+    };
+  }
 
   const claimRequired = detectSequenceClaimRequired(
     room.chips,

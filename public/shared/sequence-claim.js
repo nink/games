@@ -1,4 +1,4 @@
-import { GRID_SIZE } from './constants.js';
+import { GRID_SIZE, SEQUENCES_TO_WIN } from './constants.js';
 import { BOARD, cellAt } from './cards.js';
 
 const DIRECTIONS = [
@@ -209,6 +209,35 @@ export function validSequenceWindowsThrough(chips, team, row, col, existingClaim
 }
 
 /**
+ * @param {{ team: string, cells: { row: number, col: number }[] }[]} claims
+ * @param {string} team
+ */
+export function teamSequenceCount(claims = [], team) {
+  return claims.filter((claim) => claim.team === team).length;
+}
+
+/**
+ * When one more sequence wins the game, auto-pick a valid 5 (prefer through the placed cell).
+ * @param {unknown[][]} chips
+ * @param {string} team
+ * @param {number} row
+ * @param {number} col
+ * @param {{ team: string, cells: { row: number, col: number }[] }[]} [existingClaims]
+ * @returns {{ row: number, col: number }[] | null}
+ */
+export function pickAutoWinningSequence(chips, team, row, col, existingClaims = []) {
+  if (teamSequenceCount(existingClaims, team) + 1 < SEQUENCES_TO_WIN) return null;
+
+  const windows = validSequenceWindowsThrough(chips, team, row, col, existingClaims);
+  if (!windows.length) return null;
+
+  const throughPlace = windows.find((window) =>
+    window.some((cell) => cell.row === row && cell.col === col)
+  );
+  return throughPlace ?? windows[0];
+}
+
+/**
  * @param {unknown[][]} chips
  * @param {string} team
  * @param {number} row
@@ -216,6 +245,9 @@ export function validSequenceWindowsThrough(chips, team, row, col, existingClaim
  * @param {{ team: string, cells: { row: number, col: number }[] }[]} [existingClaims]
  */
 export function detectSequenceClaimRequired(chips, team, row, col, existingClaims = []) {
+  // Winning second sequence is auto-claimed — no manual pick needed.
+  if (pickAutoWinningSequence(chips, team, row, col, existingClaims)) return null;
+
   const windows = validSequenceWindowsThrough(chips, team, row, col, existingClaims);
   // Exact-length 5s are auto-locked; only prompt when the player must choose among options
   // (longer run with multiple valid windows, or a single window that is not the whole line).

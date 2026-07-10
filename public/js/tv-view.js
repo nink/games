@@ -32,6 +32,9 @@ export function renderTvView(root) {
           <p id="tv-code" class="room-code text-4xl font-black text-amber-400 mt-1">----</p>
         </div>
         <div id="tv-qr" class="flex justify-center py-1"></div>
+        <p class="text-xs text-slate-500 text-center leading-snug">
+          Other TVs: open <code class="text-amber-300">/watch</code> and enter this code
+        </p>
         <div>
           <p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Turn</p>
           <p id="tv-turn" class="text-lg font-semibold">Waiting…</p>

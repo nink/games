@@ -220,7 +220,7 @@ function wsSend(type, payload = {}) {
 }
 
 export function connect() {
-  clientRole = location.pathname.includes('/tv') ? 'tv' : 'play';
+  clientRole = location.pathname.includes('/play') ? 'play' : 'tv';
 
   loadCloudConfig()
     .then(async (cfg) => {

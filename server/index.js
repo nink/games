@@ -45,7 +45,7 @@ app.post('/api/room', async (_req, res) => {
   res.json({ code: created?.payload?.code });
 });
 
-// SPA fallback — client router handles /tv and /play
+// SPA fallback — client router handles /tv, /play, /watch
 app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
@@ -222,5 +222,6 @@ wss.on('connection', (ws) => {
 server.listen(PORT, () => {
   console.log(`Take 5 server running at http://localhost:${PORT}`);
   console.log(`  TV view:   http://localhost:${PORT}/tv`);
+  console.log(`  Watch:     http://localhost:${PORT}/watch`);
   console.log(`  Mobile:    http://localhost:${PORT}/play`);
 });
