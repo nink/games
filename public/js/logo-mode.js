@@ -1,6 +1,6 @@
 /**
  * Private corporate-logo demo — append ?logo to /tv or /play URLs.
- * Production default uses generic fictional icons from /shared/cards.js.
+ * Production default uses plain rank + suit faces from /shared/cards.js.
  */
 
 /** @returns {boolean} */

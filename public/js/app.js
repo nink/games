@@ -31,7 +31,7 @@ export function mountApp(root) {
     <main class="min-h-screen flex flex-col items-center justify-center gap-8 p-8 text-center">
       <div>
         <h1 class="text-5xl font-black tracking-tight text-amber-400">Take 5</h1>
-        <p class="mt-2 text-slate-400 text-lg">Corporate Sequence — TV + phone controllers</p>
+        <p class="mt-2 text-slate-400 text-lg">Sequence-style board game — TV + phone controllers</p>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
         <a href="/tv${logoQs}" class="flex-1 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-4 px-6 transition">

@@ -3,22 +3,6 @@
 .board-cell-chip-blue { box-shadow: inset 0 0 0 4px #3b82f6; }
 .board-cell-chip-green { box-shadow: inset 0 0 0 4px #22c55e; }
 
-.card-face-chipped-red { background-color: #ef4444 !important; }
-.card-face-chipped-blue { background-color: #3b82f6 !important; }
-.card-face-chipped-green { background-color: #22c55e !important; }
-
-.card-face-chipped .card-face-logo {
-  inset: 4px;
-  background: transparent !important;
-  box-shadow: none;
-  border-radius: 2px;
-  padding: 2px;
-}
-
-.card-face-chipped.card-face-wild .card-face-logo {
-  inset: 4px 4px 14px;
-}
-
 /* Valid targets — team border outside + black flash inside */
 .cell-highlight-team-red { box-shadow: inset 0 0 0 4px #ef4444; }
 .cell-highlight-team-blue { box-shadow: inset 0 0 0 4px #3b82f6; }
@@ -29,7 +13,7 @@
   position: relative;
 }
 
-/* Valid play targets — flash card face black (not wild corners) */
+/* Valid play targets — flash card face (not wild corners) */
 .cell-highlight-flash .card-face {
   animation: flash-target-black 0.85s ease-in-out infinite alternate;
   z-index: 2;
@@ -40,102 +24,131 @@
   position: relative;
 }
 
-.cell-highlight-flash .card-face-logo {
-  animation: flash-target-logo-black 0.85s ease-in-out infinite alternate;
-}
-
 .cell-highlight-remove-flash .card-face {
   animation: flash-target-red 0.85s ease-in-out infinite alternate;
 }
 
-.cell-highlight-remove-flash .card-face-logo {
-  animation: flash-target-logo-red 0.85s ease-in-out infinite alternate;
+@keyframes flash-target-black {
+  from { background-color: #f8fafc; color: #0f172a; }
+  to { background-color: #0a0a0a; color: #f8fafc; }
 }
 
-@keyframes flash-target-black {
+@keyframes flash-target-red {
+  from { background-color: #f8fafc; }
+  to { background-color: #7f1d1d; color: #fecaca; }
+}
+
+/* Logo demo (?logo) — flash suit ring + white logo plate */
+.cell-highlight-flash .card-face-logo-mode {
+  animation: flash-target-logo-suit-black 0.85s ease-in-out infinite alternate;
+}
+
+.cell-highlight-flash .card-face-logo-mode .card-face-logo {
+  animation: flash-target-logo-plate-black 0.85s ease-in-out infinite alternate;
+}
+
+.cell-highlight-remove-flash .card-face-logo-mode {
+  animation: flash-target-logo-suit-red 0.85s ease-in-out infinite alternate;
+}
+
+.cell-highlight-remove-flash .card-face-logo-mode .card-face-logo {
+  animation: flash-target-logo-plate-red 0.85s ease-in-out infinite alternate;
+}
+
+@keyframes flash-target-logo-suit-black {
   from { background-color: var(--card-suit-bg, #1e293b); }
   to { background-color: #0a0a0a; }
 }
 
-@keyframes flash-target-logo-black {
+@keyframes flash-target-logo-plate-black {
   from { background-color: #ffffff; }
   to { background-color: #141414; }
 }
 
-@keyframes flash-target-red {
+@keyframes flash-target-logo-suit-red {
   from { background-color: var(--card-suit-bg, #1e293b); }
   to { background-color: #7f1d1d; }
 }
 
-@keyframes flash-target-logo-red {
+@keyframes flash-target-logo-plate-red {
   from { background-color: #ffffff; }
   to { background-color: #991b1b; }
-}
-
-.card-face.suit-hearts { --card-suit-bg: #9333ea; background-color: #9333ea; }
-.card-face.suit-diamonds { --card-suit-bg: #f97316; background-color: #f97316; }
-.card-face.suit-clubs { --card-suit-bg: #eab308; background-color: #eab308; }
-.card-face.suit-spades { --card-suit-bg: #0d9488; background-color: #0d9488; }
-
-.card-face-logo-bordered {
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.85), 0 0 0 1px rgba(15, 23, 42, 0.45);
-}
-
-.logo-img-bordered {
-  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.9));
 }
 
 .card-tap:active { transform: scale(0.96); }
 .card-selected { outline: 3px solid #fbbf24; outline-offset: 2px; }
 
-.board-cell img {
-  object-fit: contain;
+/* Plain playing-card face — rank + suit only */
+.card-face {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.2);
+  user-select: none;
+}
+
+.card-face-plain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: #f8fafc;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.card-face-rank {
+  font-size: clamp(9px, 2.4vw, 15px);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.card-face-suit {
+  font-size: clamp(10px, 2.8vw, 16px);
+  line-height: 0.95;
+  margin-top: -1px;
+}
+
+.card-face-hand.card-face-plain .card-face-rank {
+  font-size: clamp(14px, 4vw, 22px);
+}
+
+.card-face-hand.card-face-plain .card-face-suit {
+  font-size: clamp(16px, 4.5vw, 26px);
+}
+
+.take5-board-grid .card-face-plain .card-face-rank {
+  font-size: clamp(8px, 1.6vmin, 14px);
+}
+
+.take5-board-grid .card-face-plain .card-face-suit {
+  font-size: clamp(9px, 1.9vmin, 16px);
+}
+
+.card-face-plain.card-face-wild {
+  background: #fef3c7 !important;
+  color: #92400e;
+}
+
+.card-face-plain .card-face-wild-label {
+  font-size: clamp(7px, 1.6vmin, 11px);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-align: center;
   padding: 2px;
 }
 
-/* Board (TV + play) — balance: visible suit border + larger logos (clipped in white box) */
-.take5-board-grid .board-cell img {
-  padding: 0 !important;
+.card-face-empty {
+  background: #e2e8f0;
 }
 
-.take5-board-grid .card-face-logo {
-  inset: 4px !important;
-  padding: 0 !important;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.take5-board-grid .card-face-logo img {
-  width: 100% !important;
-  height: 100% !important;
-  padding: 0 !important;
-  object-fit: contain !important;
-  object-position: center;
-  transform: scale(1.55);
-  transform-origin: center;
-}
-
-.take5-board-grid .card-face-chipped .card-face-logo {
-  inset: 4px !important;
-  padding: 0 !important;
-}
-
-.take5-board-grid .card-face-wild .card-face-logo {
-  inset: 4px 4px 14px !important;
-  padding: 1px 2px !important;
-}
-
-.take5-board-grid .card-face-wild .card-face-logo img {
-  transform: scale(1.35);
-}
-
-/* Card face — suit = full background colour */
-.card-face {
-  position: relative;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.15);
-}
+/* —— Corporate logo demo (?logo) —— */
+.card-face-logo-mode.suit-hearts { --card-suit-bg: #9333ea; background-color: #9333ea; }
+.card-face-logo-mode.suit-diamonds { --card-suit-bg: #f97316; background-color: #f97316; }
+.card-face-logo-mode.suit-clubs { --card-suit-bg: #eab308; background-color: #eab308; }
+.card-face-logo-mode.suit-spades { --card-suit-bg: #0d9488; background-color: #0d9488; }
 
 .card-face-logo {
   position: absolute;
@@ -149,7 +162,7 @@
   padding: 1px;
 }
 
-.card-face-hand .card-face-logo {
+.card-face-hand.card-face-logo-mode .card-face-logo {
   inset: 4px;
   padding: 1px;
 }
@@ -159,18 +172,35 @@
   transform-origin: center;
 }
 
-.card-face-wild {
+.take5-board-grid .card-face-logo-mode .card-face-logo {
+  inset: 4px !important;
+  padding: 0 !important;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.take5-board-grid .card-face-logo-mode .card-face-logo img {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  object-position: center;
+  transform: scale(1.55);
+  transform-origin: center;
+}
+
+.card-face-logo-mode.card-face-wild {
   --card-suit-bg: #f59e0b;
   background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
 }
 
-.card-face-wild .card-face-logo {
+.card-face-logo-mode.card-face-wild .card-face-logo {
   background: rgba(255, 255, 255, 0.95);
   inset: 3px 3px 14px;
   padding: 1px 2px;
 }
 
-.card-face-wild .card-face-logo img {
+.card-face-logo-mode.card-face-wild .card-face-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -180,7 +210,7 @@
   transform-origin: center;
 }
 
-.card-face-wild-label {
+.card-face-logo-mode .card-face-wild-label {
   position: absolute;
   bottom: 2px;
   left: 0;
@@ -191,6 +221,28 @@
   color: #78350f;
   letter-spacing: 0.04em;
   line-height: 1;
+}
+
+.hand-card-compact .card-face-logo-mode .card-face-logo {
+  inset: 2px;
+  padding: 0;
+}
+
+.hand-card-compact .card-face-logo-mode .card-face-logo img {
+  transform: scale(1.45);
+  transform-origin: center;
+}
+
+.take5-board-mobile .card-face-logo-mode .card-face-logo {
+  inset: 3px !important;
+}
+
+.take5-board-mobile .card-face-logo-mode.card-face-wild .card-face-logo {
+  inset: 3px 3px 11px !important;
+}
+
+.take5-board-mobile .card-face-logo-mode .card-face-logo img {
+  transform: scale(1.45);
 }
 
 .hand-card {
@@ -322,9 +374,6 @@
     padding-bottom: 0;
   }
 
-  .play-view-mobile .take5-board-mobile .card-face-logo {
-    inset: 4px !important;
-  }
 }
 
 /* —— Desktop play view —— */
@@ -367,10 +416,6 @@
     gap: 5px !important;
   }
 
-  .play-view-desktop .hand-card-compact .card-face-hand .card-face-logo {
-    inset: 4px;
-    padding: 2px;
-  }
 }
 
 /* Hand cards — equal width, height from aspect-ratio */
@@ -395,35 +440,16 @@
   border: none;
 }
 
-.hand-card-compact .card-face-hand .card-face-logo {
-  inset: 2px;
-  padding: 0;
-}
-
-.hand-card-compact .card-face-hand .card-face-logo img {
-  transform: scale(1.45);
-  transform-origin: center;
-}
-
 .take5-board-mobile .board-cell {
   cursor: default;
 }
 
-/* Mobile — slightly tighter borders so logos stay readable at small sizes */
-.take5-board-mobile .card-face-logo {
-  inset: 3px !important;
+.take5-board-mobile .card-face-rank {
+  font-size: clamp(7px, 2.8vw, 12px);
 }
 
-.take5-board-mobile .card-face-chipped .card-face-logo {
-  inset: 3px !important;
-}
-
-.take5-board-mobile .card-face-wild .card-face-logo {
-  inset: 3px 3px 11px !important;
-}
-
-.take5-board-mobile .card-face-logo img {
-  transform: scale(1.45);
+.take5-board-mobile .card-face-suit {
+  font-size: clamp(8px, 3.2vw, 13px);
 }
 
 /* Sequence-style preview token on valid targets — hard blink team / black */

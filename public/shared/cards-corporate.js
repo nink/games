@@ -75,22 +75,32 @@ const RANK_BRAND = {
   A: 'mcdonalds',
 };
 
-/** Suit → card/board background (distinct from team chip colours: red, blue, green). */
+/** Suit → coloured ring for corporate logo demo (?logo). */
 export const SUIT_META = {
-  hearts: { name: 'Hearts', colorName: 'Purple', bg: '#9333ea', css: 'hearts' },
-  diamonds: { name: 'Diamonds', colorName: 'Orange', bg: '#f97316', css: 'diamonds' },
-  clubs: { name: 'Clubs', colorName: 'Yellow', bg: '#eab308', css: 'clubs' },
-  spades: { name: 'Spades', colorName: 'Teal', bg: '#0d9488', css: 'spades' },
+  hearts: { name: 'Hearts', colorName: 'Purple', bg: '#9333ea', symbol: '♥', ink: '#dc2626', css: 'hearts' },
+  diamonds: { name: 'Diamonds', colorName: 'Orange', bg: '#f97316', symbol: '♦', ink: '#dc2626', css: 'diamonds' },
+  clubs: { name: 'Clubs', colorName: 'Yellow', bg: '#eab308', symbol: '♣', ink: '#0f172a', css: 'clubs' },
+  spades: { name: 'Spades', colorName: 'Teal', bg: '#0d9488', symbol: '♠', ink: '#0f172a', css: 'spades' },
 };
 
 /**
- * Display label: "McDonald's · Red"
+ * Display label: "McDonald's · Purple"
  * @param {string} brandName
  * @param {string} suit
  */
 export function brandSuitLabel(brandName, suit) {
   const meta = SUIT_META[suit];
   return meta ? `${brandName} · ${meta.colorName}` : brandName;
+}
+
+/**
+ * Compact face label: "A♥", "10♠"
+ * @param {string} rank
+ * @param {string} suit
+ */
+export function cardFaceLabel(rank, suit) {
+  const meta = SUIT_META[suit];
+  return meta ? `${rank}${meta.symbol}` : String(rank);
 }
 
 /**
@@ -113,7 +123,6 @@ export function makeCard(rank, suit) {
   if (rank === 'J') {
     const twoEyed = suit === 'clubs' || suit === 'diamonds';
     const brandId = twoEyed ? 'coke' : 'pepsi';
-    const brand = BRANDS[brandId];
     const base = twoEyed ? 'Coke (Wild)' : 'Pepsi (Remove)';
     return {
       id,
@@ -291,7 +300,7 @@ export function buildCardMapping() {
         suit,
         rankLabel: RANK_DISPLAY[rank] ?? rank,
         suitLabel: suitMeta?.name ?? suit,
-        colorName: suitMeta?.colorName ?? '',
+        colorName: suitMeta?.colorName ?? suitMeta?.name ?? '',
         brandId: card.brandId,
         brandName: brand?.name ?? card.brandId,
         label: card.label,

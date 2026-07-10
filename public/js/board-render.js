@@ -255,14 +255,6 @@ export function renderHand(container, hand, selectedCardId, onSelect, { compact 
     face.classList.add('flex-1', 'min-h-0');
     btn.appendChild(face);
 
-    if (!compact) {
-      const label = document.createElement('span');
-      label.className = 'text-[9px] text-slate-400 text-center leading-tight px-1 pb-0.5 truncate w-full';
-      label.textContent = card?.label ?? cardId;
-      label.title = card?.label ?? cardId;
-      btn.appendChild(label);
-    }
-
     btn.addEventListener('click', () => onSelect(cardId));
     wrap.appendChild(btn);
   }

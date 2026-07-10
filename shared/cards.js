@@ -51,16 +51,26 @@ const RANK_BRAND = {
   A: 'logo_a',
 };
 
-/** Suit → card/board background (distinct from team chip colours: red, blue, green). */
+/** Suit → traditional symbol + red/black ink (plain mode). bg used only by ?logo demo. */
 export const SUIT_META = {
-  hearts: { name: 'Hearts', colorName: 'Purple', bg: '#9333ea', css: 'hearts' },
-  diamonds: { name: 'Diamonds', colorName: 'Orange', bg: '#f97316', css: 'diamonds' },
-  clubs: { name: 'Clubs', colorName: 'Yellow', bg: '#eab308', css: 'clubs' },
-  spades: { name: 'Spades', colorName: 'Teal', bg: '#0d9488', css: 'spades' },
+  hearts: { name: 'Hearts', colorName: 'Purple', bg: '#9333ea', symbol: '♥', ink: '#dc2626', css: 'hearts' },
+  diamonds: { name: 'Diamonds', colorName: 'Orange', bg: '#f97316', symbol: '♦', ink: '#dc2626', css: 'diamonds' },
+  clubs: { name: 'Clubs', colorName: 'Yellow', bg: '#eab308', symbol: '♣', ink: '#0f172a', css: 'clubs' },
+  spades: { name: 'Spades', colorName: 'Teal', bg: '#0d9488', symbol: '♠', ink: '#0f172a', css: 'spades' },
 };
 
 /**
- * Display label: "Beacon · Purple"
+ * Compact face label: "A♥", "10♠"
+ * @param {string} rank
+ * @param {string} suit
+ */
+export function cardFaceLabel(rank, suit) {
+  const meta = SUIT_META[suit];
+  return meta ? `${rank}${meta.symbol}` : String(rank);
+}
+
+/**
+ * @deprecated Prefer cardFaceLabel for plain mode.
  * @param {string} brandName
  * @param {string} suit
  */
@@ -89,24 +99,23 @@ export function makeCard(rank, suit) {
   if (rank === 'J') {
     const twoEyed = suit === 'clubs' || suit === 'diamonds';
     const brandId = 'logo_j';
-    const base = twoEyed ? 'Jack (Place)' : 'Jack (Remove)';
+    const face = cardFaceLabel(rank, suit);
     return {
       id,
       rank,
       suit,
       brandId,
-      label: brandSuitLabel(base, suit),
+      label: twoEyed ? `${face} Place` : `${face} Remove`,
       jackType: twoEyed ? 'two_eyed' : 'one_eyed',
     };
   }
   const brandId = brandForRankSuit(rank, suit);
-  const brand = BRANDS[brandId];
   return {
     id,
     rank,
     suit,
     brandId,
-    label: brandSuitLabel(brand?.name ?? brandId, suit),
+    label: cardFaceLabel(rank, suit),
   };
 }
 
@@ -266,7 +275,7 @@ export function buildCardMapping() {
         suit,
         rankLabel: RANK_DISPLAY[rank] ?? rank,
         suitLabel: suitMeta?.name ?? suit,
-        colorName: suitMeta?.colorName ?? '',
+        colorName: suitMeta?.colorName ?? suitMeta?.name ?? '',
         brandId: card.brandId,
         brandName: brand?.name ?? card.brandId,
         label: card.label,
