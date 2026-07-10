@@ -94,36 +94,41 @@
   justify-content: center;
   gap: 0;
   background: #f8fafc;
-  line-height: 1;
-  font-weight: 800;
+  line-height: 0.9;
+  font-weight: 900;
+  container-type: size;
+  container-name: card-face;
 }
 
 .card-face-rank {
-  font-size: clamp(9px, 2.4vw, 15px);
-  letter-spacing: -0.02em;
+  font-size: 42cqmin;
+  letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
+  line-height: 0.85;
 }
 
 .card-face-suit {
-  font-size: clamp(10px, 2.8vw, 16px);
-  line-height: 0.95;
-  margin-top: -1px;
+  font-size: 48cqmin;
+  line-height: 0.85;
+  margin-top: -0.08em;
 }
 
+/* Hand cards — still large relative to the card face */
 .card-face-hand.card-face-plain .card-face-rank {
-  font-size: clamp(14px, 4vw, 22px);
+  font-size: 38cqmin;
 }
 
 .card-face-hand.card-face-plain .card-face-suit {
-  font-size: clamp(16px, 4.5vw, 26px);
+  font-size: 44cqmin;
 }
 
+/* Board cells — fill the square */
 .take5-board-grid .card-face-plain .card-face-rank {
-  font-size: clamp(8px, 1.6vmin, 14px);
+  font-size: 42cqmin;
 }
 
 .take5-board-grid .card-face-plain .card-face-suit {
-  font-size: clamp(9px, 1.9vmin, 16px);
+  font-size: 48cqmin;
 }
 
 .card-face-plain.card-face-wild {
@@ -132,9 +137,9 @@
 }
 
 .card-face-plain .card-face-wild-label {
-  font-size: clamp(7px, 1.6vmin, 11px);
+  font-size: 28cqmin;
   font-weight: 900;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   line-height: 1;
   text-align: center;
   padding: 2px;
@@ -150,32 +155,38 @@
 .card-face-logo-mode.suit-clubs { --card-suit-bg: #eab308; background-color: #eab308; }
 .card-face-logo-mode.suit-spades { --card-suit-bg: #0d9488; background-color: #0d9488; }
 
+/* Thin suit ring; logo plate fills almost the whole cell */
 .card-face-logo {
   position: absolute;
-  inset: 4px;
+  inset: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-  padding: 1px;
+  border-radius: 2px;
+  box-shadow: none;
+  padding: 0;
+  overflow: hidden;
 }
 
 .card-face-hand.card-face-logo-mode .card-face-logo {
-  inset: 4px;
-  padding: 1px;
+  inset: 1px;
+  padding: 0;
 }
 
 .card-face-logo img {
-  transform: scale(1.45);
-  transform-origin: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: none;
+  padding: 0;
 }
 
 .take5-board-grid .card-face-logo-mode .card-face-logo {
-  inset: 4px !important;
+  inset: 1px !important;
   padding: 0 !important;
-  border-radius: 4px;
+  border-radius: 2px;
   overflow: hidden;
 }
 
@@ -183,10 +194,9 @@
   width: 100% !important;
   height: 100% !important;
   padding: 0 !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
   object-position: center;
-  transform: scale(1.55);
-  transform-origin: center;
+  transform: none !important;
 }
 
 .card-face-logo-mode.card-face-wild {
@@ -196,23 +206,22 @@
 
 .card-face-logo-mode.card-face-wild .card-face-logo {
   background: rgba(255, 255, 255, 0.95);
-  inset: 3px 3px 14px;
-  padding: 1px 2px;
+  inset: 1px 1px 12px;
+  padding: 0;
 }
 
 .card-face-logo-mode.card-face-wild .card-face-logo img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   padding: 0;
-  transform: scale(1.3);
-  transform-origin: center;
+  transform: none;
 }
 
 .card-face-logo-mode .card-face-wild-label {
   position: absolute;
-  bottom: 2px;
+  bottom: 1px;
   left: 0;
   right: 0;
   text-align: center;
@@ -221,28 +230,30 @@
   color: #78350f;
   letter-spacing: 0.04em;
   line-height: 1;
+  z-index: 1;
 }
 
 .hand-card-compact .card-face-logo-mode .card-face-logo {
-  inset: 2px;
+  inset: 1px;
   padding: 0;
 }
 
 .hand-card-compact .card-face-logo-mode .card-face-logo img {
-  transform: scale(1.45);
-  transform-origin: center;
+  object-fit: cover;
+  transform: none;
 }
 
 .take5-board-mobile .card-face-logo-mode .card-face-logo {
-  inset: 3px !important;
+  inset: 1px !important;
 }
 
 .take5-board-mobile .card-face-logo-mode.card-face-wild .card-face-logo {
-  inset: 3px 3px 11px !important;
+  inset: 1px 1px 10px !important;
 }
 
 .take5-board-mobile .card-face-logo-mode .card-face-logo img {
-  transform: scale(1.45);
+  object-fit: cover !important;
+  transform: none !important;
 }
 
 .hand-card {
@@ -444,12 +455,12 @@
   cursor: default;
 }
 
-.take5-board-mobile .card-face-rank {
-  font-size: clamp(7px, 2.8vw, 12px);
+.take5-board-mobile .card-face-plain .card-face-rank {
+  font-size: 40cqmin;
 }
 
-.take5-board-mobile .card-face-suit {
-  font-size: clamp(8px, 3.2vw, 13px);
+.take5-board-mobile .card-face-plain .card-face-suit {
+  font-size: 46cqmin;
 }
 
 /* Sequence-style preview token on valid targets — hard blink team / black */
