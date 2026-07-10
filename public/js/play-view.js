@@ -15,6 +15,7 @@ import {
 import { detectSequenceClaimRequired } from '/shared/sequence-claim.js';
 import { isCorporateLogoDemo } from './logo-mode.js';
 import { mountCorporateDemoBanner } from './demo-banner.js';
+import { getActiveTestScenarioId } from './test-mode.js';
 
 /**
  * @param {HTMLElement} root
@@ -77,7 +78,7 @@ export function renderPlayView(root) {
             <button id="play-start" class="hidden play-start-btn rounded-xl bg-emerald-600 font-bold py-3 shrink-0 w-full">Start game (host)</button>
             <p id="play-hint" class="text-center text-xs text-amber-300/80 shrink-0 px-1"></p>
             <section class="play-hand-pane shrink-0">
-              <h2 class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5 px-0">Your hand</h2>
+              <h2 id="play-hand-label" class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5 px-0">Your hand</h2>
               <div id="play-hand"></div>
             </section>
           </div>
@@ -92,6 +93,7 @@ export function renderPlayView(root) {
   const joinForm = root.querySelector('#join-form');
   const joinError = root.querySelector('#join-error');
   const handEl = root.querySelector('#play-hand');
+  const handLabelEl = root.querySelector('#play-hand-label');
   const miniBoardEl = root.querySelector('#play-mini-board');
   const boardColumnEl = root.querySelector('.play-board-column');
   const hintEl = root.querySelector('#play-hint');
@@ -166,6 +168,8 @@ export function renderPlayView(root) {
       sel: selectedCardId,
       turn: state?.you?.isYourTurn,
       claim,
+      phase: state?.phase,
+      winnerTeam: state?.winnerTeam,
     });
   }
 
@@ -181,7 +185,10 @@ export function renderPlayView(root) {
     teamBadge.className = `rounded-full px-3 py-1 text-xs font-bold uppercase bg-${state.you.team}-500/20 text-${state.you.team}-400 border border-${state.you.team}-500/40`;
 
     if (state.phase === 'game_over') {
-      turnEl.textContent = state.winnerTeam ? `${state.winnerTeam} team wins!` : 'Game over';
+      turnEl.textContent = state.winnerTeam
+        ? `${String(state.winnerTeam).toUpperCase()} TEAM WINS`
+        : 'Game over';
+      hintEl.textContent = '';
     } else if (state.you.isYourTurn) {
       turnEl.textContent = 'Your turn — pick a card';
     } else {
@@ -191,7 +198,9 @@ export function renderPlayView(root) {
 
     const card = selectedCardId ? CARD_CATALOG[selectedCardId] : null;
     const claim = state.pendingSequenceClaim;
-    if (claim && state.you.id === claim.playerId) {
+    if (state.phase === 'game_over') {
+      // hint cleared above
+    } else if (claim && state.you.id === claim.playerId) {
       const n = claim.pickedCells?.length ?? 0;
       hintEl.textContent = `Pick 5 in a row for your sequence (${n}/5)`;
     } else if (!state.you.isYourTurn) {
@@ -253,7 +262,7 @@ export function renderPlayView(root) {
       chips: state.chips,
       validTargets: myClaim ? [] : targets,
       highlights: flashTargets ? targets : [],
-      interactive: myClaim || Boolean(selectedCardId && state.you?.isYourTurn),
+      interactive: state.phase !== 'game_over' && (myClaim || Boolean(selectedCardId && state.you?.isYourTurn)),
       onCellClick: myClaim ? handleSequencePick : (row, col) => handleBoardTap(row, col),
       playerTeam: state.you.team,
       highlightMode: 'token',
@@ -263,6 +272,7 @@ export function renderPlayView(root) {
       sequenceEligible: myClaim ? (claim.eligibleCells ?? []) : [],
       sequencePicked: myClaim ? (claim.pickedCells ?? []) : [],
       sequenceTeam: claim?.team ?? state.you.team,
+      winnerTeam: state.phase === 'game_over' ? state.winnerTeam : null,
     });
   }
 
@@ -288,8 +298,28 @@ export function renderPlayView(root) {
 
   function paintHand(fullRebuild = false) {
     if (!state?.you) return;
+
+    if (state.phase === 'game_over') {
+      const team = state.winnerTeam || 'red';
+      const title = `${String(team).toUpperCase()} TEAM WINS`;
+      handLabelEl?.classList.add('hidden');
+      handEl.innerHTML = `
+        <div class="play-win-panel">
+          <p class="play-win-title play-win-title-${team}">${title}</p>
+          <button type="button" id="play-again" class="play-again-btn">Play again</button>
+        </div>
+      `;
+      handEl.querySelector('#play-again')?.addEventListener('click', async () => {
+        showError(playError, '');
+        const ok = await startGame(getActiveTestScenarioId());
+        if (!ok) await refreshState();
+      });
+      return;
+    }
+
+    handLabelEl?.classList.remove('hidden');
     const hand = state.you.hand;
-    if (fullRebuild || !handEl.querySelector('.hand-card')) {
+    if (fullRebuild || handEl.querySelector('.play-win-panel') || !handEl.querySelector('.hand-card')) {
       renderHand(handEl, hand, selectedCardId, onHandCardTap, { compact: true });
     } else {
       updateHandSelection(handEl, selectedCardId);
@@ -341,7 +371,13 @@ export function renderPlayView(root) {
     showError(playError, '');
 
     const claimNeeded = !isRemove
-      ? detectSequenceClaimRequired(state.chips, team, row, col)
+      ? detectSequenceClaimRequired(
+        state.chips,
+        team,
+        row,
+        col,
+        state.sequenceClaims ?? [],
+      )
       : null;
     if (claimNeeded) {
       state.pendingSequenceClaim = {
@@ -416,5 +452,5 @@ export function renderPlayView(root) {
     joinRoom({ code, name, team });
   });
 
-  startBtn.addEventListener('click', () => startGame());
+  startBtn.addEventListener('click', () => startGame(getActiveTestScenarioId()));
 }

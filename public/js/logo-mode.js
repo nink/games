@@ -1,7 +1,10 @@
 /**
  * Private corporate-logo demo — append ?logo to /tv or /play URLs.
  * Production default uses plain rank + suit faces from /shared/cards.js.
+ * Also preserves active ?test01 (etc.) for join / QR links.
  */
+
+import { getActiveTestScenarioId } from './test-mode.js';
 
 /** @returns {boolean} */
 export function isCorporateLogoDemo() {
@@ -14,6 +17,8 @@ export function withLogoQuery(path = window.location.pathname) {
   url.searchParams.set('logo', '1');
   const code = new URLSearchParams(window.location.search).get('code');
   if (code) url.searchParams.set('code', code);
+  const testId = getActiveTestScenarioId();
+  if (testId) url.searchParams.set(testId, '1');
   return `${url.pathname}${url.search}`;
 }
 
@@ -21,6 +26,8 @@ export function withLogoQuery(path = window.location.pathname) {
 export function playJoinQuery(extra = {}) {
   const qs = new URLSearchParams();
   if (isCorporateLogoDemo()) qs.set('logo', '1');
+  const testId = getActiveTestScenarioId();
+  if (testId) qs.set(testId, '1');
   for (const [k, v] of Object.entries(extra)) {
     if (v != null && v !== '') qs.set(k, v);
   }

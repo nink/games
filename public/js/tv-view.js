@@ -10,6 +10,7 @@ import { emptyBoardChips } from '/shared/cards.js';
 import { renderBoard } from './board-render.js';
 import { renderPlayQr } from './play-qr.js';
 import { mountCorporateDemoBanner } from './demo-banner.js';
+import { getActiveTestScenarioId } from './test-mode.js';
 
 /**
  * @param {HTMLElement} root
@@ -91,6 +92,7 @@ export function renderTvView(root) {
       sequenceEligible: claim?.eligibleCells ?? [],
       sequencePicked: claim?.pickedCells ?? [],
       sequenceTeam: claim?.team,
+      winnerTeam: state?.phase === 'game_over' ? state.winnerTeam : null,
     });
   }
 
@@ -115,7 +117,7 @@ export function renderTvView(root) {
     }
 
     if (state.phase === 'game_over' && state.winnerTeam) {
-      turnEl.innerHTML = `<span class="text-${state.winnerTeam}-400 capitalize">${state.winnerTeam} team wins!</span>`;
+      turnEl.innerHTML = `<span class="text-${state.winnerTeam}-400 uppercase font-black tracking-wide">${state.winnerTeam} TEAM WINS</span>`;
     } else if (state.currentPlayerName) {
       turnEl.innerHTML = `<span class="capitalize text-${state.currentTeam}-400">${state.currentPlayerName}</span> <span class="text-slate-500">(${state.currentTeam})</span>`;
     } else {
@@ -145,14 +147,20 @@ export function renderTvView(root) {
       .map(([team, n]) => `<div><span class="capitalize text-${team}-400">${team}</span>: ${n} sequence${n === 1 ? '' : 's'}</div>`)
       .join('');
 
-    startBtn.classList.toggle('hidden', state.phase !== 'lobby' || (state.players?.length ?? 0) < 2);
+    const canStart =
+      (state.phase === 'lobby' || state.phase === 'game_over')
+      && (state.players?.length ?? 0) >= 2;
+    startBtn.textContent = state.phase === 'game_over' ? 'Play again' : 'Start game';
+    startBtn.classList.toggle('hidden', !canStart);
     statusEl.textContent = state.pendingSequenceClaim
       ? `${state.players?.find((p) => p.id === state.pendingSequenceClaim.playerId)?.name ?? 'Player'} — pick 5 for sequence`
       : state.pendingSelection
       ? 'A player is choosing where to play…'
       : state.phase === 'playing'
         ? `${state.deckRemaining ?? 0} cards left in deck`
-        : '';
+        : state.phase === 'game_over'
+          ? 'Game over — play again to clear the board'
+          : '';
   }
 
   connect();
@@ -177,7 +185,7 @@ export function renderTvView(root) {
   });
 
   createBtn.addEventListener('click', () => createRoom());
-  startBtn.addEventListener('click', () => startGame());
+  startBtn.addEventListener('click', () => startGame(getActiveTestScenarioId()));
 
   if (roomCode) {
     subscribeTv(roomCode);

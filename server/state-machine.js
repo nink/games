@@ -16,9 +16,11 @@ import {
   detectSequenceClaimRequired,
   areColinear,
   isValidSequencePick,
+  isValidNewSequenceClaim,
   lockClaimedCells,
   sequenceCountByClaims,
 } from '../shared/sequence-claim.js';
+import { applyTestScenario } from '../shared/test-scenarios.js';
 import {
   handContains,
   legalTargetsForCard,
@@ -137,8 +139,9 @@ export function joinRoom(room, { id, name, team }) {
 
 /**
  * @param {GameRoom} room
+ * @param {{ testScenario?: import('../shared/test-scenarios.js').TestScenario | null }} [opts]
  */
-export function startGame(room) {
+export function startGame(room, { testScenario = null } = {}) {
   if (room.players.length < 2) {
     return { ok: false, reason: 'Need at least 2 players' };
   }
@@ -161,6 +164,10 @@ export function startGame(room) {
 
   for (const player of room.players) {
     player.hand = drawCards(room, HAND_SIZE);
+  }
+
+  if (testScenario) {
+    applyTestScenario(room, testScenario);
   }
 
   return { ok: true };
@@ -263,7 +270,13 @@ export function playPlace(room, playerId, cardId, row, col) {
   const drawn = drawCards(room, 1);
   if (drawn.length) player.hand.push(drawn[0]);
 
-  const claimRequired = detectSequenceClaimRequired(room.chips, player.team, row, col);
+  const claimRequired = detectSequenceClaimRequired(
+    room.chips,
+    player.team,
+    row,
+    col,
+    room.sequenceClaims,
+  );
   if (claimRequired) {
     room.pendingSequenceClaim = {
       playerId: player.id,
@@ -283,7 +296,13 @@ export function playPlace(room, playerId, cardId, row, col) {
     };
   }
 
-  const newLines = autoLockExactFives(room.chips, player.team, row, col);
+  const newLines = autoLockExactFives(
+    room.chips,
+    player.team,
+    row,
+    col,
+    room.sequenceClaims,
+  );
   for (const line of newLines) {
     room.sequenceClaims.push({ team: player.team, cells: line });
   }
@@ -388,6 +407,14 @@ export function pickSequenceCell(room, playerId, row, col) {
   if (!isValidSequencePick(picked)) {
     claim.pickedCells = claim.pickedCells.slice(0, -1);
     return { ok: false, reason: 'Pick 5 adjacent spaces in a row' };
+  }
+
+  if (!isValidNewSequenceClaim(picked, room.sequenceClaims, claim.team)) {
+    claim.pickedCells = claim.pickedCells.slice(0, -1);
+    return {
+      ok: false,
+      reason: 'Cannot reuse the same chips from an existing sequence (crossing may share one)',
+    };
   }
 
   lockClaimedCells(room.chips, picked);

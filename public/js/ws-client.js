@@ -270,9 +270,10 @@ export async function joinRoom({ code, name, team }) {
   return ok;
 }
 
-export async function startGame() {
-  if (useWebSocket) return wsSend('start_game');
-  return apiPost('start_game');
+export async function startGame(testScenario = null) {
+  const payload = testScenario ? { testScenario } : {};
+  if (useWebSocket) return wsSend('start_game', payload);
+  return apiPost('start_game', payload);
 }
 
 export async function selectCard(cardId) {

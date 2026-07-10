@@ -11,6 +11,7 @@ import {
   startGame,
 } from './state-machine.js';
 import { createAndSaveRoom, loadRoom, saveRoom } from './room-store.js';
+import { getTestScenario } from '../shared/test-scenarios.js';
 
 /**
  * Build state payload for a role.
@@ -38,6 +39,7 @@ export async function handleGameAction(body) {
     cardId,
     row,
     col,
+    testScenario = null,
   } = body ?? {};
 
   switch (action) {
@@ -86,7 +88,8 @@ export async function handleGameAction(body) {
     case 'start_game': {
       const room = await loadRoom(code);
       if (!room) return { ok: false, error: 'Not in a room' };
-      const result = startGame(room);
+      const scenario = getTestScenario(testScenario);
+      const result = startGame(room, { testScenario: scenario });
       if (!result.ok) return { ok: false, error: result.reason };
       await saveRoom(room);
       return {

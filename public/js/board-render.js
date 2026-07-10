@@ -9,10 +9,15 @@ function isWildCorner(cardId) {
 /**
  * @param {HTMLElement} cellEl
  * @param {'red' | 'blue' | 'green'} team
+ * @param {{ flash?: boolean }} [opts]
  */
-function addPlacedToken(cellEl, team) {
+function addPlacedToken(cellEl, team, { flash = false } = {}) {
   const token = document.createElement('span');
-  token.className = `chip-token-placed chip-token-placed-${team}`;
+  token.className = [
+    'chip-token-placed',
+    `chip-token-placed-${team}`,
+    flash ? `chip-token-win-flash chip-token-win-flash-${team}` : '',
+  ].filter(Boolean).join(' ');
   token.setAttribute('aria-hidden', 'true');
   cellEl.appendChild(token);
 }
@@ -57,6 +62,7 @@ function addTokenPreview(cellEl, team, kind) {
  * @param {{ row: number, col: number }[]} [opts.sequenceEligible]
  * @param {{ row: number, col: number }[]} [opts.sequencePicked]
  * @param {'red' | 'blue' | 'green'} [opts.sequenceTeam]
+ * @param {'red' | 'blue' | 'green' | null} [opts.winnerTeam]
  */
 export function renderBoard(container, {
   chips,
@@ -73,6 +79,7 @@ export function renderBoard(container, {
   sequenceEligible = [],
   sequencePicked = [],
   sequenceTeam,
+  winnerTeam = null,
 }) {
   const clickTargets = validTargets ?? highlights;
   const tokens = tokenHighlights ?? highlights;
@@ -153,7 +160,7 @@ export function renderBoard(container, {
       const isSeqEligible = sequenceEligibleSet.has(cellKey) && !isSeqPicked;
 
       if (cell.team && !wildCorner) {
-        addPlacedToken(el, cell.team);
+        addPlacedToken(el, cell.team, { flash: Boolean(winnerTeam && cell.team === winnerTeam) });
       }
 
       if (isSeqPicked && claimTeam) {

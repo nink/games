@@ -18,6 +18,7 @@ import {
   selectCard,
   startGame,
 } from './state-machine.js';
+import { getTestScenario } from '../shared/test-scenarios.js';
 import './load-env.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -131,7 +132,8 @@ wss.on('connection', (ws) => {
         const meta = sockets.get(ws);
         const room = meta && getRoom(meta.roomCode);
         if (!room) return send(ws, 'error', { reason: 'Not in a room' });
-        const result = startGame(room);
+        const scenario = getTestScenario(payload.testScenario);
+        const result = startGame(room, { testScenario: scenario });
         if (!result.ok) return send(ws, 'error', { reason: result.reason });
         broadcastState(room);
         break;
