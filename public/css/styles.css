@@ -461,6 +461,7 @@
 
 .take5-board-mobile .card-face-plain .card-face-suit {
   font-size: 46cqmin;
+  margin-top: 0.12em;
 }
 
 /* Sequence-style preview token on valid targets — hard blink team / black */
